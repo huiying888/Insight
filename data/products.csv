@@ -1,0 +1,101 @@
+ProductID,ProductName,Category,Price,Description,Available Color
+FA-0001-00,Breathable Blazer,Blazer,131.42,Breathable blazer crafted from cotton blend with easy-care finish.,"['Cream', 'Beige']"
+FA-0002-00,High-Rise Windbreaker,Windbreaker,71.17,High-rise windbreaker crafted from rib knit with easy-care finish.,['Emerald']
+FA-0003-00,Signature Loungewear,Loungewear,69.66,Signature loungewear crafted from performance mesh with easy-care finish.,"['Maroon', 'Terracotta', 'Burgundy', 'Charcoal']"
+FA-0004-00,Breathable Sports Bra,Sports Bra,47.8,Breathable sports bra crafted from poplin with easy-care finish.,"['Olive', 'Tan', 'Mustard']"
+FA-0005-00,Textured Yoga Pants,Yoga Pants,57.13,Textured yoga pants crafted from recycled polyester with adjustable waistband.,"['Teal', 'Ivory', 'Coral']"
+FA-0006-00,Textured Coat,Coat,119.13,Textured coat crafted from recycled polyester with machine washable.,['Lavender']
+FA-0007-00,Moisture-Wicking Jeans,Jeans,69.85,Moisture-wicking jeans crafted from performance mesh with breathable panels.,"['Lavender', 'Lilac']"
+FA-0008-00,Organic Chinos,Chinos,66.2,Organic chinos crafted from bamboo viscose with snap front.,"['Brown', 'Ivory', 'Rose', 'Sand']"
+FA-0009-00,Textured Athletic Tee,Athletic Tee,31.05,Textured athletic tee crafted from tech knit with buttery-soft feel.,['Pearl']
+FA-0010-00,Ribbed Vest,Vest,61.26,Ribbed vest crafted from rib knit with drawstring waist.,"['Forest Green', 'Blush', 'Terracotta']"
+FA-0011-00,Signature Henley,Henley,22.14,Signature henley crafted from corduroy with sustainably sourced materials.,"['Rust', 'Pearl']"
+FA-0012-00,Moisture-Wicking Mini Dress,Mini Dress,93.31,Moisture-wicking mini dress crafted from bamboo viscose with odor control.,['Denim Blue']
+FA-0013-00,Cropped Puffer Jacket,Puffer Jacket,106.87,Cropped puffer jacket crafted from poplin with odor control.,"['White', 'Gray', 'Terracotta', 'Mustard']"
+FA-0014-00,Premium Cardigan,Cardigan,81.12,Premium cardigan crafted from rib knit with four-way stretch.,"['Beige', 'Cobalt']"
+FA-0015-00,Relaxed Shorts,Shorts,67.67,Relaxed shorts crafted from tech knit with button front.,"['Sky Blue', 'Burgundy', 'Navy', 'Coral']"
+FA-0016-00,Mid-Rise Wide-Leg Pants,Wide-Leg Pants,72.95,Mid-rise wide-leg pants crafted from twill with button front.,"['Mustard', 'Emerald', 'Blush']"
+FA-0017-00,Athleisure T-Shirt,T-Shirt,29.13,Athleisure t-shirt crafted from denim with elastic cuffs.,"['Tan', 'White', 'Cream', 'Denim Blue']"
+FA-0018-00,Everyday Mini Dress,Mini Dress,66.67,Everyday mini dress crafted from twill with wrinkle-resistant finish.,"['Khaki', 'Sky Blue', 'Olive', 'Sand']"
+FA-0019-00,Lightweight Shorts,Shorts,70.33,Lightweight shorts crafted from twill with uv-protective finish.,"['Mustard', 'Terracotta', 'Cobalt']"
+FA-0020-00,Lightweight Bomber Jacket,Bomber Jacket,98.01,Lightweight bomber jacket crafted from twill with hidden zip pocket.,"['Coral', 'Pearl']"
+FA-0021-00,Oversized Pajamas,Pajamas,73.31,Oversized pajamas crafted from modal jersey with reinforced seams.,"['Olive', 'Mint', 'Maroon', 'Denim Blue']"
+FA-0022-00,Tailored Pleated Skirt,Pleated Skirt,96.69,Tailored pleated skirt crafted from rib knit with brushed interior.,"['Mint', 'Rust', 'Cream']"
+FA-0023-00,Modern Shorts,Shorts,70.02,Modern shorts crafted from organic cotton with four-way stretch.,"['Sand', 'Sky Blue']"
+FA-0024-00,Slim-Fit Yoga Pants,Yoga Pants,39.6,Slim-fit yoga pants crafted from corduroy with breathable panels.,"['White', 'Pearl']"
+FA-0025-00,Cropped Loungewear,Loungewear,52.25,Cropped loungewear crafted from 100% linen with elastic cuffs.,['Brown']
+FA-0026-00,Premium Polo,Polo,30.87,Premium polo crafted from merino wool with easy-care finish.,['Beige']
+FA-0027-00,Tailored Shirt,Shirt,37.44,Tailored shirt crafted from twill with adjustable waistband.,"['Sky Blue', 'Olive', 'Cobalt', 'Denim Blue']"
+FA-0028-00,Thermal Pleated Skirt,Pleated Skirt,66.54,Thermal pleated skirt crafted from cashmere blend with four-way stretch.,"['Cream', 'Sand', 'Olive', 'Burgundy']"
+FA-0029-00,Heritage Mini Dress,Mini Dress,88.58,Heritage mini dress crafted from corduroy with easy-care finish.,"['Mint', 'Coral']"
+FA-0030-00,Recycled Running Shorts,Running Shorts,37.7,Recycled running shorts crafted from sateen with button front.,"['Navy', 'Forest Green', 'Sand']"
+FA-0031-00,Cozy Sweater,Sweater,73.06,Cozy sweater crafted from denim with drawstring waist.,"['Sky Blue', 'Rose', 'Ivory', 'Lavender']"
+FA-0032-00,Cropped Tunic,Tunic,47.48,Cropped tunic crafted from organic cotton with moisture control.,['Blush']
+FA-0033-00,Stretch Track Jacket,Track Jacket,130.97,Stretch track jacket crafted from rib knit with reinforced seams.,"['Blush', 'Forest Green', 'Maroon']"
+FA-0034-00,Oversized Cargo Pants,Cargo Pants,64.33,Oversized cargo pants crafted from denim with sustainably sourced materials.,"['Tan', 'Pearl']"
+FA-0035-00,Stretch Midi Dress,Midi Dress,63.82,Stretch midi dress crafted from twill with odor control.,['Ivory']
+FA-0036-00,Athleisure Pajamas,Pajamas,51.64,Athleisure pajamas crafted from rib knit with odor control.,['Olive']
+FA-0037-00,Thermal Jeans,Jeans,64.35,Thermal jeans crafted from sateen with button front.,['Forest Green']
+FA-0038-00,Modern Running Shorts,Running Shorts,47.56,Modern running shorts crafted from 100% cotton with uv-protective finish.,"['White', 'Rust']"
+FA-0039-00,Smart Bike Shorts,Bike Shorts,45.57,Smart bike shorts crafted from organic cotton with buttery-soft feel.,"['Blush', 'Tan']"
+FA-0040-00,Mid-Rise Bomber Jacket,Bomber Jacket,136.82,Mid-rise bomber jacket crafted from tech knit with adjustable waistband.,['Lilac']
+FA-0041-00,Low-Rise Mini Dress,Mini Dress,62.78,Low-rise mini dress crafted from poplin with breathable panels.,"['Mint', 'Brown', 'Denim Blue']"
+FA-0042-00,Stretch Maxi Dress,Maxi Dress,47.77,Stretch maxi dress crafted from rib knit with reinforced seams.,['Tan']
+FA-0043-00,High-Rise Maxi Dress,Maxi Dress,78.44,High-rise maxi dress crafted from 100% linen with button front.,"['Mint', 'Pearl']"
+FA-0044-00,Lightweight Wide-Leg Pants,Wide-Leg Pants,62.79,Lightweight wide-leg pants crafted from merino wool with elastic cuffs.,"['Terracotta', 'Rose', 'Lavender']"
+FA-0045-00,Relaxed Raincoat,Raincoat,136.51,Relaxed raincoat crafted from performance mesh with hidden zip pocket.,"['Burgundy', 'Blush']"
+FA-0046-00,Stretch Slip Dress,Slip Dress,88.49,Stretch slip dress crafted from french terry with elastic cuffs.,"['Charcoal', 'Forest Green', 'Lilac']"
+FA-0047-00,Breathable Yoga Pants,Yoga Pants,48.3,Breathable yoga pants crafted from cashmere blend with tagless label for comfort.,"['Khaki', 'Mustard', 'Beige', 'Denim Blue']"
+FA-0048-00,Oversized Thermal Top,Thermal Top,41.32,Oversized thermal top crafted from 100% cotton with tagless label for comfort.,"['Lavender', 'Lilac', 'Olive']"
+FA-0049-00,Classic Wide-Leg Pants,Wide-Leg Pants,57.35,Classic wide-leg pants crafted from bamboo viscose with wrinkle-resistant finish.,"['White', 'Sky Blue']"
+FA-0050-00,Modern Dress,Dress,105.92,Modern dress crafted from recycled polyester with tagless label for comfort.,"['Brown', 'Terracotta', 'Black', 'Emerald']"
+FA-0051-00,Breathable Thermal Bottoms,Thermal Bottoms,47.33,Breathable thermal bottoms crafted from 100% cotton with buttery-soft feel.,['Cream']
+FA-0052-00,Recycled Athletic Tee,Athletic Tee,32.87,Recycled athletic tee crafted from corduroy with uv-protective finish.,"['White', 'Blush', 'Pearl']"
+FA-0053-00,Textured Jeans,Jeans,69.53,Textured jeans crafted from chambray with button front.,"['Cobalt', 'Gray']"
+FA-0054-00,High-Rise Tunic,Tunic,42.59,High-rise tunic crafted from merino wool with four-way stretch.,"['Charcoal', 'Rose', 'Ivory', 'Blush']"
+FA-0055-00,Relaxed Bomber Jacket,Bomber Jacket,71.76,Relaxed bomber jacket crafted from organic cotton with adjustable waistband.,"['Forest Green', 'Blush', 'Cobalt', 'White']"
+FA-0056-00,Boxy Henley,Henley,37.4,Boxy henley crafted from cotton blend with easy-care finish.,"['Cobalt', 'Cream', 'Burgundy', 'Blush']"
+FA-0057-00,Cozy Bike Shorts,Bike Shorts,53.36,Cozy bike shorts crafted from rib knit with elastic cuffs.,"['Teal', 'Olive']"
+FA-0058-00,Mid-Rise Track Jacket,Track Jacket,124.61,Mid-rise track jacket crafted from linen blend with drawstring waist.,"['Lavender', 'Blush']"
+FA-0059-00,Mid-Rise Blouse,Blouse,48.96,Mid-rise blouse crafted from poplin with elastic cuffs.,['Olive']
+FA-0060-00,Signature T-Shirt,T-Shirt,32.26,Signature t-shirt crafted from bamboo viscose with sustainably sourced materials.,"['Teal', 'Burgundy']"
+FA-0061-00,Moisture-Wicking Hoodie,Hoodie,75.68,Moisture-wicking hoodie crafted from sateen with soft hand feel.,"['Khaki', 'Blush']"
+FA-0062-00,Low-Rise Polo,Polo,31.29,Low-rise polo crafted from rib knit with adjustable waistband.,['Burgundy']
+FA-0063-00,Thermal Coat,Coat,118.07,Thermal coat crafted from performance mesh with buttery-soft feel.,"['Lavender', 'Forest Green']"
+FA-0064-00,Recycled Tunic,Tunic,56.08,Recycled tunic crafted from recycled polyester with hidden zip pocket.,"['Cream', 'Blush', 'Tan']"
+FA-0065-00,Wrinkle-Resistant A-Line Skirt,A-Line Skirt,61.85,Wrinkle-resistant a-line skirt crafted from rib knit with button front.,"['Khaki', 'Denim Blue']"
+FA-0066-00,Athleisure Jumpsuit,Jumpsuit,75.34,Athleisure jumpsuit crafted from performance mesh with odor control.,['Maroon']
+FA-0067-00,Everyday Bike Shorts,Bike Shorts,46.02,Everyday bike shorts crafted from denim with wrinkle-resistant finish.,['Rust']
+FA-0068-00,Relaxed Dress,Dress,57.4,Relaxed dress crafted from linen blend with odor control.,['Olive']
+FA-0069-00,Everyday Jumpsuit,Jumpsuit,59.15,Everyday jumpsuit crafted from tech knit with easy-care finish.,['Burgundy']
+FA-0070-00,Essential Midi Dress,Midi Dress,74.13,Essential midi dress crafted from 100% linen with drawstring waist.,"['Coral', 'Sky Blue']"
+FA-0071-00,Ultra-Soft T-Shirt,T-Shirt,33.55,Ultra-soft t-shirt crafted from denim with wrinkle-resistant finish.,"['Maroon', 'Emerald']"
+FA-0072-00,Tailored Romper,Romper,55.44,Tailored romper crafted from modal jersey with brushed interior.,"['Olive', 'Cream', 'Cobalt', 'Maroon']"
+FA-0073-00,Tailored Pajamas,Pajamas,55.49,Tailored pajamas crafted from modal jersey with reinforced seams.,"['Olive', 'Teal', 'Lilac', 'White']"
+FA-0074-00,Moisture-Wicking Polo,Polo,42.26,Moisture-wicking polo crafted from corduroy with moisture control.,"['Terracotta', 'Navy', 'Lavender']"
+FA-0075-00,Low-Rise Athletic Tee,Athletic Tee,30.4,Low-rise athletic tee crafted from recycled polyester with breathable panels.,"['Coral', 'Cream']"
+FA-0076-00,Boxy Thermal Top,Thermal Top,49.76,Boxy thermal top crafted from french terry with odor control.,"['Cream', 'Navy', 'Pearl']"
+FA-0077-00,Recycled Henley,Henley,29.8,Recycled henley crafted from 100% linen with machine washable.,"['Burgundy', 'Sky Blue', 'Maroon', 'Pearl']"
+FA-0078-00,Wrinkle-Resistant Vest,Vest,46.02,Wrinkle-resistant vest crafted from merino wool with tagless label for comfort.,"['Lilac', 'Cream', 'Black']"
+FA-0079-00,Recycled Loungewear,Loungewear,55.64,Recycled loungewear crafted from cotton blend with snap front.,"['Black', 'Khaki', 'Rose', 'Lilac']"
+FA-0080-00,Cozy Skirt,Skirt,75.63,Cozy skirt crafted from 100% linen with moisture control.,['Cream']
+FA-0081-00,Moisture-Wicking Activewear,Activewear,23.09,Moisture-wicking activewear crafted from organic cotton with wrinkle-resistant finish.,"['Rust', 'Olive', 'Emerald']"
+FA-0082-00,Textured Activewear,Activewear,63.71,Textured activewear crafted from corduroy with button front.,"['Sky Blue', 'Tan', 'Cream']"
+FA-0083-00,Athleisure A-Line Skirt,A-Line Skirt,81.05,Athleisure a-line skirt crafted from chambray with sustainably sourced materials.,['Terracotta']
+FA-0084-00,Thermal Blouse,Blouse,38.43,Thermal blouse crafted from chambray with snap front.,"['Olive', 'Pearl']"
+FA-0085-00,Athleisure Shorts,Shorts,59.56,Athleisure shorts crafted from 100% linen with four-way stretch.,['Rose']
+FA-0086-00,Seamless Overcoat,Overcoat,131.7,Seamless overcoat crafted from 100% cotton with adjustable waistband.,"['Denim Blue', 'Cream', 'White']"
+FA-0087-00,Modern Blouse,Blouse,49.91,Modern blouse crafted from 100% cotton with wrinkle-resistant finish.,"['Brown', 'Burgundy']"
+FA-0088-00,Premium Slip Dress,Slip Dress,104.53,Premium slip dress crafted from cotton blend with brushed interior.,"['Maroon', 'Charcoal']"
+FA-0089-00,Wrinkle-Resistant Chinos,Chinos,62.49,Wrinkle-resistant chinos crafted from french terry with easy-care finish.,"['Maroon', 'Denim Blue', 'Pearl']"
+FA-0090-00,Lightweight Maxi Dress,Maxi Dress,109.92,Lightweight maxi dress crafted from french terry with soft hand feel.,['Cobalt']
+FA-0091-00,Stretch Trousers,Trousers,55.18,Stretch trousers crafted from rib knit with buttery-soft feel.,"['Forest Green', 'Mustard', 'Pearl', 'Cobalt']"
+FA-0092-00,Quick-Dry Romper,Romper,83.53,Quick-dry romper crafted from denim with hidden zip pocket.,['Terracotta']
+FA-0093-00,High-Rise Chinos,Chinos,55.08,High-rise chinos crafted from denim with elastic cuffs.,"['Ivory', 'Emerald', 'Navy']"
+FA-0094-00,Heritage Cargo Pants,Cargo Pants,60.6,Heritage cargo pants crafted from organic cotton with brushed interior.,"['Khaki', 'Olive', 'Cobalt', 'Emerald']"
+FA-0095-00,Oversized Running Shorts,Running Shorts,42.56,Oversized running shorts crafted from tech knit with four-way stretch.,"['Coral', 'Blush']"
+FA-0096-00,Oversized Yoga Pants,Yoga Pants,53.28,Oversized yoga pants crafted from cashmere blend with button front.,['Burgundy']
+FA-0097-00,Mid-Rise Loungewear,Loungewear,68.18,Mid-rise loungewear crafted from chambray with button front.,"['Mint', 'Emerald']"
+FA-0098-00,High-Rise Pleated Skirt,Pleated Skirt,75.42,High-rise pleated skirt crafted from organic cotton with moisture control.,"['Pearl', 'Charcoal']"
+FA-0099-00,Moisture-Wicking Overcoat,Overcoat,118.4,Moisture-wicking overcoat crafted from 100% cotton with moisture control.,"['Rose', 'Rust', 'Pearl', 'Olive']"
+FA-0100-00,Essential Bomber Jacket,Bomber Jacket,135.81,Essential bomber jacket crafted from chambray with hidden zip pocket.,['Burgundy']
