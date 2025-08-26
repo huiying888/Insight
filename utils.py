@@ -82,7 +82,7 @@ def get_sql_chain(db: SQLDatabase, schema: str):
 
     # Use LLaMA 3.2 via OpenAI-compatible endpoint (set in .env as OPENAI_API_KEY + BASE_URL if needed)
     llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash", 
+    model="gemma-3-27b-it", 
     google_api_key=os.getenv("GEMINI_API_KEY"),  # make sure this matches your .env variable name
     temperature=0
 )
@@ -114,7 +114,7 @@ def get_response(user_query: str, db: SQLDatabase, schema: str, chat_history: li
     prompt = ChatPromptTemplate.from_template(template)
 
     llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash", 
+    model="gemma-3-27b-it", 
     google_api_key=os.getenv("GEMINI_API_KEY"),  # make sure this matches your .env variable name
     temperature=0
 )
