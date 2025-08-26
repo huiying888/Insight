@@ -293,14 +293,14 @@ def load_fact_orders_and_items_marketplace(conn, channel: str):
                     o["order_id"], channel_id, customer_sk, None,  # store_sk None for marketplaces
                     o.get("created_at"), o.get("status"),
                     o.get("currency"), gross, net,
-                    o.get("shipping_fee"), o.get("tax_total"), o.get("voucher_amount"), None
+                    o.get("shipping_fee"), o.get("tax_total"), o.get("voucher_amount")
                 ))
             if rows:
                 execute_values(cur, """
                     INSERT INTO wh.fact_orders (
                         order_id, channel_id, customer_sk, store_sk, order_ts, status,
                         currency_native, order_total_gross, order_total_net,
-                        shipping_fee, tax_total, voucher_amount, order_total_myr
+                        shipping_fee, tax_total, voucher_amount
                     ) VALUES %s
                     ON CONFLICT (order_id) DO UPDATE
                     SET status = EXCLUDED.status,
@@ -360,15 +360,15 @@ def load_fact_orders_and_items_marketplace(conn, channel: str):
 
                 rows.append((
                     order_sk, product_sk, qty, price, disc,
-                    revenue_net, cost_total, margin, None, None, None
+                    revenue_net, cost_total, margin
                 ))
 
             if rows:
                 execute_values(cur, """
                     INSERT INTO wh.fact_order_items (
                         order_sk, product_sk, qty, price, discount,
-                        revenue_net, cost, margin,
-                        currency_native, revenue_myr, margin_myr
+                        revenue_net, cost, margin
+                        
                     ) VALUES %s
                     ON CONFLICT (order_sk, product_sk) DO UPDATE
                     SET qty = EXCLUDED.qty,
@@ -376,10 +376,8 @@ def load_fact_orders_and_items_marketplace(conn, channel: str):
                         discount = EXCLUDED.discount,
                         revenue_net = EXCLUDED.revenue_net,
                         cost = EXCLUDED.cost,
-                        margin = EXCLUDED.margin,
-                        currency_native = EXCLUDED.currency_native,
-                        revenue_myr = EXCLUDED.revenue_myr,
-                        margin_myr = EXCLUDED.margin_myr;
+                        margin = EXCLUDED.margin
+                        
                 """, rows)
 
     conn.commit()
@@ -424,7 +422,7 @@ def load_fact_orders_and_items_pos(conn):
                 rows.append((
                     r["order_id"], channel_id, customer_sk, store_sk, r.get("order_ts"),
                     r.get("status"), r.get("currency"), gross, net,
-                    r.get("shipping_fee"), r.get("tax_total"), r.get("discount_total"), None
+                    r.get("shipping_fee"), r.get("tax_total"), r.get("discount_total")
                 ))
 
             if rows:
@@ -432,7 +430,7 @@ def load_fact_orders_and_items_pos(conn):
                     INSERT INTO wh.fact_orders (
                         order_id, channel_id, customer_sk, store_sk, order_ts, status,
                         currency_native, order_total_gross, order_total_net,
-                        shipping_fee, tax_total, voucher_amount, order_total_myr
+                        shipping_fee, tax_total, voucher_amount
                     ) VALUES %s
                     ON CONFLICT (order_id) DO UPDATE
                     SET status = EXCLUDED.status,
@@ -489,14 +487,14 @@ def load_fact_orders_and_items_pos(conn):
                 margin = revenue_net - cost_total
 
                 rows.append((order_sk, product_sk, qty, price, disc,
-                             revenue_net, cost_total, margin, None, None, None))
+                             revenue_net, cost_total, margin))
 
             if rows:
                 execute_values(cur, """
                     INSERT INTO wh.fact_order_items (
                         order_sk, product_sk, qty, price, discount,
-                        revenue_net, cost, margin,
-                        currency_native, revenue_myr, margin_myr
+                        revenue_net, cost, margin
+                        
                     ) VALUES %s
                     ON CONFLICT (order_sk, product_sk) DO UPDATE
                     SET qty = EXCLUDED.qty,
@@ -504,10 +502,8 @@ def load_fact_orders_and_items_pos(conn):
                         discount = EXCLUDED.discount,
                         revenue_net = EXCLUDED.revenue_net,
                         cost = EXCLUDED.cost,
-                        margin = EXCLUDED.margin,
-                        currency_native = EXCLUDED.currency_native,
-                        revenue_myr = EXCLUDED.revenue_myr,
-                        margin_myr = EXCLUDED.margin_myr;
+                        margin = EXCLUDED.margin
+                        
                 """, rows)
 
     conn.commit()
@@ -541,19 +537,19 @@ def load_fact_refunds(conn, channel: str):
                 upsert_fx_myr_passthrough(cur, d)
             out.append((
                 r["refund_id"], order_sk, None,  # product_sk unknown here
-                r.get("amount"), None, r.get("reason"), r.get("processed_at")
+                r.get("amount"), r.get("reason"), r.get("processed_at")
             ))
 
         if out:
             execute_values(cur, """
                 INSERT INTO wh.fact_refunds (
-                    refund_id, order_sk, product_sk, amount_native, amount_myr, reason, processed_ts
+                    refund_id, order_sk, product_sk, amount_native, reason, processed_ts
                 ) VALUES %s
                 ON CONFLICT (refund_id) DO UPDATE
                 SET order_sk = EXCLUDED.order_sk,
                     product_sk = COALESCE(EXCLUDED.product_sk, wh.fact_refunds.product_sk),
                     amount_native = EXCLUDED.amount_native,
-                    amount_myr = COALESCE(EXCLUDED.amount_myr, wh.fact_refunds.amount_myr),
+                    
                     reason = EXCLUDED.reason,
                     processed_ts = EXCLUDED.processed_ts;
             """, out)
