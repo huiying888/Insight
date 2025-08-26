@@ -1,0 +1,81 @@
+product_id,sku,name,category,brand,cost,price,currency
+SHP-PROD0001,SHP-SKU0084,Patagonia Lightweight Coat,Outerwear,Patagonia,220,260,MYR
+SHP-PROD0002,SHP-SKU0054,Nike CoolTouch Blouse,Tops,Nike,80,130,MYR
+SHP-PROD0003,SHP-SKU0071,Vans LightMotion Sneakers,Shoes,Vans,90,150,MYR
+SHP-PROD0004,SHP-SKU0046,Nike TrueShape Sweatshirt,Tops,Nike,220,230,MYR
+SHP-PROD0005,SHP-SKU0045,Gap CoreFlex Jeans,Bottoms,Gap,250,310,MYR
+SHP-PROD0006,SHP-SKU0040,Under Armour Oversized Sweatshirt,Tops,Under Armour,50,110,MYR
+SHP-PROD0007,SHP-SKU0023,Banana Republic Sculpted Midi Dress,Dresses,Banana Republic,40,90,MYR
+SHP-PROD0008,SHP-SKU0081,Timberland FreshFoam Sandals,Shoes,Timberland,140,170,MYR
+SHP-PROD0009,SHP-SKU0011,Skechers Slip-On Slip-Ons,Shoes,Skechers,230,290,MYR
+SHP-PROD0010,SHP-SKU0001,Nike Ultraboost Sandals,Shoes,Nike,110,130,MYR
+SHP-PROD0011,SHP-SKU0019,Champion HeatGear Yoga Pants,Activewear,Champion,250,310,MYR
+SHP-PROD0012,SHP-SKU0031,The North Face UtilityStyle Cardigan,Outerwear,The North Face,220,270,MYR
+SHP-PROD0013,SHP-SKU0074,Reebok Dri-FIT Blouse,Tops,Reebok,220,240,MYR
+SHP-PROD0014,SHP-SKU0034,Marmot Quilted Coat,Outerwear,Marmot,110,130,MYR
+SHP-PROD0015,SHP-SKU0091,Columbia Lightweight Sweater,Outerwear,Columbia,50,80,MYR
+SHP-PROD0016,SHP-SKU0005,Puma AirFlow Blouse,Tops,Puma,170,200,MYR
+SHP-PROD0017,SHP-SKU0077,Lululemon MaxSpeed Sports Bra,Activewear,Lululemon,80,120,MYR
+SHP-PROD0018,SHP-SKU0078,Under Armour MotionWeave Sports Bra,Activewear,Under Armour,230,290,MYR
+SHP-PROD0019,SHP-SKU0013,Timberland Ultraboost Running Shoes,Shoes,Timberland,50,80,MYR
+SHP-PROD0020,SHP-SKU0032,Calvin Klein StormProof Coat,Outerwear,Calvin Klein,70,130,MYR
+SHP-PROD0021,SHP-SKU0056,Calvin Klein SmoothFit Blouse,Tops,Calvin Klein,110,170,MYR
+SHP-PROD0022,SHP-SKU0089,The North Face Oversized Cardigan,Outerwear,The North Face,50,80,MYR
+SHP-PROD0023,SHP-SKU0027,Skechers FreshFoam Sandals,Shoes,Skechers,160,220,MYR
+SHP-PROD0024,SHP-SKU0043,Lululemon PowerMesh Athletic Tee,Activewear,Lululemon,50,100,MYR
+SHP-PROD0025,SHP-SKU0070,Levi's ActiveDry Chinos,Bottoms,Levi's,240,270,MYR
+SHP-PROD0026,SHP-SKU0016,Ralph Lauren Contemporary Maxi Dress,Dresses,Ralph Lauren,220,260,MYR
+SHP-PROD0027,SHP-SKU0041,Reebok HeatGear Athletic Tee,Activewear,Reebok,90,100,MYR
+SHP-PROD0028,SHP-SKU0097,Ralph Lauren Contemporary Shift Dress,Dresses,Ralph Lauren,220,230,MYR
+SHP-PROD0029,SHP-SKU0010,Converse GripLock Running Shoes,Shoes,Converse,150,180,MYR
+SHP-PROD0030,SHP-SKU0073,American Eagle SlimCore Trousers,Bottoms,American Eagle,110,150,MYR
+SHP-PROD0031,SHP-SKU0012,American Eagle EnduraFit Shorts,Bottoms,American Eagle,120,180,MYR
+SHP-PROD0032,SHP-SKU0048,Patagonia Lightweight Hoodie,Outerwear,Patagonia,230,290,MYR
+SHP-PROD0033,SHP-SKU0086,Lululemon BounceFlex Leggings,Activewear,Lululemon,120,160,MYR
+SHP-PROD0034,SHP-SKU0029,Lululemon PowerMesh Leggings,Activewear,Lululemon,40,50,MYR
+SHP-PROD0035,SHP-SKU0094,Banana Republic Contemporary Midi Dress,Dresses,Banana Republic,260,270,MYR
+SHP-PROD0036,SHP-SKU0006,Tommy Hilfiger Ruched Maxi Dress,Dresses,Tommy Hilfiger,70,100,MYR
+SHP-PROD0037,SHP-SKU0067,Timberland LightMotion Sandals,Shoes,Timberland,250,290,MYR
+SHP-PROD0038,SHP-SKU0066,New Balance AirMax Sandals,Shoes,New Balance,230,260,MYR
+SHP-PROD0039,SHP-SKU0036,Nike Ultraboost Track Jacket,Activewear,Nike,210,220,MYR
+SHP-PROD0040,SHP-SKU0017,Dockers EnduraFit Trousers,Bottoms,Dockers,50,60,MYR
+SHP-PROD0041,SHP-SKU0050,Adidas GlideStep Sandals,Shoes,Adidas,130,180,MYR
+SHP-PROD0042,SHP-SKU0035,Levi's MotionFlex Cargo Pants,Bottoms,Levi's,180,200,MYR
+SHP-PROD0043,SHP-SKU0008,Adidas GripLock Boots,Shoes,Adidas,100,160,MYR
+SHP-PROD0044,SHP-SKU0096,Vans AirMax Boots,Shoes,Vans,260,320,MYR
+SHP-PROD0045,SHP-SKU0028,Reebok MaxSpeed Leggings,Activewear,Reebok,110,120,MYR
+SHP-PROD0046,SHP-SKU0020,Puma AeroCool Track Jacket,Activewear,Puma,140,150,MYR
+SHP-PROD0047,SHP-SKU0082,American Eagle CoreFlex Skirt,Bottoms,American Eagle,80,140,MYR
+SHP-PROD0048,SHP-SKU0026,Lululemon AeroCool Athletic Tee,Activewear,Lululemon,230,270,MYR
+SHP-PROD0049,SHP-SKU0063,Tommy Hilfiger Ruched Midi Dress,Dresses,Tommy Hilfiger,170,200,MYR
+SHP-PROD0050,SHP-SKU0014,Dockers High-Rise Cargo Pants,Bottoms,Dockers,100,160,MYR
+SHP-PROD0051,SHP-SKU0025,Adidas TrueShape T-Shirt,Tops,Adidas,210,230,MYR
+SHP-PROD0052,SHP-SKU0004,Adidas SmoothMotion Running Shoes,Shoes,Adidas,180,230,MYR
+SHP-PROD0053,SHP-SKU0018,New Balance SpeedTech Slip-Ons,Shoes,New Balance,160,200,MYR
+SHP-PROD0054,SHP-SKU0039,Converse LightMotion Sneakers,Shoes,Converse,80,100,MYR
+SHP-PROD0055,SHP-SKU0009,Wrangler TaperedFit Trousers,Bottoms,Wrangler,110,120,MYR
+SHP-PROD0056,SHP-SKU0079,Reebok SkinFit Track Jacket,Activewear,Reebok,190,230,MYR
+SHP-PROD0057,SHP-SKU0007,Adidas TrueShape Sweatshirt,Tops,Adidas,70,110,MYR
+SHP-PROD0058,SHP-SKU0065,New Balance Ultraboost Boots,Shoes,New Balance,210,270,MYR
+SHP-PROD0059,SHP-SKU0037,American Eagle CoreFlex Shorts,Bottoms,American Eagle,190,210,MYR
+SHP-PROD0060,SHP-SKU0090,Tommy Hilfiger Quilted Parka,Outerwear,Tommy Hilfiger,120,160,MYR
+SHP-PROD0061,SHP-SKU0057,Puma RapidDry Athletic Tee,Activewear,Puma,80,100,MYR
+SHP-PROD0062,SHP-SKU0100,Lee ProStretch Skirt,Bottoms,Lee,120,170,MYR
+SHP-PROD0063,SHP-SKU0055,Under Armour SkinFit Sports Bra,Activewear,Under Armour,80,90,MYR
+SHP-PROD0064,SHP-SKU0044,Under Armour HeatGear Running Shorts,Activewear,Under Armour,120,140,MYR
+SHP-PROD0065,SHP-SKU0051,Lee Distressed Cargo Pants,Bottoms,Lee,200,240,MYR
+SHP-PROD0066,SHP-SKU0068,Guess Cinched Dress,Dresses,Guess,170,230,MYR
+SHP-PROD0067,SHP-SKU0047,Champion SkinFit Running Shorts,Activewear,Champion,60,80,MYR
+SHP-PROD0068,SHP-SKU0069,Dockers ActiveDry Cargo Pants,Bottoms,Dockers,160,210,MYR
+SHP-PROD0069,SHP-SKU0062,Marmot UtilityStyle Hoodie,Outerwear,Marmot,40,50,MYR
+SHP-PROD0070,SHP-SKU0098,Timberland AirMax Boots,Shoes,Timberland,240,270,MYR
+SHP-PROD0071,SHP-SKU0080,Timberland LightMotion Sneakers,Shoes,Timberland,240,260,MYR
+SHP-PROD0072,SHP-SKU0042,Old Navy ActiveDry Trousers,Bottoms,Old Navy,250,270,MYR
+SHP-PROD0073,SHP-SKU0059,Gap MotionFlex Skirt,Bottoms,Gap,70,110,MYR
+SHP-PROD0074,SHP-SKU0049,Champion Seamless Yoga Pants,Activewear,Champion,80,110,MYR
+SHP-PROD0075,SHP-SKU0099,Columbia Padded Hoodie,Outerwear,Columbia,240,280,MYR
+SHP-PROD0076,SHP-SKU0058,Levi's SlimCore Jeans,Bottoms,Levi's,140,180,MYR
+SHP-PROD0077,SHP-SKU0076,Puma Dri-FIT Tank Top,Tops,Puma,90,150,MYR
+SHP-PROD0078,SHP-SKU0033,Calvin Klein Lightweight Coat,Outerwear,Calvin Klein,250,310,MYR
+SHP-PROD0079,SHP-SKU0095,Under Armour SkinFit Polo Shirt,Tops,Under Armour,220,280,MYR
+SHP-PROD0080,SHP-SKU0060,American Eagle EnduraFit Cargo Pants,Bottoms,American Eagle,130,150,MYR

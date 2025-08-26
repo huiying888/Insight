@@ -2,7 +2,6 @@
 import random
 import pandas as pd
 import numpy as np
-from itertools import product
 import datetime
 import makedirectory
 

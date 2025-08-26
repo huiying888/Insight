@@ -54,9 +54,9 @@ def random_email(name):
     domain = random.choice(["gmail.com","yahoo.com","hotmail.com","outlook.com"])
     return f"{slug}{random.randint(10,999)}@{domain}"
 
-def random_customer(prefix):
+def random_customer(platform_id):
     while True:
-        id = prefix+f"{random.randint(1,99999999):08d}"
+        id = platform_id+f"{random.randint(1,99999999):08d}"
         if id not in used_id:
             used_id.add(id)
             break

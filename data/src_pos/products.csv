@@ -1,0 +1,21 @@
+product_id,sku,name,category,brand,cost,price,currency
+POS-PROD0001,POS-SKU0099,Columbia Padded Hoodie,Outerwear,Columbia,240,280,MYR
+POS-PROD0002,POS-SKU0005,Puma AirFlow Blouse,Tops,Puma,170,200,MYR
+POS-PROD0003,POS-SKU0034,Marmot Quilted Coat,Outerwear,Marmot,110,130,MYR
+POS-PROD0004,POS-SKU0062,Marmot UtilityStyle Hoodie,Outerwear,Marmot,40,50,MYR
+POS-PROD0005,POS-SKU0094,Banana Republic Contemporary Midi Dress,Dresses,Banana Republic,260,270,MYR
+POS-PROD0006,POS-SKU0085,Calvin Klein Layered Maxi Dress,Dresses,Calvin Klein,210,270,MYR
+POS-PROD0007,POS-SKU0052,Nike Cropped Shirt,Tops,Nike,120,130,MYR
+POS-PROD0008,POS-SKU0095,Under Armour SkinFit Polo Shirt,Tops,Under Armour,220,280,MYR
+POS-PROD0009,POS-SKU0011,Skechers Slip-On Slip-Ons,Shoes,Skechers,230,290,MYR
+POS-PROD0010,POS-SKU0089,The North Face Oversized Cardigan,Outerwear,The North Face,50,80,MYR
+POS-PROD0011,POS-SKU0010,Converse GripLock Running Shoes,Shoes,Converse,150,180,MYR
+POS-PROD0012,POS-SKU0055,Under Armour SkinFit Sports Bra,Activewear,Under Armour,80,90,MYR
+POS-PROD0013,POS-SKU0057,Puma RapidDry Athletic Tee,Activewear,Puma,80,100,MYR
+POS-PROD0014,POS-SKU0073,American Eagle SlimCore Trousers,Bottoms,American Eagle,110,150,MYR
+POS-PROD0015,POS-SKU0075,Calvin Klein StormProof Cardigan,Outerwear,Calvin Klein,240,300,MYR
+POS-PROD0016,POS-SKU0043,Lululemon PowerMesh Athletic Tee,Activewear,Lululemon,50,100,MYR
+POS-PROD0017,POS-SKU0045,Gap CoreFlex Jeans,Bottoms,Gap,250,310,MYR
+POS-PROD0018,POS-SKU0015,New Balance GlideStep Sandals,Shoes,New Balance,80,100,MYR
+POS-PROD0019,POS-SKU0082,American Eagle CoreFlex Skirt,Bottoms,American Eagle,80,140,MYR
+POS-PROD0020,POS-SKU0012,American Eagle EnduraFit Shorts,Bottoms,American Eagle,120,180,MYR

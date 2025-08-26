@@ -1,0 +1,81 @@
+product_id,sku,name,category,brand,cost,price,currency
+LAZ-PROD0001,LAZ-SKU0080,Timberland LightMotion Sneakers,Shoes,Timberland,240,260,MYR
+LAZ-PROD0002,LAZ-SKU0038,Levi's SlimCore Shorts,Bottoms,Levi's,120,160,MYR
+LAZ-PROD0003,LAZ-SKU0066,New Balance AirMax Sandals,Shoes,New Balance,230,260,MYR
+LAZ-PROD0004,LAZ-SKU0055,Under Armour SkinFit Sports Bra,Activewear,Under Armour,80,90,MYR
+LAZ-PROD0005,LAZ-SKU0016,Ralph Lauren Contemporary Maxi Dress,Dresses,Ralph Lauren,220,260,MYR
+LAZ-PROD0006,LAZ-SKU0021,Columbia Lightweight Jacket,Outerwear,Columbia,120,170,MYR
+LAZ-PROD0007,LAZ-SKU0100,Lee ProStretch Skirt,Bottoms,Lee,120,170,MYR
+LAZ-PROD0008,LAZ-SKU0026,Lululemon AeroCool Athletic Tee,Activewear,Lululemon,230,270,MYR
+LAZ-PROD0009,LAZ-SKU0057,Puma RapidDry Athletic Tee,Activewear,Puma,80,100,MYR
+LAZ-PROD0010,LAZ-SKU0018,New Balance SpeedTech Slip-Ons,Shoes,New Balance,160,200,MYR
+LAZ-PROD0011,LAZ-SKU0060,American Eagle EnduraFit Cargo Pants,Bottoms,American Eagle,130,150,MYR
+LAZ-PROD0012,LAZ-SKU0094,Banana Republic Contemporary Midi Dress,Dresses,Banana Republic,260,270,MYR
+LAZ-PROD0013,LAZ-SKU0088,Nike RapidDry Athletic Tee,Activewear,Nike,220,280,MYR
+LAZ-PROD0014,LAZ-SKU0067,Timberland LightMotion Sandals,Shoes,Timberland,250,290,MYR
+LAZ-PROD0015,LAZ-SKU0056,Calvin Klein SmoothFit Blouse,Tops,Calvin Klein,110,170,MYR
+LAZ-PROD0016,LAZ-SKU0074,Reebok Dri-FIT Blouse,Tops,Reebok,220,240,MYR
+LAZ-PROD0017,LAZ-SKU0040,Under Armour Oversized Sweatshirt,Tops,Under Armour,50,110,MYR
+LAZ-PROD0018,LAZ-SKU0031,The North Face UtilityStyle Cardigan,Outerwear,The North Face,220,270,MYR
+LAZ-PROD0019,LAZ-SKU0017,Dockers EnduraFit Trousers,Bottoms,Dockers,50,60,MYR
+LAZ-PROD0020,LAZ-SKU0050,Adidas GlideStep Sandals,Shoes,Adidas,130,180,MYR
+LAZ-PROD0021,LAZ-SKU0061,Levi's FlexLite Cargo Pants,Bottoms,Levi's,60,90,MYR
+LAZ-PROD0022,LAZ-SKU0054,Nike CoolTouch Blouse,Tops,Nike,80,130,MYR
+LAZ-PROD0023,LAZ-SKU0084,Patagonia Lightweight Coat,Outerwear,Patagonia,220,260,MYR
+LAZ-PROD0024,LAZ-SKU0024,Calvin Klein SlimCore Tank Top,Tops,Calvin Klein,50,70,MYR
+LAZ-PROD0025,LAZ-SKU0089,The North Face Oversized Cardigan,Outerwear,The North Face,50,80,MYR
+LAZ-PROD0026,LAZ-SKU0010,Converse GripLock Running Shoes,Shoes,Converse,150,180,MYR
+LAZ-PROD0027,LAZ-SKU0019,Champion HeatGear Yoga Pants,Activewear,Champion,250,310,MYR
+LAZ-PROD0028,LAZ-SKU0083,Tommy Hilfiger UtilityStyle Parka,Outerwear,Tommy Hilfiger,170,180,MYR
+LAZ-PROD0029,LAZ-SKU0075,Calvin Klein StormProof Cardigan,Outerwear,Calvin Klein,240,300,MYR
+LAZ-PROD0030,LAZ-SKU0090,Tommy Hilfiger Quilted Parka,Outerwear,Tommy Hilfiger,120,160,MYR
+LAZ-PROD0031,LAZ-SKU0059,Gap MotionFlex Skirt,Bottoms,Gap,70,110,MYR
+LAZ-PROD0032,LAZ-SKU0099,Columbia Padded Hoodie,Outerwear,Columbia,240,280,MYR
+LAZ-PROD0033,LAZ-SKU0049,Champion Seamless Yoga Pants,Activewear,Champion,80,110,MYR
+LAZ-PROD0034,LAZ-SKU0077,Lululemon MaxSpeed Sports Bra,Activewear,Lululemon,80,120,MYR
+LAZ-PROD0035,LAZ-SKU0058,Levi's SlimCore Jeans,Bottoms,Levi's,140,180,MYR
+LAZ-PROD0036,LAZ-SKU0091,Columbia Lightweight Sweater,Outerwear,Columbia,50,80,MYR
+LAZ-PROD0037,LAZ-SKU0076,Puma Dri-FIT Tank Top,Tops,Puma,90,150,MYR
+LAZ-PROD0038,LAZ-SKU0087,Ralph Lauren Floral Maxi Dress,Dresses,Ralph Lauren,90,130,MYR
+LAZ-PROD0039,LAZ-SKU0064,Patagonia UtilityStyle Coat,Outerwear,Patagonia,160,210,MYR
+LAZ-PROD0040,LAZ-SKU0025,Adidas TrueShape T-Shirt,Tops,Adidas,210,230,MYR
+LAZ-PROD0041,LAZ-SKU0079,Reebok SkinFit Track Jacket,Activewear,Reebok,190,230,MYR
+LAZ-PROD0042,LAZ-SKU0011,Skechers Slip-On Slip-Ons,Shoes,Skechers,230,290,MYR
+LAZ-PROD0043,LAZ-SKU0030,Old Navy SlimCore Cargo Pants,Bottoms,Old Navy,60,110,MYR
+LAZ-PROD0044,LAZ-SKU0020,Puma AeroCool Track Jacket,Activewear,Puma,140,150,MYR
+LAZ-PROD0045,LAZ-SKU0046,Nike TrueShape Sweatshirt,Tops,Nike,220,230,MYR
+LAZ-PROD0046,LAZ-SKU0082,American Eagle CoreFlex Skirt,Bottoms,American Eagle,80,140,MYR
+LAZ-PROD0047,LAZ-SKU0086,Lululemon BounceFlex Leggings,Activewear,Lululemon,120,160,MYR
+LAZ-PROD0048,LAZ-SKU0053,Lee TaperedFit Jeans,Bottoms,Lee,180,230,MYR
+LAZ-PROD0049,LAZ-SKU0006,Tommy Hilfiger Ruched Maxi Dress,Dresses,Tommy Hilfiger,70,100,MYR
+LAZ-PROD0050,LAZ-SKU0068,Guess Cinched Dress,Dresses,Guess,170,230,MYR
+LAZ-PROD0051,LAZ-SKU0070,Levi's ActiveDry Chinos,Bottoms,Levi's,240,270,MYR
+LAZ-PROD0052,LAZ-SKU0002,Skechers LightMotion Slip-Ons,Shoes,Skechers,220,260,MYR
+LAZ-PROD0053,LAZ-SKU0093,Levi's Distressed Trousers,Bottoms,Levi's,220,240,MYR
+LAZ-PROD0054,LAZ-SKU0022,Puma Cropped Polo Shirt,Tops,Puma,240,290,MYR
+LAZ-PROD0055,LAZ-SKU0069,Dockers ActiveDry Cargo Pants,Bottoms,Dockers,160,210,MYR
+LAZ-PROD0056,LAZ-SKU0092,Nike Ultraboost Running Shoes,Shoes,Nike,100,110,MYR
+LAZ-PROD0057,LAZ-SKU0032,Calvin Klein StormProof Coat,Outerwear,Calvin Klein,70,130,MYR
+LAZ-PROD0058,LAZ-SKU0013,Timberland Ultraboost Running Shoes,Shoes,Timberland,50,80,MYR
+LAZ-PROD0059,LAZ-SKU0036,Nike Ultraboost Track Jacket,Activewear,Nike,210,220,MYR
+LAZ-PROD0060,LAZ-SKU0029,Lululemon PowerMesh Leggings,Activewear,Lululemon,40,50,MYR
+LAZ-PROD0061,LAZ-SKU0043,Lululemon PowerMesh Athletic Tee,Activewear,Lululemon,50,100,MYR
+LAZ-PROD0062,LAZ-SKU0071,Vans LightMotion Sneakers,Shoes,Vans,90,150,MYR
+LAZ-PROD0063,LAZ-SKU0045,Gap CoreFlex Jeans,Bottoms,Gap,250,310,MYR
+LAZ-PROD0064,LAZ-SKU0039,Converse LightMotion Sneakers,Shoes,Converse,80,100,MYR
+LAZ-PROD0065,LAZ-SKU0085,Calvin Klein Layered Maxi Dress,Dresses,Calvin Klein,210,270,MYR
+LAZ-PROD0066,LAZ-SKU0004,Adidas SmoothMotion Running Shoes,Shoes,Adidas,180,230,MYR
+LAZ-PROD0067,LAZ-SKU0052,Nike Cropped Shirt,Tops,Nike,120,130,MYR
+LAZ-PROD0068,LAZ-SKU0063,Tommy Hilfiger Ruched Midi Dress,Dresses,Tommy Hilfiger,170,200,MYR
+LAZ-PROD0069,LAZ-SKU0051,Lee Distressed Cargo Pants,Bottoms,Lee,200,240,MYR
+LAZ-PROD0070,LAZ-SKU0042,Old Navy ActiveDry Trousers,Bottoms,Old Navy,250,270,MYR
+LAZ-PROD0071,LAZ-SKU0015,New Balance GlideStep Sandals,Shoes,New Balance,80,100,MYR
+LAZ-PROD0072,LAZ-SKU0009,Wrangler TaperedFit Trousers,Bottoms,Wrangler,110,120,MYR
+LAZ-PROD0073,LAZ-SKU0027,Skechers FreshFoam Sandals,Shoes,Skechers,160,220,MYR
+LAZ-PROD0074,LAZ-SKU0014,Dockers High-Rise Cargo Pants,Bottoms,Dockers,100,160,MYR
+LAZ-PROD0075,LAZ-SKU0095,Under Armour SkinFit Polo Shirt,Tops,Under Armour,220,280,MYR
+LAZ-PROD0076,LAZ-SKU0001,Nike Ultraboost Sandals,Shoes,Nike,110,130,MYR
+LAZ-PROD0077,LAZ-SKU0003,American Eagle ProStretch Chinos,Bottoms,American Eagle,40,90,MYR
+LAZ-PROD0078,LAZ-SKU0078,Under Armour MotionWeave Sports Bra,Activewear,Under Armour,230,290,MYR
+LAZ-PROD0079,LAZ-SKU0047,Champion SkinFit Running Shorts,Activewear,Champion,60,80,MYR
+LAZ-PROD0080,LAZ-SKU0065,New Balance Ultraboost Boots,Shoes,New Balance,210,270,MYR
