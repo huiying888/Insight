@@ -11,15 +11,8 @@ import plotly.express as px
 import streamlit as st
 import pandas as pd
 import psycopg2
-from langchain_community.chat_models import ChatOllama
 
-DB_USER="postgres.xrtqokdryconssbidopa"
-DB_PASSWORD="Hynhy@25110204"
-DB_HOST="aws-1-ap-southeast-1.pooler.supabase.com"
-DB_PORT=5432
-DB_NAME="postgres"
-
-load_dotenv()
+load_dotenv("config/.env")
 
 # ============================================================================
 # INIT SUPABASE DATABASE CONNECTION
@@ -31,7 +24,6 @@ def get_db_connection():
         dbname=os.getenv("DB_NAME"),
         user=os.getenv("DB_USER"),
         password=os.getenv("DB_PASSWORD"),
-        sslmode=os.getenv("DB_SSLMODE", "require")
     )
 
 
