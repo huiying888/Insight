@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 from utils import get_db_connection, load_data
 
-st.header("📊 Business KPI Dashboard")
+st.title("📊 Business KPI Dashboard")
 st.markdown("KPIs across **Shopee, Lazada, TikTok, POS** from warehouse DB.")
 
 # -----------------------------
