@@ -1,1 +1,4 @@
 generateData/__pycache__/makedirectory.cpython-310.pyc
+config/.env
+__pycache__/utils.cpython-310.pyc
+config/schema.sql
