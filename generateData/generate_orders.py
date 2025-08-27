@@ -1,17 +1,24 @@
 import random
 import pandas as pd
 import numpy as np
-import datetime
+from datetime import datetime, timedelta
+from faker import Faker
 import makedirectory
 
+fake = Faker()
 random.seed(42)
+Faker.seed(42)
 pd.random_state = 42
 np.random.seed(42)
 
 lazada_products = pd.read_csv("data/src_lazada/products.csv")
+lazada_customers = pd.read_csv("data/src_lazada/customers.csv")
 shopee_products = pd.read_csv("data/src_shopee/products.csv")
+shopee_customers = pd.read_csv("data/src_shopee/customers.csv")
 tiktok_products = pd.read_csv("data/src_tiktok/products.csv")
+tiktok_customers = pd.read_csv("data/src_tiktok/customers.csv")
 pos_products = pd.read_csv("data/src_pos/products.csv")
+pos_customers = pd.read_csv("data/src_pos/customers.csv")
 j=1
 
 def generate_orders(platform_id, products_df, num_orders, j):
@@ -59,7 +66,45 @@ def generate_receipt(products_df, num_orders, j):
 
     return all_orders
 
-generate_orders("LAZ", lazada_products, 100, j).to_csv("data/src_lazada/order_items.csv", index=False)
-generate_orders("SHP", shopee_products, 100, j).to_csv("data/src_shopee/order_items.csv", index=False)
-generate_orders("TIK", tiktok_products, 100, j).to_csv("data/src_tiktok/order_items.csv", index=False)
-generate_receipt(pos_products, 100, j).to_csv("data/src_pos/receipt_lines.csv", index=False)
+def calculate_orders(order_items, customers_df):
+    for x in order_items['order_id'].unique():
+        order = pd.DataFrame()
+        customer = customers_df.sample(n=1).reset_index(drop=True)
+        order['order_id'] = [x]
+        order['buyer_id'] = customer['buyer_id']
+        order['created_at'] = fake.date_time_between(start_date=pd.to_datetime(customer.loc[0, 'created_at']), end_date="-1d")
+        order['updated_at'] = fake.date_time_between(start_date=pd.to_datetime(order.loc[0, 'created_at']), end_date="now")
+        order['status'] = random.choice(['PENDING', 'PAID', 'SHIPPED', 'COMPLETED', 'CANCELLED', "REFUNDED"])
+        order['currency'] = 'MYR'
+        order['total_amount'] = order_items[order_items['order_id'] == x].apply(lambda row: (row['price'] * row['qty']) - row['discount'] + row['shipping_fee'] + row['tax'], axis=1).sum()
+        order['shippping_fee'] = order_items[order_items['order_id'] == x]['shipping_fee'].sum()
+        order['tax_total'] = order_items[order_items['order_id'] == x]['tax'].sum()
+        order['voucher_amount'] = order_items[order_items['order_id'] == x]['discount'].sum()
+        order['market_region'] = 'MALAYSIA'
+
+        if x == order_items['order_id'].unique()[0]:
+            all_orders = order
+        else:
+            all_orders = pd.concat([all_orders, order], ignore_index=True)
+
+    return all_orders
+
+
+
+laz_order_items = generate_orders("LAZ", lazada_products, 100, j)
+shp_order_items = generate_orders("SHP", shopee_products, 100, j)
+tik_order_items = generate_orders("TIK", tiktok_products, 100, j)
+pos_receipt_lines = generate_receipt(pos_products, 100, j)
+
+laz_orders = calculate_orders(laz_order_items, lazada_customers)
+shp_orders = calculate_orders(shp_order_items, shopee_customers)
+tik_orders = calculate_orders(tik_order_items, tiktok_customers)
+
+laz_order_items.to_csv("data/src_lazada/order_items.csv", index=False)
+shp_order_items.to_csv("data/src_shopee/order_items.csv", index=False)
+tik_order_items.to_csv("data/src_tiktok/order_items.csv", index=False)
+pos_receipt_lines.to_csv("data/src_pos/receipt_lines.csv", index=False)
+
+laz_orders.to_csv("data/src_lazada/orders.csv", index=False)
+shp_orders.to_csv("data/src_shopee/orders.csv", index=False)
+tik_orders.to_csv("data/src_tiktok/orders.csv", index=False)
