@@ -19,6 +19,8 @@ tiktok_products = pd.read_csv("data/src_tiktok/products.csv")
 tiktok_customers = pd.read_csv("data/src_tiktok/customers.csv")
 pos_products = pd.read_csv("data/src_pos/products.csv")
 pos_customers = pd.read_csv("data/src_pos/customers.csv")
+pos_terminals = pd.read_csv("data/src_pos/terminals.csv")
+pos_cashiers = pd.read_csv("data/src_pos/cashiers.csv")
 
 refund_reasons = [
     "Customer Request",
@@ -96,11 +98,11 @@ def calculate_orders(order_items, customers_df):
         order['buyer_id'] = customer['buyer_id']
         order['created_at'] = fake.date_time_between(start_date=pd.to_datetime(customer.loc[0, 'created_at']), end_date="now")
         order['updated_at'] = fake.date_time_between(start_date=pd.to_datetime(order.loc[0, 'created_at']), end_date="now")
-        order['status'] = random.choice(['PENDING', 'PAID', 'SHIPPED', 'COMPLETED', 'CANCELLED', "REFUNDED"])
+        order['status'] = random.choices(['PENDING', 'PAID', 'SHIPPED', 'COMPLETED', 'CANCELLED', "REFUNDED"], [0.02, 0.02, 0.08, 0.7, 0.1, 0.08])
         order['currency'] = 'MYR'
-        order['total_amount'] = order_items[order_items['order_id'] == x].apply(lambda row: (row['price'] * row['qty']) - row['discount'] + row['shipping_fee'] + row['tax'], axis=1).sum()
+        order['total_amount'] = round(order_items[order_items['order_id'] == x].apply(lambda row: (row['price'] * row['qty']) - row['discount'] + row['shipping_fee'] + row['tax'], axis=1).sum(),2)
         order['shippping_fee'] = order_items[order_items['order_id'] == x]['shipping_fee'].sum()
-        order['tax_total'] = order_items[order_items['order_id'] == x]['tax'].sum()
+        order['tax_total'] = round(order_items[order_items['order_id'] == x]['tax'].sum(),2)
         order['voucher_amount'] = order_items[order_items['order_id'] == x]['discount'].sum()
         order['market_region'] = 'MALAYSIA'
 
@@ -110,6 +112,32 @@ def calculate_orders(order_items, customers_df):
             all_orders = pd.concat([all_orders, order], ignore_index=True)
 
     return all_orders
+
+def calculate_receipts(receipt_lines, customers_df):
+    for x in receipt_lines['receipt_id'].unique():
+        receipt = pd.DataFrame()
+        customer = customers_df.sample(n=1).reset_index(drop=True)
+        terminal = pos_terminals.sample(n=1).reset_index(drop=True)
+        receipt['receipt_id'] = [x]
+        receipt['store_id'] = terminal['store_id']
+        receipt['terminal_id'] = terminal['terminal_id']
+        receipt['cashier_id'] = pos_cashiers.sample(n=1).reset_index(drop=True)['cashier_id']
+        receipt['sold_at'] = fake.date_time_between(start_date=pd.to_datetime(customer.loc[0, 'created_at']), end_date="now")
+        receipt['status'] = random.choices(['COMPLETED', 'CANCELLED', "REFUNDED"], [0.99, 0.05, 0.05])
+        receipt['customer_id'] = customer['customer_id']
+        receipt['currency'] = 'MYR'
+        receipt['subtotal'] = receipt_lines[receipt_lines['receipt_id'] == x].apply(lambda row: (row['unit_price'] * row['qty']), axis=1).sum()
+        receipt['discount_total'] = receipt_lines[receipt_lines['receipt_id'] == x]['line_discount'].sum()
+        receipt['tax_total'] = round(receipt_lines[receipt_lines['receipt_id'] == x]['line_tax'].sum(),2)
+        receipt['shipping_fee'] = 0 if np.random.rand() > 0.05 else np.random.randint(0,15)
+        receipt['grand_total'] = receipt['subtotal'] - receipt['discount_total'] + receipt['tax_total'] + receipt['shipping_fee']
+
+        if x == receipt_lines['receipt_id'].unique()[0]:
+            all_receipts = receipt
+        else:
+            all_receipts = pd.concat([all_receipts, receipt], ignore_index=True)
+
+    return all_receipts
 
 def generate_refunds(platform_id, orders_df, order_items_df):
     refund_list = []
@@ -136,6 +164,7 @@ pos_receipt_lines = generate_receipt(pos_products, 100, j)
 laz_orders = calculate_orders(laz_order_items, lazada_customers)
 shp_orders = calculate_orders(shp_order_items, shopee_customers)
 tik_orders = calculate_orders(tik_order_items, tiktok_customers)
+pos_receipts = calculate_receipts(pos_receipt_lines, pos_customers)
 
 laz_refunds = generate_refunds("LAZ", laz_orders, laz_order_items)
 shp_refunds = generate_refunds("SHP", shp_orders, shp_order_items)
@@ -149,6 +178,7 @@ pos_receipt_lines.to_csv("data/src_pos/receipt_lines.csv", index=False)
 laz_orders.to_csv("data/src_lazada/orders.csv", index=False)
 shp_orders.to_csv("data/src_shopee/orders.csv", index=False)
 tik_orders.to_csv("data/src_tiktok/orders.csv", index=False)
+pos_receipts.to_csv("data/src_pos/receipts.csv", index=False)
 
 laz_refunds.to_csv("data/src_lazada/refunds.csv", index=False)
 shp_refunds.to_csv("data/src_shopee/refunds.csv", index=False)

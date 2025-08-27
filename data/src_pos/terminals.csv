@@ -1,0 +1,5 @@
+terminal_id,store_id,label
+TERM001,POS001,Main Counter 1
+TERM002,POS001,Main Counter 2
+TERM003,POS002,Island Checkout
+TERM004,POS003,Outlet Register
