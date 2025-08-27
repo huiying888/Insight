@@ -4,8 +4,9 @@ import psycopg2
 import plotly.express as px
 from dotenv import load_dotenv
 import os
-from utils import get_db_connection, load_data
+from utils import get_db_connection, load_data, generate_insight
 
+st.set_page_config(page_title="KPI Dashboard", page_icon="🦙", layout="wide")
 st.title("📊 Business KPI Dashboard")
 st.markdown("KPIs across **Shopee, Lazada, TikTok, POS** from warehouse DB.")
 
@@ -58,6 +59,29 @@ aov_df = load_data("""
 col4.metric("Avg Order Value", f"RM{aov_df['avg_order'][0]:,.2f}")
 
 # -----------------------------
+# INSIGHT BOX FRAME
+# -----------------------------
+import re
+
+def storytelling_box(content: str, color="#BCE5BE", bgcolor="#E8FFE8"):
+    # Replace markdown bold with HTML bold
+    safe_content = re.sub(r"\*\*(.*?)\*\*", r"<b>\1</b>", content)
+
+    st.markdown(f"""
+        <div style="
+            border: 2px solid {color};
+            border-radius: 10px;
+            padding: 12px;
+            background-color: {bgcolor};">
+            <strong>🤖 Storytelling</strong>
+            <ul>
+                {''.join(f"<li>{line.strip('* ').strip()}</li>" for line in safe_content.splitlines() if line.strip())}
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
+
+
+# -----------------------------
 # REVENUE TREND
 # -----------------------------
 st.subheader("📈 Revenue Trend")
@@ -68,8 +92,13 @@ trend_df = load_data("""
     GROUP BY order_date
     ORDER BY order_date;
 """, date_params)
-fig = px.line(trend_df, x="order_date", y="revenue", title="Revenue Over Time")
-st.plotly_chart(fig, use_container_width=True)
+col_chart, col_memo = st.columns([3, 1])
+with col_chart:
+    fig = px.line(trend_df, x="order_date", y="revenue", title="Revenue Over Time")
+    st.plotly_chart(fig, use_container_width=True)
+with col_memo:
+    storytelling_box(generate_insight("Summarize revenue trend briefly.", trend_df))
+
 
 # -----------------------------
 # REVENUE BY CHANNEL
@@ -82,8 +111,13 @@ channel_df = load_data("""
     WHERE o.order_ts::date BETWEEN %(start_date)s AND %(end_date)s
     GROUP BY c.name;
 """, date_params)
-fig = px.pie(channel_df, names="channel", values="revenue", title="Revenue Share by Channel")
-st.plotly_chart(fig, use_container_width=True)
+col_chart, col_memo = st.columns([3, 1])
+with col_chart:
+    fig = px.pie(channel_df, names="channel", values="revenue", title="Revenue Share by Channel")
+    st.plotly_chart(fig, use_container_width=True)
+with col_memo:
+    storytelling_box(generate_insight("Summarize revenue by channel briefly.", channel_df))
+
 
 # -----------------------------
 # TOP PRODUCTS
@@ -101,8 +135,54 @@ top_products = load_data("""
     ORDER BY revenue DESC
     LIMIT 10;
 """, date_params)
-fig = px.bar(top_products, x="revenue", y="product", orientation="h", title="Top 10 Products")
-st.plotly_chart(fig, use_container_width=True)
+col_chart, col_memo = st.columns([3, 1])
+with col_chart:
+    fig = px.bar(top_products, x="revenue", y="product", orientation="h", title="Top 10 Products")
+    st.plotly_chart(fig, use_container_width=True)
+with col_memo:
+    storytelling_box(generate_insight("Summarize top products by revenue briefly.", top_products))
+
+
+# -----------------------------
+# DAILY SALES PER PRODUCT
+# -----------------------------
+st.subheader("📊 Daily Sales Amount per Product")
+
+daily_sales = load_data("""
+    SELECT 
+        o.order_ts::date AS order_date,
+        p.name AS product,
+        SUM(oi.revenue_net) AS daily_sales
+    FROM wh.fact_order_items oi
+    JOIN wh.fact_orders o ON oi.order_sk = o.order_sk
+    JOIN wh.dim_product p ON oi.product_sk = p.product_sk
+    WHERE o.order_ts::date BETWEEN %(start_date)s AND %(end_date)s
+    GROUP BY o.order_ts::date, p.name
+    ORDER BY o.order_ts::date, daily_sales DESC;
+""", date_params)
+
+col_chart, col_memo = st.columns([3, 1])
+with col_chart:
+    if not daily_sales.empty:
+        fig = px.line(
+        daily_sales,
+        x="order_date",
+        y="daily_sales",
+        color="product",
+        title="Daily Sales Amount per Product"
+        )
+
+        # Force x-axis to be daily ticks
+        fig.update_xaxes(
+            dtick="D1",           # one tick per day
+            tickformat="%Y-%m-%d" # show as YYYY-MM-DD
+        )
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.info("No sales data available for the selected date range.")
+with col_memo:
+    storytelling_box(generate_insight("Summarize daily sales per product briefly.", daily_sales))
+
 
 # -----------------------------
 # INVENTORY HEALTH
@@ -116,4 +196,9 @@ inv_df = load_data("""
     ORDER BY i.stock_qty ASC
     LIMIT 15;
 """)
-st.dataframe(inv_df)
+col_chart, col_memo = st.columns([3, 1])
+with col_chart:
+    st.dataframe(inv_df)
+with col_memo:
+    storytelling_box(generate_insight("Summarize inventory health briefly.", inv_df))
+
