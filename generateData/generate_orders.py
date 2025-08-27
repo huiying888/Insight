@@ -148,19 +148,21 @@ def calculate_receipts(receipt_lines, customers_df):
 
 def generate_refunds(platform_id, orders_df, order_items_df):
     refund_list = []
+    k=0
     for idx, order in orders_df.iterrows():
         if order['status'] in ['CANCELLED', 'REFUNDED']:
             items = order_items_df[order_items_df['order_id'] == order['order_id']]
             for _, item in items.iterrows():
                 refund_amount = (item['price'] * item['qty']) - item['discount'] + item['shipping_fee'] + item['tax']
                 refund_list.append({
-                    'refund_id': f"{platform_id}-REF{item['item_id']}",
+                    'refund_id': f"{platform_id}-REF{k:08d}",
                     'order_id': order['order_id'],
                     'item_id': item['item_id'],
                     'amount': round(refund_amount, 2),
                     'reason': random.choice(refund_reasons),
                     'processed_at': fake.date_time_between(start_date=pd.to_datetime(order['created_at']), end_date="now")
                 })
+                k+=1
     return pd.DataFrame(refund_list)
 
 def generate_payments(receipts_df):
