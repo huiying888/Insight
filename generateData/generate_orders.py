@@ -101,7 +101,7 @@ def calculate_orders(order_items, customers_df):
         order['status'] = random.choices(['PENDING', 'PAID', 'SHIPPED', 'COMPLETED', 'CANCELLED', "REFUNDED"], [0.02, 0.02, 0.08, 0.7, 0.1, 0.08])
         order['currency'] = 'MYR'
         order['total_amount'] = round(order_items[order_items['order_id'] == x].apply(lambda row: (row['price'] * row['qty']) - row['discount'] + row['shipping_fee'] + row['tax'], axis=1).sum(),2)
-        order['shippping_fee'] = order_items[order_items['order_id'] == x]['shipping_fee'].sum()
+        order['shipping_fee'] = order_items[order_items['order_id'] == x]['shipping_fee'].sum()
         order['tax_total'] = round(order_items[order_items['order_id'] == x]['tax'].sum(),2)
         order['voucher_amount'] = order_items[order_items['order_id'] == x]['discount'].sum()
         order['market_region'] = 'MALAYSIA'
