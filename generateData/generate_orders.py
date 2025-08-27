@@ -156,6 +156,21 @@ def generate_refunds(platform_id, orders_df, order_items_df):
                 })
     return pd.DataFrame(refund_list)
 
+def generate_payments(receipts_df):
+    payment_methods = [["CASH","CASH"],["CREDIT CARD","CRDC"],["DEBIT CARD","DBTC"],["GRAB PAY","GRAB"],["TOUCH N GO","TNGO"]]
+    payment_list = []
+    for idx, receipt in receipts_df.iterrows():
+        payment_method = random.choices(payment_methods, [0.4, 0.3, 0.2, 0.05, 0.05])[0],
+        payment_list.append({
+            'payment_id': f"PAY{receipt['receipt_id'][3:]}",
+            'receipt_id': receipt['receipt_id'],
+            'method': payment_method[0][0],
+            'amount': receipt['grand_total'],
+            'ref_no': payment_method[0][1] + fake.bothify(text='##########'),
+            'paid_at': receipt['sold_at'] + timedelta(minutes=random.randint(1,10))
+        })
+    return pd.DataFrame(payment_list)
+
 laz_order_items = generate_orders("LAZ", lazada_products, 100, j)
 shp_order_items = generate_orders("SHP", shopee_products, 100, j)
 tik_order_items = generate_orders("TIK", tiktok_products, 100, j)
@@ -170,6 +185,8 @@ laz_refunds = generate_refunds("LAZ", laz_orders, laz_order_items)
 shp_refunds = generate_refunds("SHP", shp_orders, shp_order_items)
 tik_refunds = generate_refunds("TIK", tik_orders, tik_order_items)
 
+pos_payments = generate_payments(pos_receipts)
+
 laz_order_items.to_csv("data/src_lazada/order_items.csv", index=False)
 shp_order_items.to_csv("data/src_shopee/order_items.csv", index=False)
 tik_order_items.to_csv("data/src_tiktok/order_items.csv", index=False)
@@ -183,3 +200,5 @@ pos_receipts.to_csv("data/src_pos/receipts.csv", index=False)
 laz_refunds.to_csv("data/src_lazada/refunds.csv", index=False)
 shp_refunds.to_csv("data/src_shopee/refunds.csv", index=False)
 tik_refunds.to_csv("data/src_tiktok/refunds.csv", index=False)
+
+pos_payments.to_csv("data/src_pos/payments.csv", index=False)
