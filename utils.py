@@ -131,3 +131,34 @@ def get_response(user_query: str, db: SQLDatabase, schema: str, chat_history: li
         "question": user_query,
         "chat_history": chat_history,
     })
+
+def generate_insight(user_query: str, df: pd.DataFrame):
+    template = """
+    You are a helpful data analyst. 
+    Answer briefly in clear bullet points (1–3 max). 
+    Summarize chart insight and suggest actions if relevant. 
+    Do not explain code.
+
+    User question: {question}
+    Data Preview:
+    {data}
+    """
+
+    prompt = ChatPromptTemplate.from_template(template)
+
+    llm = ChatGoogleGenerativeAI(
+        model="gemma-3-27b-it",
+        google_api_key=os.getenv("GEMINI_API_KEY"),
+        temperature=0.1
+    )
+
+    chain = (
+        prompt
+        | llm
+        | StrOutputParser()
+    )
+
+    return chain.invoke({
+        "question": user_query,
+        "data": df.head(20).to_string(index=False)  # send sample for efficiency
+    })
