@@ -43,15 +43,22 @@ refund_reasons = [
     "Other"
 ]
 
+j=0
 
-j=1
+def item_id_ing(platform_id, j):
+    j+=1
+    return f"{platform_id}-ITEM{j:08d}"
 
+def line_id_ing(j):
+    j+=1
+    return f"LINE{j:08d}"
+    
 def generate_orders(platform_id, products_df, num_orders, j):
     for i in range(1, num_orders + 1):
         num_items = random.randint(1, 5)
         order_items = products_df.sample(n=num_items).reset_index(drop=True)[['product_id','name','sku','category','price']]
         order_items['order_id'] = f"{platform_id}-ORD{i:08d}"
-        order_items['item_id'] = f"{platform_id}-ITEM{j:08d}"
+        order_items['item_id'] = item_id_ing(platform_id, j)
         order_items['qty'] = order_items['product_id'].map(lambda x: random.randint(1, 3))
         order_items['discount'] = order_items['price'].map(lambda x: np.random.randint(0,10) if x > 50 else 0)
         order_items['shipping_fee'] = order_items['price'].map(lambda x: 0 if x > 75 else np.random.randint(0,15))
@@ -73,7 +80,7 @@ def generate_receipt(products_df, num_orders, j):
         num_items = random.randint(1, 5)
         receipt_items = products_df.sample(n=num_items).reset_index(drop=True)[['product_id','name','sku','category','price']]
         receipt_items['receipt_id'] = f"REC{i:08d}"
-        receipt_items['line_id'] = f"LINE{j:08d}"
+        receipt_items['line_id'] = line_id_ing(j)
         receipt_items['qty'] = receipt_items['product_id'].map(lambda x: random.randint(1, 3))
         receipt_items['line_discount'] = receipt_items['price'].map(lambda x: np.random.randint(0,10) if x > 50 else 0)
         receipt_items['line_tax'] = receipt_items.apply(lambda x: round(x['price'] * x['qty'] * 0.06, 2), axis=1)
