@@ -83,8 +83,9 @@ def upsert_fx_myr_passthrough(cur, date_key: dt.date):
 # ============================================================================
 # SEED MASTER PRODUCTS (OPTIONAL)
 # ============================================================================
-def seed_master_products(conn):
+def seed_master_products(MASTER_PRODUCT_SEED, conn):
     if not MASTER_PRODUCT_SEED:
+        print("No master products to seed.")
         return
     with conn.cursor() as cur:
         execute_values(cur, """
@@ -98,6 +99,7 @@ def seed_master_products(conn):
                 starting_inventory = EXCLUDED.starting_inventory,
                 created_at = EXCLUDED.created_at;
         """, MASTER_PRODUCT_SEED)
+        print(f"Seeded/Updated {len(MASTER_PRODUCT_SEED)} master products.")
     conn.commit()
 
 # ============================================================================

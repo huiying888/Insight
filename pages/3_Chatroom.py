@@ -8,7 +8,7 @@ from langchain_core.messages import AIMessage, HumanMessage
 from utils import get_db_connection, load_data, init_supabase, load_schema_from_file, get_response
 load_dotenv()
 
-st.set_page_config(page_title="Chat with Supabase", page_icon="🦙")
+st.set_page_config(page_title="Chat with Supabase", page_icon="🦙", layout="wide")
 st.title("💬 Chat with your AI Assistant")
 
 st.markdown(
@@ -47,7 +47,7 @@ st.markdown(
 # Initialize chat + schema
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
-        AIMessage(content="Hello! I'm a SQL assistant connected to Supabase. Ask me anything about your database."),
+        AIMessage(content="Hi there 👋 I’m your AI assistant. Ask me anything about your database and I’ll help you uncover business insights."),
     ]
 
 if "db" not in st.session_state:

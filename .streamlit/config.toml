@@ -1,7 +1,7 @@
 [theme]
 base="light"            # "light" or "dark"
 primaryColor="#71b3b3ff" # buttons, sliders, etc.
-backgroundColor="#e4edffff"
+backgroundColor="#eff4ffff"
 secondaryBackgroundColor="#d1e4ffff"
 textColor="#182536ff"
 font="sans serif"      # "sans serif", "serif", or "monospace"
