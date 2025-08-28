@@ -3,8 +3,8 @@ import pandas as pd
 from collections import Counter
 from mapping import get_db_connection, fetchall_dict  # use your helpers
 
-st.set_page_config(page_title="Product Overview", layout="wide", page_icon="🛒")
-st.title("🛒 Product Overview")
+st.set_page_config(page_title="Business Overview", layout="wide", page_icon="🛒")
+st.title("🛒 Business Overview")
 
 def fetch_product_channel_summary():
     conn = get_db_connection()
