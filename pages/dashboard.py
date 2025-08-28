@@ -68,25 +68,34 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "📦 Inventory"
 ])
 
-
 # -----------------------------
 # INSIGHT BOX FRAME
 # -----------------------------
 import re
 
-def storytelling_box(content: str, color="#BCE5BE", bgcolor="#E8FFE8"):
+def storytelling_box(content: str, color="#BDCDD6", bgcolor="#D7E3E6"):
     # Replace markdown bold with HTML bold
     safe_content = re.sub(r"\*\*(.*?)\*\*", r"<b>\1</b>", content)
 
     st.markdown(f"""
         <div style="
-            border: 2px solid {color};
-            border-radius: 10px;
+            border: 2px solid #DAD2FF;
+            border-radius: 18px;
             padding: 12px;
-            background-color: {bgcolor};">
-            <strong>🤖 Storytelling</strong>
-            <ul>
-                {''.join(f"<li>{line.strip('* ').strip()}</li>" for line in safe_content.splitlines() if line.strip())}
+            background: radial-gradient(circle at top left, #FFF8D6, #EDEAFF, #D4CCFF);
+            color: #2B2B2B;
+            font-family: 'Segoe UI', sans-serif;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+        "
+            onmouseover="this.style.boxShadow='0 8px 18px rgba(0,0,0,0.18)'; this.style.transform='scale(1.03)';"
+            onmouseout="this.style.boxShadow='0 6px 14px rgba(0,0,0,0.12)'; this.style.transform='scale(1)';"
+        >
+            <div style="font-size: 20px; font-weight: bold; margin-bottom: 12px; color:#493D9E;">
+                🤖 Storytelling
+            </div>
+            <ul style="padding-left: 22px; line-height: 1.6; list-style-type: '✨ ';">
+                {''.join(f"<li style='margin-bottom: 8px; color:#2B2B2B;'>{line.strip('* ').strip()}</li>" for line in safe_content.splitlines() if line.strip())}
             </ul>
         </div>
     """, unsafe_allow_html=True)
@@ -107,7 +116,7 @@ with tab1:
     col_chart, col_memo = st.columns([3, 1])
     with col_chart:
         if not trend_df.empty:
-            fig = px.line(trend_df, x="order_date", y="revenue", title="Revenue Over Time")
+            fig = px.line(trend_df, x="order_date", y="revenue", title="Revenue Over Time", color_discrete_sequence=["#B2A5FF"])
             st.plotly_chart(fig, use_container_width=True)
         else:
             st.info("No revenue data available for the selected date range.")
@@ -130,7 +139,7 @@ with tab2:
     col_chart, col_memo = st.columns([3, 1])
     with col_chart:
         if not channel_df.empty:
-            fig = px.pie(channel_df, names="channel", values="revenue", title="Revenue Share by Channel")
+            fig = px.pie(channel_df, names="channel", values="revenue", title="Revenue Share by Channel", color_discrete_sequence=px.colors.qualitative.Pastel1)
             st.plotly_chart(fig, use_container_width=True)
         else:
             st.info("No channel revenue data available for the selected date range.")
@@ -156,7 +165,7 @@ with tab2:
     col_chart, col_memo = st.columns([3, 1])
     with col_chart:
         if not trend_df.empty:
-            fig = px.line(trend_df, x="order_date", y="revenue", color="channel", title="Daily Revenue Trend by Channel", markers=True)
+            fig = px.line(trend_df, x="order_date", y="revenue", color="channel", title="Daily Revenue Trend by Channel", markers=True, color_discrete_sequence=px.colors.qualitative.Pastel)
             fig.update_xaxes(
                 dtick="D1",  
                 tickformat="%Y-%m-%d",
@@ -187,7 +196,7 @@ with tab3:
     col_chart, col_memo = st.columns([3, 1])
     with col_chart:
         if not top_products.empty:
-            fig = px.bar(top_products, x="revenue", y="product", orientation="h", title="Top 10 Products", color="product")
+            fig = px.bar(top_products, x="revenue", y="product", orientation="h", title="Top 10 Products", color="product", color_discrete_sequence=px.colors.qualitative.Pastel)
             st.plotly_chart(fig, use_container_width=True)
         else:
             st.info("No product revenue data available for the selected date range.")
@@ -215,7 +224,7 @@ with tab3:
     col_chart, col_memo = st.columns([3, 1])
     with col_chart:
         if not daily_sales.empty:
-            fig = px.line(daily_sales, x="order_date", y="daily_sales", color="product", title="Daily Sales Amount per Product")
+            fig = px.line(daily_sales, x="order_date", y="daily_sales", color="product", title="Daily Sales Amount per Product", color_discrete_sequence=px.colors.qualitative.Pastel)
             fig.update_xaxes(
                 dtick="D1",           
                 tickformat="%Y-%m-%d" 
@@ -262,7 +271,7 @@ with tab4:
     col_chart, col_memo = st.columns([3, 1])
     with col_chart:
         if not inventory_df.empty:
-            fig = px.bar(inventory_df, x="category", y="stock_qty", title="Current Inventory by Category", text_auto=True, color="category")
+            fig = px.bar(inventory_df, x="category", y="stock_qty", title="Current Inventory by Category", text_auto=True, color="category", color_discrete_sequence=px.colors.qualitative.Pastel1)
             fig.update_layout(xaxis_title="Category", yaxis_title="Quantity")
             st.plotly_chart(fig, use_container_width=True)
         else:
