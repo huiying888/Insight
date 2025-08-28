@@ -1,0 +1,545 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>POS (HTML)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --muted:#777; --line:#ddd; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 20px; }
+    header { display:flex; align-items:center; justify-content:space-between; margin-bottom: 10px; }
+    h2 { margin: 0; }
+    nav { display:flex; gap:8px; }
+    nav button { padding:8px 12px; border:1px solid #ccc; background:#f8f8f8; cursor:pointer; }
+    nav button.active { background:white; border-bottom-color: white; font-weight:600; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:12px; margin-top:10px; }
+    .row { display:flex; gap:12px; flex-wrap:wrap; margin:10px 0; align-items:flex-end; }
+    select, input, button { padding:8px; }
+    select { min-width: 160px; }
+    table { width:100%; border-collapse: collapse; margin-top:10px; }
+    th, td { border:1px solid var(--line); padding:6px; text-align:left; vertical-align: middle; }
+    tfoot td { font-weight: 600; }
+    .right { text-align:right; }
+    .muted { color:var(--muted); }
+    .success { background:#e6ffed; padding:8px; border:1px solid #b7ebc6; margin-top:10px;}
+    .error { background:#ffecec; padding:8px; border:1px solid #ffb3b3; margin-top:10px;}
+    .hide { display:none; }
+    .btn-link { background:none; border:none; color:#0366d6; cursor:pointer; padding:0; }
+    .pill { background:#f0f0f0; padding:2px 8px; border-radius:999px; }
+    .combo { display:flex; gap:6px; align-items:center; }
+    .combo input { flex:1; min-width:160px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div><h2>🖥️ POS</h2><span class="pill">HTML + Flask + Supabase</span></div>
+    <nav>
+      <button id="tab-pos" class="active" onclick="showTab('pos')">Record Sale</button>
+      <button id="tab-products" onclick="showTab('products')">Add Product</button>
+      <button id="tab-customers" onclick="showTab('customers')">Register Customer</button>
+      <button id="tab-sales" onclick="showTab('sales')">View Sales</button>
+    </nav>
+  </header>
+
+  <!-- ===== Record Sale ===== -->
+  <section id="sec-pos" class="card">
+    <h3>Record Sale</h3>
+    <div class="row">
+      <div>
+        <label>Store</label><br/>
+        <select id="store"></select>
+      </div>
+      <div>
+        <label>Terminal ID</label><br/>
+        <select id="terminalId"></select>
+      </div>
+      <div>
+        <label>Cashier</label><br/>
+        <select id="cashierId"></select>
+      </div>
+      <div style="min-width:360px;">
+        <label>Customer</label><br/>
+        <div class="combo">
+          <input id="customerFilter" placeholder="Search customer..." />
+          <select id="customer" style="min-width:220px;"></select>
+        </div>
+      </div>
+      <div>
+        <label>Currency</label><br/>
+        <select id="currency"><option value="MYR" selected>MYR</option></select>
+      </div>
+      <div>
+        <label>Tax %</label><br/>
+        <input id="tax" type="number" step="0.5" value="6"/>
+      </div>
+      <div>
+        <label>Order Disc (RM)</label><br/>
+        <input id="orderDisc" type="number" step="1" value="0"/>
+      </div>
+      <div>
+        <label>Shipping (RM)</label><br/>
+        <input id="shipping" type="number" step="1" value="0"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <input id="search" placeholder="Search product by SKU or name" style="flex:1"/>
+      <input id="qtyAdd" type="number" min="1" value="1" style="width:100px"/>
+      <button id="btnSearch">Search</button>
+    </div>
+    <div id="results" class="muted">Type something and click Search.</div>
+
+    <h4>Cart</h4>
+    <div id="cartWrap" class="muted">Cart is empty.</div>
+    <div id="msg"></div>
+  </section>
+
+  <!-- ===== Add Product ===== -->
+  <section id="sec-products" class="card hide">
+    <h3>Add New Product</h3>
+    <div class="row">
+      <input id="pSku"       placeholder="SKU (e.g. POS-001)" />
+      <input id="pName"      placeholder="Name" style="width:260px" />
+      <input id="pCategory"  placeholder="Category" />
+      <input id="pBrand"     placeholder="Brand" />
+      <input id="pPrice"     type="number" step="0.01" placeholder="Price" />
+      <input id="pCost"      type="number" step="0.01" placeholder="Cost (opt)" />
+      <select id="pCurr"><option value="MYR">MYR</option></select>
+      <button id="btnCreateProduct">Create Product</button>
+      <button id="btnCheckProduct" type="button">Check existing</button>
+    </div>
+    <div id="prodMsg"></div>
+  </section>
+
+  <!-- ===== Register Customer ===== -->
+  <section id="sec-customers" class="card hide">
+    <h3>Register Customer</h3>
+    <div class="row">
+      <input id="cName" placeholder="Customer name" style="width:220px" />
+      <input id="cEmail" placeholder="Email (optional)" style="width:220px" />
+      <input id="cPhone" placeholder="Phone (optional)" style="width:160px" />
+    </div>
+    <div class="row">
+      <input id="cAddress" placeholder="Address (optional)" style="flex:1" />
+      <input id="cCity" placeholder="City" />
+      <input id="cState" placeholder="State/Region" />
+      <input id="cPostcode" placeholder="Postcode" />
+      <input id="cCountry" placeholder="Country" value="Malaysia" />
+    </div>
+    <div class="row">
+      <button id="btnCreateCustomer">Create Customer</button>
+      <button id="btnCheckCustomer" type="button">Check existing</button>
+    </div>
+    <div id="custMsg"></div>
+  </section>
+
+  <!-- ===== View Sales ===== -->
+  <section id="sec-sales" class="card hide">
+    <h3>Sales Records</h3>
+    <div class="row">
+      <label>From&nbsp;<input id="sFrom" type="date"/></label>
+      <label>To&nbsp;<input id="sTo" type="date"/></label>
+      <select id="sStore"></select>
+      <input id="sQ" placeholder="receipt/customer/cashier"/>
+      <button id="btnSalesSearch">Search</button>
+    </div>
+    <div id="salesWrap" class="muted">No search yet.</div>
+    <div id="salesDetail"></div>
+  </section>
+
+<script>
+/* ---------- Tabs ---------- */
+function showTab(name) {
+  const ids = ["pos","products","customers","sales"];
+  ids.forEach(id=>{
+    document.getElementById("sec-"+id).classList.toggle("hide", id!==name);
+    document.getElementById("tab-"+id).classList.toggle("active", id===name);
+  });
+}
+
+/* ---------- Utilities ---------- */
+const fmt = n => Number(n).toFixed(2);
+let products = [];
+let cart = [];
+
+async function safeJson(url) {
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(await r.text());
+    return await r.json();
+  } catch (e) {
+    console.error("GET", url, e);
+    return null;
+  }
+}
+function ensureOption(sel, label, value="") { sel.appendChild(new Option(label, value)); }
+
+/* ---------- Populate dropdowns ---------- */
+function buildCustomerSelect(list) {
+  const sel = document.getElementById("customer");
+  const box = document.getElementById("customerFilter");
+  sel.replaceChildren();
+  ensureOption(sel, "Walk-in", "WALKIN");
+
+  if (!list) { ensureOption(sel, "(customers unavailable)", ""); return; }
+  if (!list.length) { ensureOption(sel, "(no customers in DB)", ""); return; }
+
+  list.forEach(c => sel.appendChild(new Option(c.name, c.customer_id)));
+
+  if (box) {
+    box.value = "";
+    box.oninput = () => {
+      const term = box.value.toLowerCase();
+      for (const opt of sel.options) {
+        if (opt.value === "WALKIN") { opt.hidden = false; continue; }
+        opt.hidden = !!term && !opt.text.toLowerCase().includes(term);
+      }
+      const first = [...sel.options].find(o => !o.hidden);
+      if (first) sel.value = first.value;
+    };
+  }
+}
+
+async function populateTerminals() {
+  const storeId = document.getElementById("store")?.value || "";
+  const sel = document.getElementById("terminalId");
+  sel.replaceChildren();
+  sel.appendChild(new Option("Loading…", ""));
+
+  // try filtered first
+  let data = await safeJson("/api/terminals" + (storeId ? `?store_id=${encodeURIComponent(storeId)}` : ""));
+  // fallback: refetch without filter if failed or empty
+  if (!data || data.length === 0) {
+    data = await safeJson("/api/terminals");
+  }
+
+  sel.replaceChildren();
+  if (!data) { sel.appendChild(new Option("(terminals unavailable)", "")); return; }
+  if (!data.length) { sel.appendChild(new Option("(no terminals in DB)", "")); return; }
+  data.forEach(t => {
+  const label = t.name && t.name !== t.terminal_id ? `${t.name} (${t.terminal_id})` : t.terminal_id;
+  sel.appendChild(new Option(label, t.terminal_id));
+});
+}
+
+async function populateCashiers() {
+  const storeId = document.getElementById("store")?.value || "";
+  const sel = document.getElementById("cashierId");
+  sel.replaceChildren();
+  sel.appendChild(new Option("Loading…", ""));
+
+  // try filtered first
+  let data = await safeJson("/api/cashiers" + (storeId ? `?store_id=${encodeURIComponent(storeId)}` : ""));
+  // fallback: refetch without filter if failed or empty
+  if (!data || data.length === 0) {
+    data = await safeJson("/api/cashiers");
+  }
+
+  sel.replaceChildren();
+  if (!data) { sel.appendChild(new Option("(cashiers unavailable)", "")); return; }
+  if (!data.length) { sel.appendChild(new Option("(no cashiers in DB)", "")); return; }
+  data.forEach(c => {
+  const label = c.name && c.name !== c.cashier_id ? `${c.name} (${c.cashier_id})` : c.cashier_id;
+  sel.appendChild(new Option(label, c.cashier_id));
+});
+}
+
+async function loadRefs() {
+  // stores
+  const stores = await safeJson("/api/stores");
+  const storeSel = document.getElementById("store");
+  const sStore   = document.getElementById("sStore");
+
+  storeSel.replaceChildren();
+  if (!stores) ensureOption(storeSel, "(stores unavailable)", "");
+  else if (!stores.length) ensureOption(storeSel, "(no stores in DB)", "");
+  else {
+    stores.forEach(s => storeSel.appendChild(new Option(s.name, s.store_id)));
+    storeSel.value = stores[0].store_id;
+  }
+
+  if (sStore) {
+    sStore.replaceChildren();
+    ensureOption(sStore, "All stores", "");
+    (stores || []).forEach(s => sStore.appendChild(new Option(s.name, s.store_id)));
+  }
+
+  // customers
+  const customers = await safeJson("/api/customers");
+  buildCustomerSelect(customers);
+
+  // terminals & cashiers (dependent on store)
+  await populateTerminals();
+  await populateCashiers();
+  storeSel.addEventListener("change", async () => {
+    await populateTerminals();
+    await populateCashiers();
+  });
+
+  // default dates for sales
+  const toEl = document.getElementById("sTo");
+  const fromEl = document.getElementById("sFrom");
+  if (toEl && fromEl) {
+    const today = new Date();
+    const prior = new Date(Date.now() - 6*864e5);
+    toEl.value = today.toISOString().slice(0,10);
+    fromEl.value = prior.toISOString().slice(0,10);
+  }
+}
+
+/* ---------- Product search & Cart ---------- */
+async function searchProducts() {
+  const q = document.getElementById("search").value.trim();
+  const wrap = document.getElementById("results");
+  wrap.textContent = "Searching…";
+  try {
+    const res = await fetch("/api/products?search=" + encodeURIComponent(q));
+    if (!res.ok) throw new Error(await res.text());
+    products = await res.json();
+    if (!products.length) { wrap.innerHTML = "<div class='muted'>No products.</div>"; return; }
+    const qty = parseInt(document.getElementById("qtyAdd").value || "1", 10);
+    wrap.innerHTML =
+      "<table><thead><tr><th>SKU</th><th>Name</th><th class='right'>Price</th><th></th></tr></thead><tbody>" +
+      products.map((p,i)=>`
+        <tr>
+          <td>${p.sku}</td>
+          <td>${p.name} <br><small class="muted">${p.category||"-"} · ${p.brand||"-"}</small></td>
+          <td class="right">RM ${fmt(p.price)}</td>
+          <td><button onclick="addToCart(${i})">Add x${qty}</button></td>
+        </tr>`).join("") + "</tbody></table>";
+  } catch (err) {
+    console.error(err);
+    wrap.innerHTML = `<div class="error">Search failed: ${String(err).slice(0,200)}</div>`;
+  }
+}
+
+function addToCart(i) {
+  const qty = parseInt(document.getElementById("qtyAdd").value || "1", 10);
+  const p = products[i];
+  const existing = cart.find(x=>x.product_id===p.product_id);
+  if (existing) existing.qty += qty;
+  else cart.push({product_id:p.product_id, sku:p.sku, name:p.name, unit_price:Number(p.price), qty:qty, line_discount:0});
+  renderCart();
+}
+function removeFromCart(idx) { cart.splice(idx,1); renderCart(); }
+function updateQty(idx, val) { cart[idx].qty = Math.max(1, parseInt(val||"1",10)); renderCart(false); }
+function updateDisc(idx, val) { cart[idx].line_discount = Math.max(0, Number(val||0)); renderCart(false); }
+
+function totals() {
+  const orderDisc = Number(document.getElementById("orderDisc").value || "0");
+  const taxPct = Number(document.getElementById("tax").value || "0");
+  const shipping = Number(document.getElementById("shipping").value || "0");
+  const subtotal = cart.reduce((s,i)=>s + i.unit_price * i.qty, 0);
+  const lineDisc = cart.reduce((s,i)=>s + i.line_discount * i.qty, 0);
+  const afterLine = Math.max(subtotal - lineDisc, 0);
+  const afterOrder = Math.max(afterLine - orderDisc, 0);
+  const tax = Math.round((afterOrder * taxPct / 100) * 100) / 100;
+  const grand = afterOrder + tax + shipping;
+  return {subtotal, lineDisc, orderDisc, tax, shipping, grand};
+}
+
+function renderCart() {
+  const wrap = document.getElementById("cartWrap");
+  if (!cart.length) { wrap.innerHTML = "<div class='muted'>Cart is empty.</div>"; return; }
+  const t = totals();
+  wrap.innerHTML = `
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Qty</th><th class="right">Unit</th><th class="right">Disc</th><th class="right">Line</th><th></th></tr>
+      </thead>
+      <tbody>
+        ${cart.map((i,idx)=>`
+          <tr>
+            <td>${i.name}</td>
+            <td><input type="number" min="1" value="${i.qty}" onchange="updateQty(${idx}, this.value)" /></td>
+            <td class="right">RM ${fmt(i.unit_price)}</td>
+            <td class="right"><input type="number" min="0" step="1" value="${i.line_discount}" onchange="updateDisc(${idx}, this.value)" /></td>
+            <td class="right">RM ${fmt((i.unit_price - i.line_discount) * i.qty)}</td>
+            <td><button onclick="removeFromCart(${idx})">🗑️</button></td>
+          </tr>
+        `).join("")}
+      </tbody>
+      <tfoot>
+        <tr><td colspan="4" class="right">Subtotal</td><td class="right">RM ${fmt(t.subtotal)}</td><td></td></tr>
+        <tr><td colspan="4" class="right">Line Discounts</td><td class="right">- RM ${fmt(t.lineDisc)}</td><td></td></tr>
+        <tr><td colspan="4" class="right">Order Discount</td><td class="right">- RM ${fmt(t.orderDisc)}</td><td></td></tr>
+        <tr><td colspan="4" class="right">Tax</td><td class="right">RM ${fmt(t.tax)}</td><td></td></tr>
+        <tr><td colspan="4" class="right">Shipping</td><td class="right">RM ${fmt(t.shipping)}</td><td></td></tr>
+        <tr><td colspan="4" class="right">Grand Total</td><td class="right">RM ${fmt(t.grand)}</td><td></td></tr>
+      </tfoot>
+    </table>
+    <div class="row"><button onclick="checkout()">💾 Save Sale</button></div>
+  `;
+}
+
+async function checkout() {
+  const msg = document.getElementById("msg");
+  msg.innerHTML = "";
+  if (!cart.length) { msg.innerHTML = `<div class="error">Cart is empty.</div>`; return; }
+  const payload = {
+    store_id: document.getElementById("store").value,
+    terminal_id: document.getElementById("terminalId").value,
+    cashier_id: document.getElementById("cashierId").value,
+    customer_id: document.getElementById("customer").value,
+    currency: document.getElementById("currency").value,
+    tax_rate: Number(document.getElementById("tax").value || "0"),
+    order_discount: Number(document.getElementById("orderDisc").value || "0"),
+    shipping_fee: Number(document.getElementById("shipping").value || "0"),
+    items: cart.map(i=>({ product_id: i.product_id, qty: i.qty, unit_price: i.unit_price, line_discount: i.line_discount }))
+  };
+  if (!payload.store_id)   { msg.innerHTML = `<div class="error">Please select a store.</div>`; return; }
+  if (!payload.terminal_id){ msg.innerHTML = `<div class="error">Please select a terminal.</div>`; return; }
+  if (!payload.cashier_id) { msg.innerHTML = `<div class="error">Please select a cashier.</div>`; return; }
+
+  const res = await fetch("/api/receipts", { method:"POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(payload) });
+  const out = await res.json();
+  if (!res.ok) { msg.innerHTML = `<div class="error">Failed: ${out.error || "Unknown error"}</div>`; return; }
+  msg.innerHTML = `<div class="success">Saved! Receipt <b>${out.receipt_id}</b> — Grand Total RM ${fmt(out.totals.grand_total)}</div>`;
+  cart = []; renderCart(); document.getElementById("search").value = ""; document.getElementById("results").innerHTML = "";
+}
+
+/* ---------- Customer/Product helpers ---------- */
+document.getElementById("btnCheckProduct")?.addEventListener("click", async () => {
+  const msg = document.getElementById("prodMsg"); msg.innerHTML = "";
+  const sku = document.getElementById("pSku").value.trim();
+  const name = document.getElementById("pName").value.trim();
+  if (!sku && !name) { msg.innerHTML = `<div class="error">Enter SKU or Name to check.</div>`; return; }
+  const qs = new URLSearchParams(); if (sku) qs.set("sku", sku); if (name) qs.set("name", name);
+  const res = await fetch("/api/products/exists?"+qs.toString());
+  const out = await res.json();
+  msg.innerHTML = out.exists ? `<div class="error">Duplicate: ${out.name || out.sku} (product_id ${out.product_id})</div>` :
+                               `<div class="success">No duplicate found. Safe to create.</div>`;
+});
+
+async function createProduct() {
+  const msg = document.getElementById("prodMsg"); msg.innerHTML = "";
+  const body = {
+    sku: document.getElementById("pSku").value.trim(),
+    name: document.getElementById("pName").value.trim(),
+    category: document.getElementById("pCategory").value.trim(),
+    brand: document.getElementById("pBrand").value.trim(),
+    price: Number(document.getElementById("pPrice").value || "0"),
+    cost: Number(document.getElementById("pCost").value || "0"),
+    currency: document.getElementById("pCurr").value
+  };
+  const res = await fetch("/api/products", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+  const out = await res.json();
+  if (!res.ok) { msg.innerHTML = `<div class="error">Create failed: ${out.error || "Unknown"}</div>`; return; }
+  msg.innerHTML = `<div class="success">Created product_id: <b>${out.product_id}</b></div>`;
+}
+document.getElementById("btnCreateProduct").addEventListener("click", createProduct);
+
+document.getElementById("btnCheckCustomer")?.addEventListener("click", async () => {
+  const msg = document.getElementById("custMsg"); msg.innerHTML = "";
+  const name = document.getElementById("cName").value.trim();
+  if (!name) { msg.innerHTML = `<div class="error">Enter a name.</div>`; return; }
+  const res = await fetch("/api/customers/exists?name=" + encodeURIComponent(name));
+  const out = await res.json();
+  msg.innerHTML = out.exists ? `<div class="error">Duplicate: ${out.name} (customer_id ${out.customer_id})</div>` :
+                               `<div class="success">No duplicate found. Safe to create.</div>`;
+});
+
+async function createCustomer() {
+  const msg = document.getElementById("custMsg"); msg.innerHTML = "";
+  const body = {
+    name: document.getElementById("cName").value.trim(),
+    email: document.getElementById("cEmail").value.trim(),
+    phone: document.getElementById("cPhone").value.trim(),
+    address: document.getElementById("cAddress").value.trim(),
+    city: document.getElementById("cCity").value.trim(),
+    state: document.getElementById("cState").value.trim(),
+    region: document.getElementById("cState").value.trim(),
+    postcode: document.getElementById("cPostcode").value.trim(),
+    country: document.getElementById("cCountry").value.trim(),
+  };
+  if (!body.name) { msg.innerHTML = `<div class="error">Please enter a name.</div>`; return; }
+  const res = await fetch("/api/customers", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body) });
+  const out = await res.json();
+  if (!res.ok) { msg.innerHTML = `<div class="error">Create failed: ${out.error || "Unknown"}</div>`; return; }
+  msg.innerHTML = `<div class="success">Created customer_id: <b>${out.customer_id}</b></div>`;
+  loadRefs(); // refresh dropdowns
+}
+document.getElementById("btnCreateCustomer").addEventListener("click", createCustomer);
+
+/* ---------- Sales viewer ---------- */
+async function fetchSales() {
+  const wrap = document.getElementById("salesWrap");
+  const detail = document.getElementById("salesDetail");
+  detail.innerHTML = "";
+  const s = new URLSearchParams();
+  const from = document.getElementById("sFrom").value;
+  const to = document.getElementById("sTo").value;
+  const store = document.getElementById("sStore").value;
+  const q = document.getElementById("sQ").value.trim();
+  if (from) s.set("start", from);
+  if (to) { const dt = new Date(to); dt.setDate(dt.getDate()+1); s.set("end", dt.toISOString().slice(0,10)); }
+  if (store) s.set("store_id", store);
+  if (q) s.set("q", q);
+
+  wrap.textContent = "Loading…";
+  try {
+    const res = await fetch("/api/receipts?"+s.toString());
+    if (!res.ok) throw new Error(await res.text());
+    const rows = await res.json();
+    if (!Array.isArray(rows) || !rows.length) { wrap.innerHTML = "<div class='muted'>No records.</div>"; return; }
+    wrap.innerHTML = `
+      <table>
+        <thead>
+          <tr><th>Date/Time</th><th>Receipt</th><th>Store</th><th>Customer</th><th>Cashier</th><th>Terminal</th><th class="right">Total (RM)</th><th></th></tr>
+        </thead>
+        <tbody>
+          ${rows.map(r=>`
+            <tr>
+              <td>${new Date(r.sold_at).toLocaleString()}</td>
+              <td>${r.receipt_id}</td>
+              <td>${r.store_name || r.store_id}</td>
+              <td>${r.customer_id}</td>
+              <td>${r.cashier_id || r.cashier_code || ""}</td>
+              <td>${r.terminal_id || ""}</td>
+              <td class="right">${fmt(r.grand_total)}</td>
+              <td><button class="btn-link" onclick="viewLines('${r.receipt_id}')">view items</button></td>
+            </tr>`).join("")}
+        </tbody>
+      </table>`;
+  } catch (err) {
+    wrap.innerHTML = `<div class="error">Failed to load sales: ${String(err).slice(0,200)}</div>`;
+    console.error(err);
+  }
+}
+document.getElementById("btnSalesSearch").addEventListener("click", fetchSales);
+
+async function viewLines(receipt_id) {
+  const detail = document.getElementById("salesDetail");
+  const res = await fetch(`/api/receipts/${encodeURIComponent(receipt_id)}/lines`);
+  const lines = await res.json();
+  if (!lines.length) { detail.innerHTML = "<div class='muted'>No lines.</div>"; return; }
+  detail.innerHTML = `
+    <h4>Items for ${receipt_id}</h4>
+    <table>
+      <thead><tr><th>SKU</th><th>Name</th><th class="right">Qty</th><th class="right">Unit</th><th class="right">Disc</th><th class="right">Tax</th><th class="right">Line Total</th></tr></thead>
+      <tbody>
+        ${lines.map(l=>`
+          <tr>
+            <td>${l.sku || "-"}</td>
+            <td>${l.name || l.product_id}</td>
+            <td class="right">${l.qty}</td>
+            <td class="right">RM ${fmt(l.unit_price)}</td>
+            <td class="right">RM ${fmt(l.line_discount)}</td>
+            <td class="right">RM ${fmt(l.line_tax)}</td>
+            <td class="right">RM ${fmt(l.line_total)}</td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>`;
+}
+
+/* ---------- Wire up ---------- */
+document.getElementById("btnSearch").addEventListener("click", searchProducts);
+["tax","orderDisc","shipping"].forEach(id=>{
+  document.getElementById(id).addEventListener("change", ()=>renderCart());
+});
+
+loadRefs(); // kick off initial population
+</script>
+</body>
+</html>
