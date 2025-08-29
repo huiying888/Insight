@@ -1,8 +1,8 @@
-import makedirectory
-import generate_master_product
-import generate_customers
-import generate_tiktok_marketing
-import generate_pos_elements
-import generate_src_products
-import generate_orders
-import generate_pos_invmov
+import helpers.makedirectory
+import helpers.generate_master_product
+import helpers.generate_customers
+import helpers.generate_tiktok_marketing
+import helpers.generate_pos_elements
+import helpers.generate_src_products
+import helpers.generate_orders
+import helpers.generate_pos_invmov
