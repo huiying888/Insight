@@ -1,81 +1,81 @@
 product_id,sku,name,category,brand,cost,price,currency,updated_at
-LAZ-PROD0001,LAZ-SKU0084,Marmot Lightweight Sweater,Outerwear,Marmot,220,260,MYR,2025-01-07 21:21:50
-LAZ-PROD0002,LAZ-SKU0054,Puma CoolTouch T-Shirt,Tops,Puma,80,130,MYR,2025-01-07 21:21:50
-LAZ-PROD0003,LAZ-SKU0071,Timberland LightMotion Sneakers,Shoes,Timberland,90,150,MYR,2025-01-07 21:21:50
-LAZ-PROD0004,LAZ-SKU0046,Puma TrueShape Shirt,Tops,Puma,220,230,MYR,2025-01-07 21:21:50
-LAZ-PROD0005,LAZ-SKU0045,Old Navy CoreFlex Chinos,Bottoms,Old Navy,250,310,MYR,2025-01-07 21:21:50
-LAZ-PROD0006,LAZ-SKU0040,Adidas Oversized Shirt,Tops,Adidas,50,110,MYR,2025-01-07 21:21:50
-LAZ-PROD0007,LAZ-SKU0023,Guess Sculpted Dress,Dresses,Guess,40,90,MYR,2025-01-07 21:21:50
-LAZ-PROD0008,LAZ-SKU0081,Adidas FreshFoam Sandals,Shoes,Adidas,140,170,MYR,2025-01-07 21:21:50
-LAZ-PROD0009,LAZ-SKU0011,Nike Slip-On Slip-Ons,Shoes,Nike,230,290,MYR,2025-01-07 21:21:50
-LAZ-PROD0010,LAZ-SKU0001,Converse Ultraboost Sandals,Shoes,Converse,110,130,MYR,2025-01-07 21:21:50
-LAZ-PROD0011,LAZ-SKU0019,Champion HeatGear Athletic Tee,Activewear,Champion,250,310,MYR,2025-01-07 21:21:50
-LAZ-PROD0012,LAZ-SKU0031,The North Face UtilityStyle Hoodie,Outerwear,The North Face,220,270,MYR,2025-01-07 21:21:50
-LAZ-PROD0013,LAZ-SKU0074,Reebok Dri-FIT T-Shirt,Tops,Reebok,220,240,MYR,2025-01-07 21:21:50
-LAZ-PROD0014,LAZ-SKU0034,Tommy Hilfiger Quilted Sweater,Outerwear,Tommy Hilfiger,110,130,MYR,2025-01-07 21:21:50
-LAZ-PROD0015,LAZ-SKU0091,Patagonia Lightweight Parka,Outerwear,Patagonia,50,80,MYR,2025-01-07 21:21:50
-LAZ-PROD0016,LAZ-SKU0005,Nike AirFlow T-Shirt,Tops,Nike,170,200,MYR,2025-01-07 21:21:50
-LAZ-PROD0017,LAZ-SKU0077,Under Armour MaxSpeed Sports Bra,Activewear,Under Armour,80,120,MYR,2025-01-07 21:21:50
-LAZ-PROD0018,LAZ-SKU0078,Adidas MotionWeave Sports Bra,Activewear,Adidas,230,290,MYR,2025-01-07 21:21:50
-LAZ-PROD0019,LAZ-SKU0013,Adidas Ultraboost Boots,Shoes,Adidas,50,80,MYR,2025-01-07 21:21:50
-LAZ-PROD0020,LAZ-SKU0032,Columbia StormProof Sweater,Outerwear,Columbia,70,130,MYR,2025-01-07 21:21:50
-LAZ-PROD0021,LAZ-SKU0056,Calvin Klein SmoothFit T-Shirt,Tops,Calvin Klein,110,170,MYR,2025-01-07 21:21:50
-LAZ-PROD0022,LAZ-SKU0089,The North Face Oversized Hoodie,Outerwear,The North Face,50,80,MYR,2025-01-07 21:21:50
-LAZ-PROD0023,LAZ-SKU0027,Nike FreshFoam Sandals,Shoes,Nike,160,220,MYR,2025-01-07 21:21:50
-LAZ-PROD0024,LAZ-SKU0043,Under Armour PowerMesh Track Jacket,Activewear,Under Armour,50,100,MYR,2025-01-07 21:21:50
-LAZ-PROD0025,LAZ-SKU0070,Gap ActiveDry Shorts,Bottoms,Gap,240,270,MYR,2025-01-07 21:21:50
-LAZ-PROD0026,LAZ-SKU0016,Ann Taylor Contemporary Mini Dress,Dresses,Ann Taylor,220,260,MYR,2025-01-07 21:21:50
-LAZ-PROD0027,LAZ-SKU0041,Reebok HeatGear Track Jacket,Activewear,Reebok,90,100,MYR,2025-01-07 21:21:50
-LAZ-PROD0028,LAZ-SKU0097,Ann Taylor Contemporary Maxi Dress,Dresses,Ann Taylor,220,230,MYR,2025-01-07 21:21:50
-LAZ-PROD0029,LAZ-SKU0010,Vans GripLock Boots,Shoes,Vans,150,180,MYR,2025-01-07 21:21:50
-LAZ-PROD0030,LAZ-SKU0073,Dockers SlimCore Cargo Pants,Bottoms,Dockers,110,150,MYR,2025-01-07 21:21:50
-LAZ-PROD0031,LAZ-SKU0012,Dockers EnduraFit Jeans,Bottoms,Dockers,120,180,MYR,2025-01-07 21:21:50
-LAZ-PROD0032,LAZ-SKU0048,Marmot Lightweight Cardigan,Outerwear,Marmot,230,290,MYR,2025-01-07 21:21:50
-LAZ-PROD0033,LAZ-SKU0086,Under Armour BounceFlex Leggings,Activewear,Under Armour,120,160,MYR,2025-01-07 21:21:50
-LAZ-PROD0034,LAZ-SKU0029,Under Armour PowerMesh Leggings,Activewear,Under Armour,40,50,MYR,2025-01-07 21:21:50
-LAZ-PROD0035,LAZ-SKU0094,Guess Contemporary Dress,Dresses,Guess,260,270,MYR,2025-01-07 21:21:50
-LAZ-PROD0036,LAZ-SKU0006,Banana Republic Ruched Mini Dress,Dresses,Banana Republic,70,100,MYR,2025-01-07 21:21:50
-LAZ-PROD0037,LAZ-SKU0067,Adidas LightMotion Sandals,Shoes,Adidas,250,290,MYR,2025-01-07 21:21:50
-LAZ-PROD0038,LAZ-SKU0066,New Balance AirMax Sandals,Shoes,New Balance,230,260,MYR,2025-01-07 21:21:50
-LAZ-PROD0039,LAZ-SKU0036,Puma Ultraboost Yoga Pants,Activewear,Puma,210,220,MYR,2025-01-07 21:21:50
-LAZ-PROD0040,LAZ-SKU0017,American Eagle EnduraFit Cargo Pants,Bottoms,American Eagle,50,60,MYR,2025-01-07 21:21:50
-LAZ-PROD0041,LAZ-SKU0050,Skechers GlideStep Sandals,Shoes,Skechers,130,180,MYR,2025-01-07 21:21:50
-LAZ-PROD0042,LAZ-SKU0035,Gap MotionFlex Skirt,Bottoms,Gap,180,200,MYR,2025-01-07 21:21:50
-LAZ-PROD0043,LAZ-SKU0008,Skechers GripLock Running Shoes,Shoes,Skechers,100,160,MYR,2025-01-07 21:21:50
-LAZ-PROD0044,LAZ-SKU0096,Timberland AirMax Running Shoes,Shoes,Timberland,260,320,MYR,2025-01-07 21:21:50
-LAZ-PROD0045,LAZ-SKU0028,Reebok MaxSpeed Leggings,Activewear,Reebok,110,120,MYR,2025-01-07 21:21:50
-LAZ-PROD0046,LAZ-SKU0020,Lululemon AeroCool Yoga Pants,Activewear,Lululemon,140,150,MYR,2025-01-07 21:21:50
-LAZ-PROD0047,LAZ-SKU0082,Dockers CoreFlex Trousers,Bottoms,Dockers,80,140,MYR,2025-01-07 21:21:50
-LAZ-PROD0048,LAZ-SKU0026,Under Armour AeroCool Track Jacket,Activewear,Under Armour,230,270,MYR,2025-01-07 21:21:50
-LAZ-PROD0049,LAZ-SKU0063,Banana Republic Ruched Dress,Dresses,Banana Republic,170,200,MYR,2025-01-07 21:21:50
-LAZ-PROD0050,LAZ-SKU0014,American Eagle High-Rise Skirt,Bottoms,American Eagle,100,160,MYR,2025-01-07 21:21:50
-LAZ-PROD0051,LAZ-SKU0025,Tommy Hilfiger TrueShape Blouse,Tops,Tommy Hilfiger,210,230,MYR,2025-01-07 21:21:50
-LAZ-PROD0052,LAZ-SKU0004,Skechers SmoothMotion Boots,Shoes,Skechers,180,230,MYR,2025-01-07 21:21:50
-LAZ-PROD0053,LAZ-SKU0018,New Balance SpeedTech Slip-Ons,Shoes,New Balance,160,200,MYR,2025-01-07 21:21:50
-LAZ-PROD0054,LAZ-SKU0039,Vans LightMotion Sneakers,Shoes,Vans,80,100,MYR,2025-01-07 21:21:50
-LAZ-PROD0055,LAZ-SKU0009,Lee TaperedFit Cargo Pants,Bottoms,Lee,110,120,MYR,2025-01-07 21:21:50
-LAZ-PROD0056,LAZ-SKU0079,Reebok SkinFit Yoga Pants,Activewear,Reebok,190,230,MYR,2025-01-07 21:21:50
-LAZ-PROD0057,LAZ-SKU0007,Tommy Hilfiger TrueShape Shirt,Tops,Tommy Hilfiger,70,110,MYR,2025-01-07 21:21:50
-LAZ-PROD0058,LAZ-SKU0065,New Balance Ultraboost Running Shoes,Shoes,New Balance,210,270,MYR,2025-01-07 21:21:50
-LAZ-PROD0059,LAZ-SKU0037,Dockers CoreFlex Jeans,Bottoms,Dockers,190,210,MYR,2025-01-07 21:21:50
-LAZ-PROD0060,LAZ-SKU0090,Calvin Klein Quilted Jacket,Outerwear,Calvin Klein,120,160,MYR,2025-01-07 21:21:50
-LAZ-PROD0061,LAZ-SKU0057,Lululemon RapidDry Track Jacket,Activewear,Lululemon,80,100,MYR,2025-01-07 21:21:50
-LAZ-PROD0062,LAZ-SKU0100,Levi's ProStretch Trousers,Bottoms,Levi's,120,170,MYR,2025-01-07 21:21:50
-LAZ-PROD0063,LAZ-SKU0055,Adidas SkinFit Sports Bra,Activewear,Adidas,80,90,MYR,2025-01-07 21:21:50
-LAZ-PROD0064,LAZ-SKU0044,Adidas HeatGear Running Shorts,Activewear,Adidas,120,140,MYR,2025-01-07 21:21:50
-LAZ-PROD0065,LAZ-SKU0051,Levi's Distressed Skirt,Bottoms,Levi's,200,240,MYR,2025-01-07 21:21:50
-LAZ-PROD0066,LAZ-SKU0068,Tommy Hilfiger Cinched Shift Dress,Dresses,Tommy Hilfiger,170,230,MYR,2025-01-07 21:21:50
-LAZ-PROD0067,LAZ-SKU0047,Champion SkinFit Running Shorts,Activewear,Champion,60,80,MYR,2025-01-07 21:21:50
-LAZ-PROD0068,LAZ-SKU0069,American Eagle ActiveDry Skirt,Bottoms,American Eagle,160,210,MYR,2025-01-07 21:21:50
-LAZ-PROD0069,LAZ-SKU0062,Tommy Hilfiger UtilityStyle Cardigan,Outerwear,Tommy Hilfiger,40,50,MYR,2025-01-07 21:21:50
-LAZ-PROD0070,LAZ-SKU0098,Adidas AirMax Running Shoes,Shoes,Adidas,240,270,MYR,2025-01-07 21:21:50
-LAZ-PROD0071,LAZ-SKU0080,Adidas LightMotion Sneakers,Shoes,Adidas,240,260,MYR,2025-01-07 21:21:50
-LAZ-PROD0072,LAZ-SKU0042,Wrangler ActiveDry Cargo Pants,Bottoms,Wrangler,250,270,MYR,2025-01-07 21:21:50
-LAZ-PROD0073,LAZ-SKU0059,Old Navy MotionFlex Trousers,Bottoms,Old Navy,70,110,MYR,2025-01-07 21:21:50
-LAZ-PROD0074,LAZ-SKU0049,Champion Seamless Athletic Tee,Activewear,Champion,80,110,MYR,2025-01-07 21:21:50
-LAZ-PROD0075,LAZ-SKU0099,Patagonia Padded Cardigan,Outerwear,Patagonia,240,280,MYR,2025-01-07 21:21:50
-LAZ-PROD0076,LAZ-SKU0058,Gap SlimCore Chinos,Bottoms,Gap,140,180,MYR,2025-01-07 21:21:50
-LAZ-PROD0077,LAZ-SKU0076,Nike Dri-FIT Sweatshirt,Tops,Nike,90,150,MYR,2025-01-07 21:21:50
-LAZ-PROD0078,LAZ-SKU0033,Columbia Lightweight Sweater,Outerwear,Columbia,250,310,MYR,2025-01-07 21:21:50
-LAZ-PROD0079,LAZ-SKU0095,Adidas SkinFit Polo Shirt,Tops,Adidas,220,280,MYR,2025-01-07 21:21:50
-LAZ-PROD0080,LAZ-SKU0060,Dockers EnduraFit Skirt,Bottoms,Dockers,130,150,MYR,2025-01-07 21:21:50
+LAZ-PROD0001,LAZ-SKU0084,Marmot Lightweight Cardigan,Outerwear,Marmot,220,260,MYR,2025-01-07 21:28:48
+LAZ-PROD0002,LAZ-SKU0054,Adidas CoolTouch Shirt,Tops,Adidas,80,130,MYR,2025-01-07 21:28:48
+LAZ-PROD0003,LAZ-SKU0071,Skechers LightMotion Slip-Ons,Shoes,Skechers,90,150,MYR,2025-01-07 21:28:48
+LAZ-PROD0004,LAZ-SKU0046,Adidas TrueShape Tank Top,Tops,Adidas,220,230,MYR,2025-01-07 21:28:48
+LAZ-PROD0005,LAZ-SKU0045,Gap CoreFlex Jeans,Bottoms,Gap,250,310,MYR,2025-01-07 21:28:48
+LAZ-PROD0006,LAZ-SKU0040,Tommy Hilfiger Oversized Tank Top,Tops,Tommy Hilfiger,50,110,MYR,2025-01-07 21:28:48
+LAZ-PROD0007,LAZ-SKU0023,Ralph Lauren Sculpted Shift Dress,Dresses,Ralph Lauren,40,90,MYR,2025-01-07 21:28:48
+LAZ-PROD0008,LAZ-SKU0081,Nike FreshFoam Sneakers,Shoes,Nike,140,170,MYR,2025-01-07 21:28:48
+LAZ-PROD0009,LAZ-SKU0011,New Balance Slip-On Sandals,Shoes,New Balance,230,290,MYR,2025-01-07 21:28:48
+LAZ-PROD0010,LAZ-SKU0001,Adidas Ultraboost Sneakers,Shoes,Adidas,110,130,MYR,2025-01-07 21:28:48
+LAZ-PROD0011,LAZ-SKU0019,Under Armour HeatGear Yoga Pants,Activewear,Under Armour,250,310,MYR,2025-01-07 21:28:48
+LAZ-PROD0012,LAZ-SKU0031,Patagonia UtilityStyle Jacket,Outerwear,Patagonia,220,270,MYR,2025-01-07 21:28:48
+LAZ-PROD0013,LAZ-SKU0074,Under Armour Dri-FIT Shirt,Tops,Under Armour,220,240,MYR,2025-01-07 21:28:48
+LAZ-PROD0014,LAZ-SKU0034,The North Face Quilted Cardigan,Outerwear,The North Face,110,130,MYR,2025-01-07 21:28:48
+LAZ-PROD0015,LAZ-SKU0091,Calvin Klein Lightweight Sweater,Outerwear,Calvin Klein,50,80,MYR,2025-01-07 21:28:48
+LAZ-PROD0016,LAZ-SKU0005,Reebok AirFlow Shirt,Tops,Reebok,170,200,MYR,2025-01-07 21:28:48
+LAZ-PROD0017,LAZ-SKU0077,Nike MaxSpeed Sports Bra,Activewear,Nike,80,120,MYR,2025-01-07 21:28:48
+LAZ-PROD0018,LAZ-SKU0078,Champion MotionWeave Sports Bra,Activewear,Champion,230,290,MYR,2025-01-07 21:28:48
+LAZ-PROD0019,LAZ-SKU0013,Nike Ultraboost Running Shoes,Shoes,Nike,50,80,MYR,2025-01-07 21:28:48
+LAZ-PROD0020,LAZ-SKU0032,Tommy Hilfiger StormProof Cardigan,Outerwear,Tommy Hilfiger,70,130,MYR,2025-01-07 21:28:48
+LAZ-PROD0021,LAZ-SKU0056,Nike SmoothFit Shirt,Tops,Nike,110,170,MYR,2025-01-07 21:28:48
+LAZ-PROD0022,LAZ-SKU0089,Patagonia Oversized Jacket,Outerwear,Patagonia,50,80,MYR,2025-01-07 21:28:48
+LAZ-PROD0023,LAZ-SKU0027,New Balance FreshFoam Sneakers,Shoes,New Balance,160,220,MYR,2025-01-07 21:28:48
+LAZ-PROD0024,LAZ-SKU0043,Nike PowerMesh Running Shorts,Activewear,Nike,50,100,MYR,2025-01-07 21:28:48
+LAZ-PROD0025,LAZ-SKU0070,Lee ActiveDry Chinos,Bottoms,Lee,240,270,MYR,2025-01-07 21:28:48
+LAZ-PROD0026,LAZ-SKU0016,Ann Taylor Contemporary Midi Dress,Dresses,Ann Taylor,220,260,MYR,2025-01-07 21:28:48
+LAZ-PROD0027,LAZ-SKU0041,Puma HeatGear Running Shorts,Activewear,Puma,90,100,MYR,2025-01-07 21:28:48
+LAZ-PROD0028,LAZ-SKU0097,Ann Taylor Contemporary Maxi Dress,Dresses,Ann Taylor,220,230,MYR,2025-01-07 21:28:48
+LAZ-PROD0029,LAZ-SKU0010,Vans GripLock Running Shoes,Shoes,Vans,150,180,MYR,2025-01-07 21:28:48
+LAZ-PROD0030,LAZ-SKU0073,Old Navy SlimCore Cargo Pants,Bottoms,Old Navy,110,150,MYR,2025-01-07 21:28:48
+LAZ-PROD0031,LAZ-SKU0012,Old Navy EnduraFit Trousers,Bottoms,Old Navy,120,180,MYR,2025-01-07 21:28:48
+LAZ-PROD0032,LAZ-SKU0048,Marmot Lightweight Coat,Outerwear,Marmot,230,290,MYR,2025-01-07 21:28:48
+LAZ-PROD0033,LAZ-SKU0086,Nike BounceFlex Track Jacket,Activewear,Nike,120,160,MYR,2025-01-07 21:28:48
+LAZ-PROD0034,LAZ-SKU0029,Nike PowerMesh Track Jacket,Activewear,Nike,40,50,MYR,2025-01-07 21:28:48
+LAZ-PROD0035,LAZ-SKU0094,Ralph Lauren Contemporary Shift Dress,Dresses,Ralph Lauren,260,270,MYR,2025-01-07 21:28:48
+LAZ-PROD0036,LAZ-SKU0006,Guess Ruched Midi Dress,Dresses,Guess,70,100,MYR,2025-01-07 21:28:48
+LAZ-PROD0037,LAZ-SKU0067,Nike LightMotion Sneakers,Shoes,Nike,250,290,MYR,2025-01-07 21:28:48
+LAZ-PROD0038,LAZ-SKU0066,Converse AirMax Sneakers,Shoes,Converse,230,260,MYR,2025-01-07 21:28:48
+LAZ-PROD0039,LAZ-SKU0036,Adidas Ultraboost Athletic Tee,Activewear,Adidas,210,220,MYR,2025-01-07 21:28:48
+LAZ-PROD0040,LAZ-SKU0017,Wrangler EnduraFit Cargo Pants,Bottoms,Wrangler,50,60,MYR,2025-01-07 21:28:48
+LAZ-PROD0041,LAZ-SKU0050,Timberland GlideStep Sneakers,Shoes,Timberland,130,180,MYR,2025-01-07 21:28:48
+LAZ-PROD0042,LAZ-SKU0035,Lee MotionFlex Shorts,Bottoms,Lee,180,200,MYR,2025-01-07 21:28:48
+LAZ-PROD0043,LAZ-SKU0008,Timberland GripLock Boots,Shoes,Timberland,100,160,MYR,2025-01-07 21:28:48
+LAZ-PROD0044,LAZ-SKU0096,Skechers AirMax Boots,Shoes,Skechers,260,320,MYR,2025-01-07 21:28:48
+LAZ-PROD0045,LAZ-SKU0028,Puma MaxSpeed Track Jacket,Activewear,Puma,110,120,MYR,2025-01-07 21:28:48
+LAZ-PROD0046,LAZ-SKU0020,Lululemon AeroCool Athletic Tee,Activewear,Lululemon,140,150,MYR,2025-01-07 21:28:48
+LAZ-PROD0047,LAZ-SKU0082,Old Navy CoreFlex Skirt,Bottoms,Old Navy,80,140,MYR,2025-01-07 21:28:48
+LAZ-PROD0048,LAZ-SKU0026,Nike AeroCool Running Shorts,Activewear,Nike,230,270,MYR,2025-01-07 21:28:48
+LAZ-PROD0049,LAZ-SKU0063,Guess Ruched Shift Dress,Dresses,Guess,170,200,MYR,2025-01-07 21:28:48
+LAZ-PROD0050,LAZ-SKU0014,Wrangler High-Rise Shorts,Bottoms,Wrangler,100,160,MYR,2025-01-07 21:28:48
+LAZ-PROD0051,LAZ-SKU0025,Puma TrueShape Sweatshirt,Tops,Puma,210,230,MYR,2025-01-07 21:28:48
+LAZ-PROD0052,LAZ-SKU0004,Timberland SmoothMotion Running Shoes,Shoes,Timberland,180,230,MYR,2025-01-07 21:28:48
+LAZ-PROD0053,LAZ-SKU0018,Converse SpeedTech Sandals,Shoes,Converse,160,200,MYR,2025-01-07 21:28:48
+LAZ-PROD0054,LAZ-SKU0039,Vans LightMotion Slip-Ons,Shoes,Vans,80,100,MYR,2025-01-07 21:28:48
+LAZ-PROD0055,LAZ-SKU0009,American Eagle TaperedFit Cargo Pants,Bottoms,American Eagle,110,120,MYR,2025-01-07 21:28:48
+LAZ-PROD0056,LAZ-SKU0079,Puma SkinFit Athletic Tee,Activewear,Puma,190,230,MYR,2025-01-07 21:28:48
+LAZ-PROD0057,LAZ-SKU0007,Puma TrueShape Tank Top,Tops,Puma,70,110,MYR,2025-01-07 21:28:48
+LAZ-PROD0058,LAZ-SKU0065,Converse Ultraboost Boots,Shoes,Converse,210,270,MYR,2025-01-07 21:28:48
+LAZ-PROD0059,LAZ-SKU0037,Old Navy CoreFlex Trousers,Bottoms,Old Navy,190,210,MYR,2025-01-07 21:28:48
+LAZ-PROD0060,LAZ-SKU0090,Columbia Quilted Hoodie,Outerwear,Columbia,120,160,MYR,2025-01-07 21:28:48
+LAZ-PROD0061,LAZ-SKU0057,Lululemon RapidDry Running Shorts,Activewear,Lululemon,80,100,MYR,2025-01-07 21:28:48
+LAZ-PROD0062,LAZ-SKU0100,Levi's ProStretch Skirt,Bottoms,Levi's,120,170,MYR,2025-01-07 21:28:48
+LAZ-PROD0063,LAZ-SKU0055,Champion SkinFit Sports Bra,Activewear,Champion,80,90,MYR,2025-01-07 21:28:48
+LAZ-PROD0064,LAZ-SKU0044,Champion HeatGear Leggings,Activewear,Champion,120,140,MYR,2025-01-07 21:28:48
+LAZ-PROD0065,LAZ-SKU0051,Levi's Distressed Shorts,Bottoms,Levi's,200,240,MYR,2025-01-07 21:28:48
+LAZ-PROD0066,LAZ-SKU0068,Banana Republic Cinched Mini Dress,Dresses,Banana Republic,170,230,MYR,2025-01-07 21:28:48
+LAZ-PROD0067,LAZ-SKU0047,Under Armour SkinFit Leggings,Activewear,Under Armour,60,80,MYR,2025-01-07 21:28:48
+LAZ-PROD0068,LAZ-SKU0069,Wrangler ActiveDry Shorts,Bottoms,Wrangler,160,210,MYR,2025-01-07 21:28:48
+LAZ-PROD0069,LAZ-SKU0062,The North Face UtilityStyle Coat,Outerwear,The North Face,40,50,MYR,2025-01-07 21:28:48
+LAZ-PROD0070,LAZ-SKU0098,Nike AirMax Boots,Shoes,Nike,240,270,MYR,2025-01-07 21:28:48
+LAZ-PROD0071,LAZ-SKU0080,Nike LightMotion Slip-Ons,Shoes,Nike,240,260,MYR,2025-01-07 21:28:48
+LAZ-PROD0072,LAZ-SKU0042,Dockers ActiveDry Cargo Pants,Bottoms,Dockers,250,270,MYR,2025-01-07 21:28:48
+LAZ-PROD0073,LAZ-SKU0059,Gap MotionFlex Skirt,Bottoms,Gap,70,110,MYR,2025-01-07 21:28:48
+LAZ-PROD0074,LAZ-SKU0049,Under Armour Seamless Yoga Pants,Activewear,Under Armour,80,110,MYR,2025-01-07 21:28:48
+LAZ-PROD0075,LAZ-SKU0099,Calvin Klein Padded Coat,Outerwear,Calvin Klein,240,280,MYR,2025-01-07 21:28:48
+LAZ-PROD0076,LAZ-SKU0058,Lee SlimCore Jeans,Bottoms,Lee,140,180,MYR,2025-01-07 21:28:48
+LAZ-PROD0077,LAZ-SKU0076,Reebok Dri-FIT Polo Shirt,Tops,Reebok,90,150,MYR,2025-01-07 21:28:48
+LAZ-PROD0078,LAZ-SKU0033,Tommy Hilfiger Lightweight Cardigan,Outerwear,Tommy Hilfiger,250,310,MYR,2025-01-07 21:28:48
+LAZ-PROD0079,LAZ-SKU0095,Tommy Hilfiger SkinFit Blouse,Tops,Tommy Hilfiger,220,280,MYR,2025-01-07 21:28:48
+LAZ-PROD0080,LAZ-SKU0060,Old Navy EnduraFit Shorts,Bottoms,Old Navy,130,150,MYR,2025-01-07 21:28:48

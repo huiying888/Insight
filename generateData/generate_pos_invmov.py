@@ -4,11 +4,14 @@ import pandas as pd
 from faker import Faker
 
 fake = Faker()
+random.seed(42)
+Faker.seed(42)
 
 # Configuration
-stores = pd.read_csv("data/src_pos/stores.csv")['store_id'].tolist()
 receipt_lines = pd.read_csv("data/src_pos/receipt_lines.csv")
 receipts = pd.read_csv("data/src_pos/receipts.csv")
+stores = pd.read_csv("data/src_pos/stores.csv")['store_id'].tolist()
+products = pd.read_csv("data/src_pos/products.csv")['product_id'].tolist()
 movement_types = ["Sale", "Stock In", "Return", "Adjustment"]
 
 # Storage
@@ -21,36 +24,42 @@ adjustment_id = 1
 for idx, x in receipt_lines.iterrows():
     movement_type = ""
     while movement_type != "Sale":
-        movement_id = f"INVMOVE{j:04d}"
+        movement_id = f"IMV{j:08d}"
         if j==1:
             movement_type = "Sale"
         else:
-            movement_type = random.choices(movement_types, weights=[0.7, 0.1, 0.1, 0.1])[0]
+            movement_type = random.choices(movement_types, weights=[0.7, 0.2, 0.05, 0.05])[0]
 
         # qty_delta rules
-        if movement_type == "Sale":
+        if movement_type == "Sale": # Sale
             product_id = x['product_id']
             store_id = receipts.loc[receipts['receipt_id'] == x['receipt_id'], 'store_id'].values[0]
             qty_delta = x['qty'] * -1
             reference_id = receipts.loc[receipts['receipt_id'] == x['receipt_id'], 'receipt_id'].values[0]
             moved_at = receipts.loc[receipts['receipt_id'] == x['receipt_id'], 'sold_at'].values[0]
-            note = f"Sold via {reference_id}"
-        elif movement_type == "Stock In":
-            qty_delta = random.randint(10, 100)
+            note = f"Sold {product_id} via {reference_id}"
+        elif movement_type == "Stock In": # Stock In
+            product_id = products[random.randint(0, len(products)-1)]
+            store_id = stores[random.randint(0, len(stores)-1)]
+            qty_delta = random.randint(1, 20) * 5
             reference_id = f"PO{stockin_id:04d}"
             stockin_id += 1
             moved_at = datetime.strptime(str(data[-1][6]), "%Y-%m-%d %H:%M:%S") + timedelta(minutes=random.randint(10, 1440))
-            note = "New stock delivery"
-        elif movement_type == "Return":
+            note = f"New stock delivery for {product_id}"
+        elif movement_type == "Return": # Return
+            product_id = products[random.randint(0, len(products)-1)]
+            store_id = stores[random.randint(0, len(stores)-1)]
             qty_delta = random.randint(1, 3)
             reference_id = f"RTN{return_id:04d}"
-            note = f"Customer return {reference_id}"
+            note = f"Customer return {product_id}"
             return_id += 1
             moved_at = datetime.strptime(str(data[-1][6]), "%Y-%m-%d %H:%M:%S") + timedelta(minutes=random.randint(10, 1440))
         else:  # Adjustment
-            qty_delta = random.choice([-5, -2, -1, 1, 2, 5])
+            product_id = products[random.randint(0, len(products)-1)]
+            store_id = stores[random.randint(0, len(stores)-1)]
+            qty_delta = random.randint(-5, 5)
             reference_id = f"ADJ{adjustment_id:04d}"
-            note = f"Stock adjustment {reference_id}"
+            note = f"Stock adjustment of {product_id}"
             adjustment_id += 1
             moved_at = datetime.strptime(str(data[-1][6]), "%Y-%m-%d %H:%M:%S") + timedelta(minutes=random.randint(10, 1440))
 

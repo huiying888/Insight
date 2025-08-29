@@ -187,10 +187,11 @@ def assign_last_updated(order_items_df, orders_df):
 def assign_campaigns_influencers(orders_df, campaigns_df, influencers_df):
     orders_df['campaign_id'] = None
     orders_df['influencer_id'] = None
-    for idx, order in orders_df.iterrows():
+    for idx, order in orders_df.sample(n=20).iterrows():
         campaign = campaigns_df.sample(n=1).reset_index(drop=True)
-        influencer = influencers_df.sample(n=1).reset_index(drop=True)
         orders_df.at[idx, 'campaign_id'] = campaign.loc[0, 'campaign_id']
+    for idx, order in orders_df.sample(n=20).iterrows():
+        influencer = influencers_df.sample(n=1).reset_index(drop=True)
         orders_df.at[idx, 'influencer_id'] = influencer.loc[0, 'influencer_id']
     orders_df = orders_df.reindex(columns=['order_id','buyer_id','created_at','updated_at','status','currency','total_amount','shipping_fee','tax_total','voucher_amount','campaign_id','influencer_id','market_region'])
     return orders_df

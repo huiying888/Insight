@@ -1,21 +1,21 @@
 product_id,sku,name,category,brand,cost,price,currency,updated_at
-POS-PROD0001,POS-SKU0099,Patagonia Padded Cardigan,Outerwear,Patagonia,240,280,MYR,2025-03-28 05:05:15
-POS-PROD0002,POS-SKU0005,Nike AirFlow T-Shirt,Tops,Nike,170,200,MYR,2025-03-28 05:05:15
-POS-PROD0003,POS-SKU0034,Tommy Hilfiger Quilted Sweater,Outerwear,Tommy Hilfiger,110,130,MYR,2025-03-28 05:05:15
-POS-PROD0004,POS-SKU0062,Tommy Hilfiger UtilityStyle Cardigan,Outerwear,Tommy Hilfiger,40,50,MYR,2025-03-28 05:05:15
-POS-PROD0005,POS-SKU0094,Guess Contemporary Dress,Dresses,Guess,260,270,MYR,2025-03-28 05:05:15
-POS-PROD0006,POS-SKU0085,Calvin Klein Layered Mini Dress,Dresses,Calvin Klein,210,270,MYR,2025-03-28 05:05:15
-POS-PROD0007,POS-SKU0052,Puma Cropped Tank Top,Tops,Puma,120,130,MYR,2025-03-28 05:05:15
-POS-PROD0008,POS-SKU0095,Adidas SkinFit Polo Shirt,Tops,Adidas,220,280,MYR,2025-03-28 05:05:15
-POS-PROD0009,POS-SKU0011,Nike Slip-On Slip-Ons,Shoes,Nike,230,290,MYR,2025-03-28 05:05:15
-POS-PROD0010,POS-SKU0089,The North Face Oversized Hoodie,Outerwear,The North Face,50,80,MYR,2025-03-28 05:05:15
-POS-PROD0011,POS-SKU0010,Vans GripLock Boots,Shoes,Vans,150,180,MYR,2025-03-28 05:05:15
-POS-PROD0012,POS-SKU0055,Adidas SkinFit Sports Bra,Activewear,Adidas,80,90,MYR,2025-03-28 05:05:15
-POS-PROD0013,POS-SKU0057,Lululemon RapidDry Track Jacket,Activewear,Lululemon,80,100,MYR,2025-03-28 05:05:15
-POS-PROD0014,POS-SKU0073,Dockers SlimCore Cargo Pants,Bottoms,Dockers,110,150,MYR,2025-03-28 05:05:15
-POS-PROD0015,POS-SKU0075,Columbia StormProof Hoodie,Outerwear,Columbia,240,300,MYR,2025-03-28 05:05:15
-POS-PROD0016,POS-SKU0043,Under Armour PowerMesh Track Jacket,Activewear,Under Armour,50,100,MYR,2025-03-28 05:05:15
-POS-PROD0017,POS-SKU0045,Old Navy CoreFlex Chinos,Bottoms,Old Navy,250,310,MYR,2025-03-28 05:05:15
-POS-PROD0018,POS-SKU0015,New Balance GlideStep Sandals,Shoes,New Balance,80,100,MYR,2025-03-28 05:05:15
-POS-PROD0019,POS-SKU0082,Dockers CoreFlex Trousers,Bottoms,Dockers,80,140,MYR,2025-03-28 05:05:15
-POS-PROD0020,POS-SKU0012,Dockers EnduraFit Jeans,Bottoms,Dockers,120,180,MYR,2025-03-28 05:05:15
+POS-PROD0001,POS-SKU0099,Calvin Klein Padded Coat,Outerwear,Calvin Klein,240,280,MYR,2025-03-28 05:12:13
+POS-PROD0002,POS-SKU0005,Reebok AirFlow Shirt,Tops,Reebok,170,200,MYR,2025-03-28 05:12:13
+POS-PROD0003,POS-SKU0034,The North Face Quilted Cardigan,Outerwear,The North Face,110,130,MYR,2025-03-28 05:12:13
+POS-PROD0004,POS-SKU0062,The North Face UtilityStyle Coat,Outerwear,The North Face,40,50,MYR,2025-03-28 05:12:13
+POS-PROD0005,POS-SKU0094,Ralph Lauren Contemporary Shift Dress,Dresses,Ralph Lauren,260,270,MYR,2025-03-28 05:12:13
+POS-PROD0006,POS-SKU0085,Calvin Klein Layered Midi Dress,Dresses,Calvin Klein,210,270,MYR,2025-03-28 05:12:13
+POS-PROD0007,POS-SKU0052,Adidas Cropped T-Shirt,Tops,Adidas,120,130,MYR,2025-03-28 05:12:13
+POS-PROD0008,POS-SKU0095,Tommy Hilfiger SkinFit Blouse,Tops,Tommy Hilfiger,220,280,MYR,2025-03-28 05:12:13
+POS-PROD0009,POS-SKU0011,New Balance Slip-On Sandals,Shoes,New Balance,230,290,MYR,2025-03-28 05:12:13
+POS-PROD0010,POS-SKU0089,Patagonia Oversized Jacket,Outerwear,Patagonia,50,80,MYR,2025-03-28 05:12:13
+POS-PROD0011,POS-SKU0010,Vans GripLock Running Shoes,Shoes,Vans,150,180,MYR,2025-03-28 05:12:13
+POS-PROD0012,POS-SKU0055,Champion SkinFit Sports Bra,Activewear,Champion,80,90,MYR,2025-03-28 05:12:13
+POS-PROD0013,POS-SKU0057,Lululemon RapidDry Running Shorts,Activewear,Lululemon,80,100,MYR,2025-03-28 05:12:13
+POS-PROD0014,POS-SKU0073,Old Navy SlimCore Cargo Pants,Bottoms,Old Navy,110,150,MYR,2025-03-28 05:12:13
+POS-PROD0015,POS-SKU0075,Tommy Hilfiger StormProof Jacket,Outerwear,Tommy Hilfiger,240,300,MYR,2025-03-28 05:12:13
+POS-PROD0016,POS-SKU0043,Nike PowerMesh Running Shorts,Activewear,Nike,50,100,MYR,2025-03-28 05:12:13
+POS-PROD0017,POS-SKU0045,Gap CoreFlex Jeans,Bottoms,Gap,250,310,MYR,2025-03-28 05:12:13
+POS-PROD0018,POS-SKU0015,Converse GlideStep Sneakers,Shoes,Converse,80,100,MYR,2025-03-28 05:12:13
+POS-PROD0019,POS-SKU0082,Old Navy CoreFlex Skirt,Bottoms,Old Navy,80,140,MYR,2025-03-28 05:12:13
+POS-PROD0020,POS-SKU0012,Old Navy EnduraFit Trousers,Bottoms,Old Navy,120,180,MYR,2025-03-28 05:12:13
