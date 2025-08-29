@@ -20,20 +20,17 @@ from datetime import timedelta
 date_range = load_data("SELECT MIN(date_key) as min_date, MAX(date_key) as max_date FROM wh.dim_date;")
 min_date, max_date = pd.to_datetime(date_range.iloc[0]['min_date']).date(), pd.to_datetime(date_range.iloc[0]['max_date']).date()
 
-# Default range: last 1 month
 default_start = max(min_date, max_date - timedelta(days=30))
 default_end = max_date
-print(f"Date range in DB: {min_date} to {max_date}")
-print(f"Default date range: {default_start} to {default_end}")
-# 👇 must be a tuple
+
 start_date, end_date = st.date_input(
     "📅 Select Date Range",
-    value=(default_start, default_end),  # tuple not list
+    value=(default_start, default_end),  
     min_value=min_date,
     max_value=max_date
 )
-
 date_params = {"start_date": start_date, "end_date": end_date}
+
 # -----------------------------
 # KPIs
 # -----------------------------
@@ -123,7 +120,7 @@ with tab1:
         GROUP BY order_date
         ORDER BY order_date;
     """, date_params)
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not trend_df.empty:
             fig = px.line(trend_df, x="order_date", y="revenue", title="Revenue Over Time", color_discrete_sequence=["#B2A5FF"])
@@ -146,7 +143,7 @@ with tab2:
         WHERE o.order_ts::date BETWEEN %(start_date)s AND %(end_date)s
         GROUP BY c.name;
     """, date_params)
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not channel_df.empty:
             fig = px.pie(channel_df, names="channel", values="revenue", title="Revenue Share by Channel", color_discrete_sequence=px.colors.qualitative.Pastel1)
@@ -169,7 +166,7 @@ with tab2:
     all_channels = trend_df["channel"].unique()
     full_index = pd.MultiIndex.from_product([all_dates, all_channels], names=["order_date", "channel"])
     trend_df = trend_df.set_index(["order_date", "channel"]).reindex(full_index, fill_value=0).reset_index()
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not trend_df.empty:
             fig = px.line(trend_df, x="order_date", y="revenue", color="channel", title="Daily Revenue Trend by Channel", markers=True, color_discrete_sequence=px.colors.qualitative.Pastel)
@@ -201,7 +198,7 @@ with tab3:
         ORDER BY revenue DESC
         LIMIT 10;
     """, date_params)
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not top_products.empty:
             fig = px.bar(top_products, x="revenue", y="product", orientation="h", title="Top 10 Products", color="product", color_discrete_sequence=px.colors.qualitative.Pastel)
@@ -224,7 +221,7 @@ with tab3:
         GROUP BY o.order_ts::date, p.category
         ORDER BY o.order_ts::date, daily_sales DESC;
     """, date_params)
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not daily_sales.empty:
             fig = px.line(daily_sales, x="order_date", y="daily_sales", color="category",   title="Daily Sales Amount per Category", color_discrete_sequence=px.colors.qualitative.Pastel)
@@ -251,7 +248,7 @@ with tab3:
         GROUP BY o.order_ts::date, p.name
         ORDER BY o.order_ts::date, daily_sales DESC;
     """, date_params)
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not daily_sales.empty:
             fig = px.line(daily_sales, x="order_date", y="daily_sales", color="product", title="Daily Sales Amount per Product", color_discrete_sequence=px.colors.qualitative.Pastel)
@@ -279,7 +276,7 @@ with tab4:
         WHERE i.snapshot_date = (SELECT MAX(snapshot_date) FROM wh.fact_inventory)
         ORDER BY i.stock_qty ASC;
     """)
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not inv_df.empty:
             st.dataframe(inv_df)
@@ -298,7 +295,7 @@ with tab4:
         GROUP BY p.category
         ORDER BY stock_qty DESC;
     """)
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not inventory_df.empty:
             fig = px.bar(inventory_df, x="category", y="stock_qty", title="Current Inventory by Category", text_auto=True, color="category", color_discrete_sequence=px.colors.qualitative.Pastel)
@@ -337,7 +334,7 @@ with tab5:
     region_sales_full = all_regions_df.merge(region_sales, on='region', how='left')
     region_sales_full['total_revenue'] = region_sales_full['total_revenue'].fillna(0)
     region_sales_full['total_customers'] = region_sales_full['total_customers'].fillna(0)
-    col_chart, col_memo = st.columns([3, 1])
+    col_chart, col_memo = st.columns([2, 1])
     with col_chart:
         if not region_sales_full.empty:
             fig = px.choropleth(
@@ -354,8 +351,8 @@ with tab5:
             fig.update_layout(
                 margin={"r":0,"t":50,"l":0,"b":0},  
                 height=600,
-                paper_bgcolor="#FFFDF7",  # background around the plotting area
-                plot_bgcolor="#FFFDF7"    # background of the plotting area itself                   
+                paper_bgcolor="#FFFDF7",  
+                plot_bgcolor="#FFFDF7"                     
             )
             fig.update_geos(
                 fitbounds="locations",
