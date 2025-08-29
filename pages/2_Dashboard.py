@@ -5,6 +5,7 @@ import plotly.express as px
 from dotenv import load_dotenv
 import os
 from utils import get_db_connection, load_data, generate_insight
+import requests, json
 
 st.set_page_config(page_title="KPI Dashboard", page_icon="🦙", layout="wide")
 st.title("📊 Business KPI Dashboard")
@@ -61,15 +62,16 @@ col4.metric("Avg Order Value", f"RM{aov_df['avg_order'][0]:,.2f}")
 # -----------------------------
 # ORGANIZED LAYOUT WITH TABS
 # -----------------------------
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "📈 Total Revenue", 
     "🏪 Channels", 
     "🔥 Products", 
-    "📦 Inventory"
+    "📦 Inventory",
+    "👥 Customers"
 ])
 
 # -----------------------------
-# INSIGHT BOX FRAME
+# STORYTELLING BOX FRAME
 # -----------------------------
 import re
 
@@ -146,9 +148,6 @@ with tab2:
     with col_memo:
         storytelling_box(generate_insight("Summarize revenue by channel briefly.", channel_df))
 
-# -----------------------------
-# REVENUE TREND BY CHANNEL
-# -----------------------------
     st.subheader("📈 Revenue Trend by Channel")
     trend_df = load_data("""
         SELECT o.order_ts::date AS order_date, c.name AS channel, SUM(o.order_total_gross) AS revenue
@@ -176,8 +175,9 @@ with tab2:
             st.info("No revenue trend data available for the selected date range.")
     with col_memo:
         storytelling_box(generate_insight("Summarize revenue trend by channel briefly.", trend_df))
+
 # -----------------------------
-# TOP PRODUCTS
+# PRODUCTS BY REVENUE
 # -----------------------------
 with tab3:
     st.subheader("🔥 Top Products by Revenue")
@@ -203,12 +203,7 @@ with tab3:
     with col_memo:
         storytelling_box(generate_insight("Summarize top products by revenue briefly.", top_products))
 
-
-# -----------------------------
-# DAILY SALES PER PRODUCT
-# -----------------------------
     st.subheader("📊 Daily Sales Amount per Product")
-
     daily_sales = load_data("""
         SELECT 
             o.order_ts::date AS order_date,
@@ -271,7 +266,7 @@ with tab4:
     col_chart, col_memo = st.columns([3, 1])
     with col_chart:
         if not inventory_df.empty:
-            fig = px.bar(inventory_df, x="category", y="stock_qty", title="Current Inventory by Category", text_auto=True, color="category", color_discrete_sequence=px.colors.qualitative.Pastel1)
+            fig = px.bar(inventory_df, x="category", y="stock_qty", title="Current Inventory by Category", text_auto=True, color="category", color_discrete_sequence=px.colors.qualitative.Pastel)
             fig.update_layout(xaxis_title="Category", yaxis_title="Quantity")
             st.plotly_chart(fig, use_container_width=True)
         else:
@@ -280,4 +275,57 @@ with tab4:
         storytelling_box(
             generate_insight("Summarize inventory distribution by category briefly.", inventory_df)
         )
+
+# -----------------------------
+# CUSTOMER SEGMENT BY STATE 
+# -----------------------------
+with tab5:
+    st.subheader("🌏 Customer Segment by State")
+    region_sales = load_data("""
+        SELECT
+            COALESCE(c.region, 'Unknown') AS region,
+            SUM(o.order_total_net) AS total_revenue,
+            COUNT(DISTINCT c.source_customer_id) AS total_customers
+        FROM wh.dim_customer c
+        LEFT JOIN wh.fact_orders o
+        ON c.customer_sk = o.customer_sk
+        AND o.order_ts::date BETWEEN %(start_date)s AND %(end_date)s
+        GROUP BY c.region
+    """, date_params)
+
+    region_sales['region'] = region_sales['region'].replace({None: 'Unknown', '': 'Unknown'})
+    region_sales = region_sales[region_sales['region'] != 'Unknown']
+    with open("assets/malaysia_states.geo.json", "r", encoding="utf-8") as f:
+        geojson = json.load(f)
+    all_regions = [feature['properties']['name'] for feature in geojson['features']]
+    all_regions_df = pd.DataFrame({'region': all_regions})
+    region_sales_full = all_regions_df.merge(region_sales, on='region', how='left')
+    region_sales_full['total_revenue'] = region_sales_full['total_revenue'].fillna(0)
+    region_sales_full['total_customers'] = region_sales_full['total_customers'].fillna(0)
+    col_chart, col_memo = st.columns([3, 1])
+    with col_chart:
+        if not region_sales_full.empty:
+            fig = px.choropleth(
+                region_sales_full,
+                geojson=geojson,
+                locations='region',                 
+                featureidkey='properties.name',  
+                color='total_revenue',
+                hover_data=['total_customers','total_revenue'],
+                color_continuous_scale="Blues",
+                title='Total Revenue by State'
+            )
+            fig.update_layout(
+                margin={"r":0,"t":50,"l":0,"b":0},  
+                height=600,                          
+            )
+            fig.update_geos(
+                fitbounds="locations",
+                visible=False
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("No regional sales data available for the selected date range.")
+    with col_memo:
+        storytelling_box(generate_insight("Summarize sales by state briefly.", region_sales_full))
 
