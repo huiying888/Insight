@@ -211,6 +211,33 @@ with tab3:
     with col_memo:
         storytelling_box(generate_insight("Summarize top products by revenue briefly.", top_products))
 
+    st.subheader("📊 Daily Sales Amount per Category")
+    daily_sales = load_data("""
+        SELECT 
+            o.order_ts::date AS order_date,
+            p.category AS category,   -- 👈 change here
+            SUM(oi.revenue_net) AS daily_sales
+        FROM wh.fact_order_items oi
+        JOIN wh.fact_orders o ON oi.order_sk = o.order_sk
+        JOIN wh.dim_product p ON oi.product_sk = p.product_sk
+        WHERE o.order_ts::date BETWEEN %(start_date)s AND %(end_date)s
+        GROUP BY o.order_ts::date, p.category
+        ORDER BY o.order_ts::date, daily_sales DESC;
+    """, date_params)
+    col_chart, col_memo = st.columns([3, 1])
+    with col_chart:
+        if not daily_sales.empty:
+            fig = px.line(daily_sales, x="order_date", y="daily_sales", color="category",   title="Daily Sales Amount per Category", color_discrete_sequence=px.colors.qualitative.Pastel)
+            fig.update_xaxes(
+                dtick="D1",           
+                tickformat="%Y-%m-%d"
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("No sales data available for the selected date range.")
+    with col_memo:
+        storytelling_box(generate_insight("Summarize daily sales per category briefly.", daily_sales))
+
     st.subheader("📊 Daily Sales Amount per Product")
     daily_sales = load_data("""
         SELECT 
@@ -237,7 +264,8 @@ with tab3:
             st.info("No sales data available for the selected date range.")
     with col_memo:
         storytelling_box(generate_insight("Summarize daily sales per product briefly.", daily_sales))
-
+    
+    
 
 # -----------------------------
 # INVENTORY HEALTH
