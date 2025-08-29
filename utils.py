@@ -160,5 +160,5 @@ def generate_insight(user_query: str, df: pd.DataFrame):
 
     return chain.invoke({
         "question": user_query,
-        "data": df.head(20).to_string(index=False)  # send sample for efficiency
+        "data": df.to_string(index=False) 
     })

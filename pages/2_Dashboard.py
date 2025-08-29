@@ -273,12 +273,11 @@ with tab3:
 with tab4:
     st.subheader("📦 Inventory Health")
     inv_df = load_data("""
-        SELECT p.name as product, i.stock_qty
+        SELECT p.master_product_code, p.name as product, i.stock_qty
         FROM wh.fact_inventory i
         JOIN wh.dim_product p ON i.product_sk = p.product_sk
         WHERE i.snapshot_date = (SELECT MAX(snapshot_date) FROM wh.fact_inventory)
-        ORDER BY i.stock_qty ASC
-        LIMIT 15;
+        ORDER BY i.stock_qty ASC;
     """)
     col_chart, col_memo = st.columns([3, 1])
     with col_chart:
