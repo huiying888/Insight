@@ -134,14 +134,16 @@ def get_response(user_query: str, db: SQLDatabase, schema: str, chat_history: li
 
 def generate_insight(user_query: str, df: pd.DataFrame):
     template = """
-    You are a helpful data analyst. 
-    Answer briefly in clear bullet points (1–3 max). 
-    Summarize chart insight and suggest actions if relevant. 
-    Do not explain code.
+        You are a business data analyst.
+        Respond in 1–3 concise and consistent bullet points only.
+        - Start each bullet with a bolded short label.
+        - Give key business insights directly (no intro phrases).
+        - Suggest an action if useful.
+        No code or technical details.
 
-    User question: {question}
-    Data Preview:
-    {data}
+        Question: {question}
+        Data:
+        {data}
     """
 
     prompt = ChatPromptTemplate.from_template(template)
@@ -160,5 +162,5 @@ def generate_insight(user_query: str, df: pd.DataFrame):
 
     return chain.invoke({
         "question": user_query,
-        "data": df.head(20).to_string(index=False)  # send sample for efficiency
+        "data": df.to_string(index=False) 
     })
