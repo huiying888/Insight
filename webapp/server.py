@@ -315,7 +315,7 @@ def api_create_customer():
         return jsonify({"error": "Missing field: name"}), 400
 
     # ID like CUST###
-    cid = next_id("src_pos", "customers", "customer_id", "CUST", 3)
+    cid = next_id("src_pos", "customers", "customer_id", "CUST", 8)
 
     cols = ["customer_id", "name"]
     vals = [cid, name]
@@ -412,7 +412,7 @@ def api_create_product():
         if k not in data or str(data[k]).strip() == "":
             return jsonify({"error": f"Missing field: {k}"}), 400
 
-    pid = next_id("src_pos", "products", "product_id", "POSPROD", 3)
+    pid = next_id("src_pos", "products", "product_id", "POSP-ROD", 4)
     now_ts = datetime.now(tz=MY_TZ)
 
     conn = get_conn()
@@ -539,7 +539,7 @@ def api_create_receipt():
     tax_total      = round(after_order * tax_rate / 100.0, 2)
     grand_total    = after_order + tax_total + shipping_fee
 
-    rid = next_id("src_pos", "receipts", "receipt_id", "REC", 3)
+    rid = next_id("src_pos", "receipts", "receipt_id", "REC", 8)
     sold_at = datetime.now(tz=MY_TZ)
 
     conn = get_conn()
