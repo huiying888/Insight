@@ -1,6 +1,7 @@
 import os
 import sys
 import datetime as dt
+import pandas as pd
 from typing import List, Dict, Any, Optional, Tuple
 
 import psycopg2
@@ -17,11 +18,20 @@ SRC_SCHEMAS = {ch: f"src_{ch}" for ch in CHANNELS}
 
 # ---- OPTIONAL: initial master product seeding and bridge mapping overrides ---
 # 1) Seed your golden catalog here (only needed once; safe to keep – it's upsert)
+
+df = pd.read_csv("data/master_product.csv")
+
 MASTER_PRODUCT_SEED = [
-    # ("MASTER_CODE", "NAME", "CATEGORY", "BRAND", starting_inventory, created_at)
-    # Example:
-    # ("SKU-001", "Nike Air Max 270", "Sneakers", "Nike", 200, dt.datetime.now()),
-    # ("SKU-002", "Adidas Ultraboost", "Sneakers", "Adidas", 150, dt.datetime.now()),
+    (
+        row["master_product_code"],
+        row["name"],
+        row["category"],
+        row["brand"],
+        int(row["starting_inventory"]),
+        dt.datetime.fromisoformat(row["created_at"]) if "created_at" in row and not pd.isna(row["created_at"]) 
+            else dt.datetime.now()
+    )
+    for _, row in df.iterrows()
 ]
 
 # 2) Manual bridge overrides (source_product_id -> master_product_code)
@@ -90,7 +100,7 @@ def seed_master_products(MASTER_PRODUCT_SEED, conn):
     with conn.cursor() as cur:
         execute_values(cur, """
             INSERT INTO wh.dim_product (
-                master_product_code, name, category, brand, starting_inventory,created_at
+                master_product_code, name, category, brand, starting_inventory, created_at
             ) VALUES %s
             ON CONFLICT (master_product_code) DO UPDATE
             SET name = EXCLUDED.name,
@@ -690,7 +700,7 @@ def main():
     conn = get_db_connection()
     try:
         # 0) seed master catalog (optional but recommended before first run)
-        seed_master_products(conn)
+        seed_master_products(MASTER_PRODUCT_SEED, conn)
 
         # 1) dimensions (non-product)
         load_dim_store(conn)
