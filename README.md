@@ -7,7 +7,6 @@ It combines **real-time dashboards**, **AI storytelling for KPIs**, and an **int
 ---
 ## Table of Contents
 
-- [Features](#features)
 - [Problem Statement](#problem-statemnt)
 - [Solution](#solution)
 - [Tech Stack](#tech-stack)
