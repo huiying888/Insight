@@ -1,6 +1,8 @@
 import pandas as pd
 import makedirectory
 
+pd.random_state = 42
+
 terminals = [
     {"terminal_id":"TERM001","store_id":"POS001","label":"Main Counter 1"},
     {"terminal_id":"TERM002","store_id":"POS001","label":"Main Counter 2"},

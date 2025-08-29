@@ -1,101 +1,61 @@
 buyer_id,name,phone,email,region,created_at
-LAZC00000001,Chan Mei Ling,+60142181960,chan105@gmail.com,Selangor,2025-01-07 21:28:48
-LAZC00000002,Abdul Farid bin Hakim,+60183794026,abdul294@hotmail.com,Selangor,2023-11-24 17:03:43
-LAZC00000003,Md Hafiz bin Haziq,+60125594078,md954@gmail.com,Johor,2023-09-18 15:56:05
-LAZC00000004,Siti Lina binti Azman,+60141034131,siti294@outlook.com,Johor,2025-03-28 05:12:13
-LAZC00000005,Chong Qian Yi,+60144192832,chong398@outlook.com,Penang,2024-03-30 20:37:07
-LAZC00000006,Divya A/P Raj,+60170305641,divya945@yahoo.com,Sabah,2024-03-07 10:48:56
-LAZC00000007,Ajay A/L Hari,+60187242388,ajay774@hotmail.com,Sabah,2024-02-19 14:39:01
-LAZC00000008,Chong Mei Ling,+60138710122,chong620@outlook.com,Kuala Lumpur,2023-12-16 14:52:33
-LAZC00000009,Ong Yue Ying,+60168018451,ong455@hotmail.com,Selangor,2025-03-24 06:31:08
-LAZC00000010,Cheah Jing Yi,+60168281489,cheah166@yahoo.com,Penang,2023-11-17 20:20:56
-LAZC00000011,Rekha A/P Prakash,+60119570154,rekha69@yahoo.com,Selangor,2025-02-05 20:17:35
-LAZC00000012,Lakshmi A/P Deepak,+60191822782,lakshmi550@hotmail.com,Sabah,2025-03-27 12:44:52
-LAZC00000013,Low Yu Xuan,+60144657871,low240@yahoo.com,Kuala Lumpur,2025-07-23 05:07:59
-LAZC00000014,Wong Chen Wei,+60140103105,wong536@gmail.com,Selangor,2024-10-26 20:04:10
-LAZC00000015,Siti Siti binti Hakim,+60193763116,siti443@hotmail.com,Johor,2023-11-05 18:21:28
-LAZC00000016,Teo Fang Ying,+60120651333,teo153@outlook.com,Johor,2024-11-30 21:16:43
-LAZC00000017,Ain Nadia binti Fikri,+60120801326,ain502@outlook.com,Selangor,2024-07-22 22:53:36
-LAZC00000018,Priya A/P Mani,+60116474687,priya204@yahoo.com,Penang,2023-09-23 22:10:21
-LAZC00000019,Siti Aisyah binti Hakim,+60170097882,siti993@gmail.com,Sabah,2023-09-22 09:09:39
-LAZC00000020,Siti Nurul binti Irfan,+60146193990,siti439@gmail.com,Sarawak,2023-11-11 00:18:23
-LAZC00000021,Cheah Jia Hui,+60145346247,cheah961@hotmail.com,Kuala Lumpur,2024-02-16 01:24:28
-LAZC00000022,Abdul Hafiz bin Hafiz,+60148425135,abdul171@hotmail.com,Johor,2024-02-26 22:48:50
-LAZC00000023,Asha A/P Anil,+60118412411,asha288@yahoo.com,Penang,2024-09-25 18:12:21
-LAZC00000024,Wong Fang Ying,+60168740164,wong13@gmail.com,Penang,2024-12-09 20:08:35
-LAZC00000025,Sita A/P Kumar,+60198680112,sita864@gmail.com,Penang,2023-09-19 20:22:00
-LAZC00000026,Lee Wei Ming,+60165053315,lee645@outlook.com,Sarawak,2024-11-08 04:04:00
-LAZC00000027,Syed Aiman bin Fikri,+60136025634,syed816@yahoo.com,Sarawak,2024-01-31 16:18:10
-LAZC00000028,Syed Fazli bin Farid,+60147543303,syed346@outlook.com,Penang,2025-03-08 09:16:24
-LAZC00000029,Sita A/P Suresh,+60188501429,sita49@hotmail.com,Kuala Lumpur,2025-01-16 00:25:28
-LAZC00000030,Lau Qian Yi,+60189816934,lau735@gmail.com,Johor,2025-02-24 23:20:44
-LAZC00000031,Abdul Irfan bin Hakim,+60145615951,abdul529@hotmail.com,Penang,2024-10-26 12:08:45
-LAZC00000032,Deepak A/L Vijay,+60133662994,deepak571@outlook.com,Kuala Lumpur,2024-07-21 02:07:00
-LAZC00000033,Siti Izzati binti Irfan,+60177773872,siti300@gmail.com,Sabah,2024-02-17 11:00:41
-LAZC00000034,Lim Hao Ran,+60144332003,lim635@outlook.com,Kuala Lumpur,2024-08-13 03:33:50
-LAZC00000035,Goh Mei Ling,+60187632016,goh190@yahoo.com,Sarawak,2024-11-29 22:24:32
-LAZC00000036,Wong Si Ying,+60127278895,wong637@outlook.com,Sarawak,2024-04-02 07:33:04
-LAZC00000037,Prakash A/L Hari,+60137743487,prakash291@yahoo.com,Johor,2025-05-19 22:34:40
-LAZC00000038,Wan Hani binti Azman,+60122236231,wan427@outlook.com,Penang,2025-07-05 10:37:59
-LAZC00000039,Wong Hao Ran,+60186909670,wong315@hotmail.com,Johor,2023-09-04 06:50:46
-LAZC00000040,Meena A/P Prakash,+60147346706,meena694@hotmail.com,Sarawak,2025-04-10 14:53:42
-LAZC00000041,Latha A/P Kumar,+60116990162,latha196@outlook.com,Kuala Lumpur,2025-05-17 03:15:36
-LAZC00000042,Che Hani binti Azman,+60184641708,che984@gmail.com,Penang,2024-01-01 05:57:57
-LAZC00000043,Ain Mira binti Ahmad,+60143092327,ain587@gmail.com,Selangor,2025-02-22 11:57:43
-LAZC00000044,Chong Li Jun,+60122419049,chong416@outlook.com,Sarawak,2024-07-23 11:48:14
-LAZC00000045,Syed Irfan bin Farid,+60124919058,syed687@outlook.com,Penang,2024-05-20 12:25:47
-LAZC00000046,Md Zulhilmi bin Haziq,+60191657262,md640@hotmail.com,Sabah,2024-04-02 01:35:52
-LAZC00000047,Sanjay A/L Deepak,+60165314737,sanjay354@outlook.com,Kuala Lumpur,2023-12-29 00:02:54
-LAZC00000048,Ong Mei Ling,+60174549480,ong97@yahoo.com,Selangor,2024-02-13 11:26:23
-LAZC00000049,Anil A/L Raj,+60197701436,anil323@yahoo.com,Sarawak,2025-04-14 06:15:45
-LAZC00000050,Low Qian Yi,+60188557444,low133@yahoo.com,Sarawak,2024-05-17 16:16:39
-LAZC00000051,Siti Mira binti Hakim,+60133374989,siti112@hotmail.com,Selangor,2023-11-17 15:02:17
-LAZC00000052,Wan Aisyah binti Hakim,+60134008427,wan903@gmail.com,Kuala Lumpur,2023-11-10 06:36:30
-LAZC00000053,Ong Qian Yi,+60130471167,ong600@gmail.com,Sarawak,2024-06-20 08:03:31
-LAZC00000054,Anil A/L Ramesh,+60161318699,anil804@yahoo.com,Sabah,2023-11-13 08:37:28
-LAZC00000055,Chan Hao Ran,+60184990913,chan280@yahoo.com,Sarawak,2024-06-04 01:33:40
-LAZC00000056,Siti Nurul binti Aiman,+60116797403,siti733@hotmail.com,Penang,2025-06-18 12:08:26
-LAZC00000057,Ajay A/L Raj,+60169361832,ajay856@hotmail.com,Selangor,2024-05-23 09:29:59
-LAZC00000058,Wan Izzati binti Hakim,+60167174648,wan458@outlook.com,Kuala Lumpur,2024-12-11 03:58:10
-LAZC00000059,Khoo Qian Yi,+60160139904,khoo791@gmail.com,Selangor,2024-03-22 16:43:36
-LAZC00000060,Lee Chen Wei,+60187175655,lee888@gmail.com,Selangor,2025-05-18 03:39:43
-LAZC00000061,Muhammad Irfan bin Haziq,+60117154516,muhammad683@gmail.com,Sabah,2023-10-02 23:40:31
-LAZC00000062,Goh Yu Xuan,+60197034824,goh911@outlook.com,Sarawak,2025-03-19 00:53:13
-LAZC00000063,Teo Chen Wei,+60142480861,teo871@yahoo.com,Kuala Lumpur,2024-08-21 02:00:03
-LAZC00000064,Ho Li Jun,+60194846773,ho574@outlook.com,Selangor,2024-10-19 17:43:00
-LAZC00000065,Low Jing Yi,+60131465840,low753@hotmail.com,Penang,2023-12-05 04:37:43
-LAZC00000066,Nisha A/P Hari,+60137875588,nisha476@outlook.com,Penang,2025-08-15 14:31:56
-LAZC00000067,Kavita A/P Ramesh,+60183605766,kavita517@yahoo.com,Kuala Lumpur,2024-06-19 06:05:34
-LAZC00000068,Muhammad Zulhilmi bin Hafiz,+60191870262,muhammad490@gmail.com,Penang,2023-10-30 10:38:33
-LAZC00000069,Teo Xiu Lin,+60178657809,teo250@gmail.com,Sarawak,2024-11-01 00:29:01
-LAZC00000070,Raj A/L Deepak,+60126117240,raj342@gmail.com,Kuala Lumpur,2024-04-13 22:56:23
-LAZC00000071,Nur Farah binti Syafiq,+60189222196,nur519@yahoo.com,Sabah,2025-06-04 10:55:26
-LAZC00000072,Wan Nadia binti Amir,+60117482175,wan664@hotmail.com,Johor,2024-12-30 12:23:44
-LAZC00000073,Vijay A/L Raj,+60187136959,vijay726@hotmail.com,Penang,2024-12-22 15:44:39
-LAZC00000074,Mohammed Amir bin Ahmad,+60119743953,mohammed645@yahoo.com,Penang,2025-07-17 23:43:02
-LAZC00000075,Nisha A/P Ajay,+60131047095,nisha102@yahoo.com,Penang,2025-06-29 13:04:53
-LAZC00000076,Nur Siti binti Fikri,+60178842474,nur833@hotmail.com,Kuala Lumpur,2024-06-06 03:03:57
-LAZC00000077,Lau Mei Ling,+60188516048,lau475@gmail.com,Penang,2024-11-20 16:19:28
-LAZC00000078,Asha A/P Mani,+60171370985,asha673@yahoo.com,Kuala Lumpur,2024-01-26 14:13:10
-LAZC00000079,Khoo Jia Hui,+60181200471,khoo250@gmail.com,Sabah,2025-02-27 11:52:17
-LAZC00000080,Siti Aina binti Amin,+60136179640,siti232@hotmail.com,Johor,2023-10-23 06:18:09
-LAZC00000081,Chong Xiu Lin,+60178506431,chong103@outlook.com,Sarawak,2023-10-04 19:55:44
-LAZC00000082,Md Ahmad bin Fikri,+60173293183,md842@yahoo.com,Selangor,2025-01-24 20:32:32
-LAZC00000083,Siti Aisyah binti Amir,+60132842102,siti376@gmail.com,Selangor,2024-02-23 06:01:56
-LAZC00000084,Chan Wei Ming,+60136811775,chan472@gmail.com,Sabah,2025-04-21 16:44:20
-LAZC00000085,Ahmad Fikri bin Rizal,+60167007661,ahmad739@outlook.com,Johor,2024-04-11 00:16:59
-LAZC00000086,Siti Siti binti Hafiz,+60134998569,siti474@hotmail.com,Sabah,2023-10-31 05:07:50
-LAZC00000087,Khoo Xiu Lin,+60146736576,khoo757@outlook.com,Kuala Lumpur,2025-06-24 13:58:42
-LAZC00000088,Wan Hani binti Aiman,+60191111615,wan579@yahoo.com,Kuala Lumpur,2024-02-27 01:14:13
-LAZC00000089,Chong Fang Ying,+60126560494,chong116@hotmail.com,Sabah,2025-07-03 06:07:36
-LAZC00000090,Ho Xiu Lin,+60178514936,ho633@gmail.com,Sarawak,2023-11-16 16:30:13
-LAZC00000091,Kumar A/L Vijay,+60165502296,kumar155@gmail.com,Sarawak,2024-06-20 11:46:01
-LAZC00000092,Khoo Yue Ying,+60146675254,khoo805@hotmail.com,Sabah,2024-04-02 03:30:14
-LAZC00000093,Lee Li Jun,+60111476797,lee289@outlook.com,Selangor,2024-08-16 09:52:52
-LAZC00000094,Mani A/L Ravi,+60169784036,mani17@gmail.com,Selangor,2025-01-04 23:43:02
-LAZC00000095,Nur Mira binti Amir,+60165107622,nur555@outlook.com,Sarawak,2025-06-08 02:38:45
-LAZC00000096,Ahmad Fikri bin Azman,+60126060715,ahmad597@outlook.com,Johor,2024-06-08 14:39:55
-LAZC00000097,Ravi A/L Mani,+60115297516,ravi259@gmail.com,Johor,2024-01-03 13:47:33
-LAZC00000098,Ng Hao Ran,+60165352181,ng937@yahoo.com,Penang,2024-06-12 18:22:26
-LAZC00000099,Teo Hao Ran,+60133124329,teo788@yahoo.com,Sarawak,2024-06-01 04:25:35
-LAZC00000100,Ahmad Fazli bin Fazli,+60199955271,ahmad462@outlook.com,Sarawak,2024-02-08 23:11:40
+LAZC00000001,Chan Mei Ling,+60142181960,chan105@gmail.com,Johor,2025-05-04 22:41:56
+LAZC00000002,Abdul Farid bin Hakim,+60183794026,abdul294@hotmail.com,Penang,2024-10-11 20:29:23
+LAZC00000003,Md Hafiz bin Haziq,+60125594078,md954@gmail.com,Negeri Sembilan,2024-09-08 07:55:34
+LAZC00000004,Siti Lina binti Azman,+60141034131,siti294@outlook.com,Perak,2025-06-13 14:33:38
+LAZC00000005,Chong Qian Yi,+60144192832,chong398@outlook.com,Sabah,2024-12-14 10:16:05
+LAZC00000006,Divya A/P Raj,+60170305641,divya945@yahoo.com,Kedah,2024-12-02 17:22:00
+LAZC00000007,Ajay A/L Hari,+60187242388,ajay774@hotmail.com,Kedah,2024-11-24 07:17:02
+LAZC00000008,Chong Mei Ling,+60138710122,chong620@outlook.com,Selangor,2024-10-22 19:23:48
+LAZC00000009,Ong Yue Ying,+60168018451,ong455@hotmail.com,Penang,2025-06-11 15:13:06
+LAZC00000010,Cheah Jing Yi,+60168281489,cheah166@yahoo.com,Sarawak,2024-10-08 10:08:00
+LAZC00000011,Rekha A/P Prakash,+60119570154,rekha69@yahoo.com,Johor,2025-05-19 10:06:19
+LAZC00000012,Lakshmi A/P Deepak,+60191822782,lakshmi550@hotmail.com,Perlis,2025-06-13 06:19:58
+LAZC00000013,Cheah Yue Ying,+60144657871,cheah240@yahoo.com,Selangor,2025-08-11 02:31:31
+LAZC00000014,Wong Chen Wei,+60140103105,wong536@gmail.com,Johor,2025-03-29 09:59:37
+LAZC00000015,Siti Siti binti Hakim,+60193763116,siti443@hotmail.com,Negeri Sembilan,2024-10-02 09:08:16
+LAZC00000016,Teo Fang Ying,+60120651333,teo153@outlook.com,Negeri Sembilan,2025-04-15 22:35:53
+LAZC00000017,Ain Nadia binti Fikri,+60120801326,ain502@outlook.com,Johor,2025-02-09 11:24:20
+LAZC00000018,Priya A/P Mani,+60116474687,priya204@yahoo.com,Sabah,2024-09-10 23:02:42
+LAZC00000019,Siti Aisyah binti Hakim,+60170097882,siti993@gmail.com,Pahang,2024-09-10 04:32:21
+LAZC00000020,Siti Nurul binti Irfan,+60146193990,siti439@gmail.com,Kelantan,2024-10-05 00:06:43
+LAZC00000021,Cheah Jia Hui,+60145346247,cheah961@hotmail.com,Melaka,2024-11-22 12:39:46
+LAZC00000022,Ramesh A/L Ramesh,+60121838425,ramesh910@gmail.com,Johor,2024-11-27 23:21:57
+LAZC00000023,Ho Yue Ying,+60169808412,ho128@hotmail.com,Selangor,2025-03-13 21:03:42
+LAZC00000024,Vijay A/L Ramesh,+60145348740,vijay659@gmail.com,Negeri Sembilan,2025-04-20 10:01:49
+LAZC00000025,Suresh A/L Anil,+60134278680,suresh87@gmail.com,Terengganu,2024-09-08 22:08:32
+LAZC00000026,Radha A/P Ramesh,+60136204505,radha708@yahoo.com,Johor,2025-04-04 13:59:32
+LAZC00000027,Prakash A/L Sanjay,+60189232260,prakash764@yahoo.com,Sarawak,2024-11-14 20:06:37
+LAZC00000028,Ajay A/L Sanjay,+60144216073,ajay846@yahoo.com,Perak,2025-06-03 16:35:44
+LAZC00000029,Ho Mei Ling,+60140365414,ho666@hotmail.com,Pahang,2025-05-09 00:10:16
+LAZC00000030,Low Qian Yi,+60111429401,low363@outlook.com,Terengganu,2025-05-28 23:37:54
+LAZC00000031,Prakash A/L Ravi,+60189340608,prakash382@yahoo.com,Negeri Sembilan,2025-03-29 06:01:54
+LAZC00000032,Muhammad Amin bin Azman,+60124846564,muhammad206@yahoo.com,Negeri Sembilan,2025-02-08 13:01:02
+LAZC00000033,Khoo Si Ying,+60139946804,khoo225@hotmail.com,Negeri Sembilan,2024-11-23 05:27:52
+LAZC00000034,Radha A/P Hari,+60197387214,radha105@hotmail.com,Perlis,2025-02-20 01:44:27
+LAZC00000035,Vijay A/L Raj,+60142003791,vijay434@outlook.com,Kelantan,2025-04-15 11:09:48
+LAZC00000036,Ng Zhi Hao,+60183201632,ng61@outlook.com,Pahang,2024-12-15 15:44:04
+LAZC00000037,Mohammed Aiman bin Fikri,+60198895798,mohammed860@outlook.com,Pahang,2025-07-09 23:14:52
+LAZC00000038,Ho Zhi Hao,+60194348734,ho89@outlook.com,Terengganu,2025-08-02 05:16:31
+LAZC00000039,Wan Amira binti Hafiz,+60132362316,wan348@outlook.com,Pahang,2024-09-01 03:22:55
+LAZC00000040,Ho Hui Min,+60189096705,ho781@hotmail.com,Negeri Sembilan,2025-06-20 07:24:23
+LAZC00000041,Meena A/P Prakash,+60147346706,meena694@hotmail.com,Kelantan,2025-07-08 13:35:20
+LAZC00000042,Latha A/P Kumar,+60116990162,latha196@outlook.com,Kuala Lumpur,2024-10-30 14:56:30
+LAZC00000043,Che Hani binti Azman,+60184641708,che984@gmail.com,Sarawak,2025-05-27 17:56:23
+LAZC00000044,Ain Mira binti Ahmad,+60143092327,ain587@gmail.com,Johor,2025-02-09 17:51:39
+LAZC00000045,Chong Li Jun,+60122419049,chong416@outlook.com,Terengganu,2025-01-08 18:10:25
+LAZC00000046,Syed Irfan bin Farid,+60124919058,syed687@outlook.com,Sarawak,2024-12-15 12:45:28
+LAZC00000047,Md Zulhilmi bin Haziq,+60191657262,md640@hotmail.com,Melaka,2024-10-28 23:58:59
+LAZC00000048,Latha A/P Mani,+60165314737,latha354@outlook.com,Kuala Lumpur,2024-11-21 05:40:43
+LAZC00000049,Ong Mei Ling,+60174549480,ong97@yahoo.com,Johor,2025-06-22 03:05:24
+LAZC00000050,Anil A/L Raj,+60197701436,anil323@yahoo.com,Kelantan,2025-01-07 08:05:51
+LAZC00000051,Ng Jing Yi,+60175744431,ng333@yahoo.com,Selangor,2024-10-08 07:28:40
+LAZC00000052,Sunita A/P Kumar,+60143749894,sunita862@gmail.com,Johor,2024-10-04 15:15:47
+LAZC00000053,Wan Aisyah binti Hakim,+60134008427,wan903@gmail.com,Kuala Lumpur,2025-01-24 03:59:17
+LAZC00000054,Ong Qian Yi,+60130471167,ong600@gmail.com,Kelantan,2024-10-06 04:16:16
+LAZC00000055,Anil A/L Ramesh,+60161318699,anil804@yahoo.com,Pahang,2025-01-16 00:44:22
+LAZC00000056,Chan Hao Ran,+60184990913,chan280@yahoo.com,Kelantan,2025-07-24 18:01:45
+LAZC00000057,Siti Nurul binti Aiman,+60116797403,siti733@hotmail.com,Sabah,2025-01-10 04:42:31
+LAZC00000058,Ajay A/L Raj,+60169361832,ajay856@hotmail.com,Penang,2025-04-21 01:56:37
+LAZC00000059,Wan Izzati binti Hakim,+60167174648,wan458@outlook.com,Selangor,2024-12-10 08:19:20
+LAZC00000060,Khoo Qian Yi,+60160139904,khoo791@gmail.com,Melaka,2025-07-09 01:47:23

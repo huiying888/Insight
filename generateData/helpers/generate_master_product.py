@@ -1,12 +1,15 @@
 # Generate a synthetic fashion apparel e-commerce dataset and save as CSV
 import random
 import pandas as pd
-import numpy as np
-import datetime
+from faker import Faker
 import makedirectory
 
+
+Faker.seed(42)
+fake = Faker()
 random.seed(42)
-np.random.seed(42)
+pd.random_state = 42
+
 
 # Configuration
 num_products = 100
@@ -46,15 +49,17 @@ items = {
 products = []
 used_names = set()
 
+random.seed(42)
+
 for i in range(1, num_products + 1):
     category = random.choice(categories)
 
     # Generate a unique product name
     while True:
-        brand = random.choice(list(brands[category]))
-        descriptor = random.choice(list(descriptors[category]))
-        item = random.choice(list(items[category]))
-        
+        brand = random.choice(sorted(list(brands[category])))
+        descriptor = random.choice(sorted(list(descriptors[category])))
+        item = random.choice(sorted(list(items[category])))
+    
         name = f"{brand} {descriptor} {item}"
         if name not in used_names:
             used_names.add(name)
@@ -70,7 +75,7 @@ for i in range(1, num_products + 1):
         "category": category,
         "brand": brand,
         "is_active": random.choices([True, False], weights=[0.9, 0.1])[0],
-        "created_at": (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=365*2)).isoformat(),
+        "created_at": fake.date_time_between(start_date="-1y", end_date="-6m"),
         "starting_inventory": starting_inventory,
         "base_cost": cost, # Base wholesale cost - cost to acquire
         "base_price": price, # Base retail price - price sold to customer

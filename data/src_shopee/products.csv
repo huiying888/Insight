@@ -1,81 +1,81 @@
 product_id,sku,name,category,brand,cost,price,currency,updated_at
-SHP-PROD0001,SHP-SKU0080,Nike LightMotion Slip-Ons,Shoes,Nike,240,260,MYR,2023-11-24 17:03:43
-SHP-PROD0002,SHP-SKU0038,Lee SlimCore Trousers,Bottoms,Lee,120,160,MYR,2023-11-24 17:03:43
-SHP-PROD0003,SHP-SKU0066,Converse AirMax Sneakers,Shoes,Converse,230,260,MYR,2023-11-24 17:03:43
-SHP-PROD0004,SHP-SKU0055,Champion SkinFit Sports Bra,Activewear,Champion,80,90,MYR,2023-11-24 17:03:43
-SHP-PROD0005,SHP-SKU0016,Ann Taylor Contemporary Midi Dress,Dresses,Ann Taylor,220,260,MYR,2023-11-24 17:03:43
-SHP-PROD0006,SHP-SKU0021,Calvin Klein Lightweight Parka,Outerwear,Calvin Klein,120,170,MYR,2023-11-24 17:03:43
-SHP-PROD0007,SHP-SKU0100,Levi's ProStretch Skirt,Bottoms,Levi's,120,170,MYR,2023-11-24 17:03:43
-SHP-PROD0008,SHP-SKU0026,Nike AeroCool Running Shorts,Activewear,Nike,230,270,MYR,2023-11-24 17:03:43
-SHP-PROD0009,SHP-SKU0057,Lululemon RapidDry Running Shorts,Activewear,Lululemon,80,100,MYR,2023-11-24 17:03:43
-SHP-PROD0010,SHP-SKU0018,Converse SpeedTech Sandals,Shoes,Converse,160,200,MYR,2023-11-24 17:03:43
-SHP-PROD0011,SHP-SKU0060,Old Navy EnduraFit Shorts,Bottoms,Old Navy,130,150,MYR,2023-11-24 17:03:43
-SHP-PROD0012,SHP-SKU0094,Ralph Lauren Contemporary Shift Dress,Dresses,Ralph Lauren,260,270,MYR,2023-11-24 17:03:43
-SHP-PROD0013,SHP-SKU0088,Adidas RapidDry Running Shorts,Activewear,Adidas,220,280,MYR,2023-11-24 17:03:43
-SHP-PROD0014,SHP-SKU0067,Nike LightMotion Sneakers,Shoes,Nike,250,290,MYR,2023-11-24 17:03:43
-SHP-PROD0015,SHP-SKU0056,Nike SmoothFit Shirt,Tops,Nike,110,170,MYR,2023-11-24 17:03:43
-SHP-PROD0016,SHP-SKU0074,Under Armour Dri-FIT Shirt,Tops,Under Armour,220,240,MYR,2023-11-24 17:03:43
-SHP-PROD0017,SHP-SKU0040,Tommy Hilfiger Oversized Tank Top,Tops,Tommy Hilfiger,50,110,MYR,2023-11-24 17:03:43
-SHP-PROD0018,SHP-SKU0031,Patagonia UtilityStyle Jacket,Outerwear,Patagonia,220,270,MYR,2023-11-24 17:03:43
-SHP-PROD0019,SHP-SKU0017,Wrangler EnduraFit Cargo Pants,Bottoms,Wrangler,50,60,MYR,2023-11-24 17:03:43
-SHP-PROD0020,SHP-SKU0050,Timberland GlideStep Sneakers,Shoes,Timberland,130,180,MYR,2023-11-24 17:03:43
-SHP-PROD0021,SHP-SKU0061,Lee FlexLite Shorts,Bottoms,Lee,60,90,MYR,2023-11-24 17:03:43
-SHP-PROD0022,SHP-SKU0054,Adidas CoolTouch Shirt,Tops,Adidas,80,130,MYR,2023-11-24 17:03:43
-SHP-PROD0023,SHP-SKU0084,Marmot Lightweight Cardigan,Outerwear,Marmot,220,260,MYR,2023-11-24 17:03:43
-SHP-PROD0024,SHP-SKU0024,Nike SlimCore Polo Shirt,Tops,Nike,50,70,MYR,2023-11-24 17:03:43
-SHP-PROD0025,SHP-SKU0089,Patagonia Oversized Jacket,Outerwear,Patagonia,50,80,MYR,2023-11-24 17:03:43
-SHP-PROD0026,SHP-SKU0010,Vans GripLock Running Shoes,Shoes,Vans,150,180,MYR,2023-11-24 17:03:43
-SHP-PROD0027,SHP-SKU0019,Under Armour HeatGear Yoga Pants,Activewear,Under Armour,250,310,MYR,2023-11-24 17:03:43
-SHP-PROD0028,SHP-SKU0083,Columbia UtilityStyle Hoodie,Outerwear,Columbia,170,180,MYR,2023-11-24 17:03:43
-SHP-PROD0029,SHP-SKU0075,Tommy Hilfiger StormProof Jacket,Outerwear,Tommy Hilfiger,240,300,MYR,2023-11-24 17:03:43
-SHP-PROD0030,SHP-SKU0090,Columbia Quilted Hoodie,Outerwear,Columbia,120,160,MYR,2023-11-24 17:03:43
-SHP-PROD0031,SHP-SKU0059,Gap MotionFlex Skirt,Bottoms,Gap,70,110,MYR,2023-11-24 17:03:43
-SHP-PROD0032,SHP-SKU0099,Calvin Klein Padded Coat,Outerwear,Calvin Klein,240,280,MYR,2023-11-24 17:03:43
-SHP-PROD0033,SHP-SKU0049,Under Armour Seamless Yoga Pants,Activewear,Under Armour,80,110,MYR,2023-11-24 17:03:43
-SHP-PROD0034,SHP-SKU0077,Nike MaxSpeed Sports Bra,Activewear,Nike,80,120,MYR,2023-11-24 17:03:43
-SHP-PROD0035,SHP-SKU0058,Lee SlimCore Jeans,Bottoms,Lee,140,180,MYR,2023-11-24 17:03:43
-SHP-PROD0036,SHP-SKU0091,Calvin Klein Lightweight Sweater,Outerwear,Calvin Klein,50,80,MYR,2023-11-24 17:03:43
-SHP-PROD0037,SHP-SKU0076,Reebok Dri-FIT Polo Shirt,Tops,Reebok,90,150,MYR,2023-11-24 17:03:43
-SHP-PROD0038,SHP-SKU0087,Ann Taylor Floral Midi Dress,Dresses,Ann Taylor,90,130,MYR,2023-11-24 17:03:43
-SHP-PROD0039,SHP-SKU0064,Marmot UtilityStyle Cardigan,Outerwear,Marmot,160,210,MYR,2023-11-24 17:03:43
-SHP-PROD0040,SHP-SKU0025,Puma TrueShape Sweatshirt,Tops,Puma,210,230,MYR,2023-11-24 17:03:43
-SHP-PROD0041,SHP-SKU0079,Puma SkinFit Athletic Tee,Activewear,Puma,190,230,MYR,2023-11-24 17:03:43
-SHP-PROD0042,SHP-SKU0011,New Balance Slip-On Sandals,Shoes,New Balance,230,290,MYR,2023-11-24 17:03:43
-SHP-PROD0043,SHP-SKU0030,Dockers SlimCore Shorts,Bottoms,Dockers,60,110,MYR,2023-11-24 17:03:43
-SHP-PROD0044,SHP-SKU0020,Lululemon AeroCool Athletic Tee,Activewear,Lululemon,140,150,MYR,2023-11-24 17:03:43
-SHP-PROD0045,SHP-SKU0046,Adidas TrueShape Tank Top,Tops,Adidas,220,230,MYR,2023-11-24 17:03:43
-SHP-PROD0046,SHP-SKU0082,Old Navy CoreFlex Skirt,Bottoms,Old Navy,80,140,MYR,2023-11-24 17:03:43
-SHP-PROD0047,SHP-SKU0086,Nike BounceFlex Track Jacket,Activewear,Nike,120,160,MYR,2023-11-24 17:03:43
-SHP-PROD0048,SHP-SKU0053,Levi's TaperedFit Jeans,Bottoms,Levi's,180,230,MYR,2023-11-24 17:03:43
-SHP-PROD0049,SHP-SKU0006,Guess Ruched Midi Dress,Dresses,Guess,70,100,MYR,2023-11-24 17:03:43
-SHP-PROD0050,SHP-SKU0068,Banana Republic Cinched Mini Dress,Dresses,Banana Republic,170,230,MYR,2023-11-24 17:03:43
-SHP-PROD0051,SHP-SKU0070,Lee ActiveDry Chinos,Bottoms,Lee,240,270,MYR,2023-11-24 17:03:43
-SHP-PROD0052,SHP-SKU0002,New Balance LightMotion Sandals,Shoes,New Balance,220,260,MYR,2023-11-24 17:03:43
-SHP-PROD0053,SHP-SKU0093,Lee Distressed Cargo Pants,Bottoms,Lee,220,240,MYR,2023-11-24 17:03:43
-SHP-PROD0054,SHP-SKU0022,Reebok Cropped Blouse,Tops,Reebok,240,290,MYR,2023-11-24 17:03:43
-SHP-PROD0055,SHP-SKU0069,Wrangler ActiveDry Shorts,Bottoms,Wrangler,160,210,MYR,2023-11-24 17:03:43
-SHP-PROD0056,SHP-SKU0092,Adidas Ultraboost Running Shoes,Shoes,Adidas,100,110,MYR,2023-11-24 17:03:43
-SHP-PROD0057,SHP-SKU0032,Tommy Hilfiger StormProof Cardigan,Outerwear,Tommy Hilfiger,70,130,MYR,2023-11-24 17:03:43
-SHP-PROD0058,SHP-SKU0013,Nike Ultraboost Running Shoes,Shoes,Nike,50,80,MYR,2023-11-24 17:03:43
-SHP-PROD0059,SHP-SKU0036,Adidas Ultraboost Athletic Tee,Activewear,Adidas,210,220,MYR,2023-11-24 17:03:43
-SHP-PROD0060,SHP-SKU0029,Nike PowerMesh Track Jacket,Activewear,Nike,40,50,MYR,2023-11-24 17:03:43
-SHP-PROD0061,SHP-SKU0043,Nike PowerMesh Running Shorts,Activewear,Nike,50,100,MYR,2023-11-24 17:03:43
-SHP-PROD0062,SHP-SKU0071,Skechers LightMotion Slip-Ons,Shoes,Skechers,90,150,MYR,2023-11-24 17:03:43
-SHP-PROD0063,SHP-SKU0045,Gap CoreFlex Jeans,Bottoms,Gap,250,310,MYR,2023-11-24 17:03:43
-SHP-PROD0064,SHP-SKU0039,Vans LightMotion Slip-Ons,Shoes,Vans,80,100,MYR,2023-11-24 17:03:43
-SHP-PROD0065,SHP-SKU0085,Calvin Klein Layered Midi Dress,Dresses,Calvin Klein,210,270,MYR,2023-11-24 17:03:43
-SHP-PROD0066,SHP-SKU0004,Timberland SmoothMotion Running Shoes,Shoes,Timberland,180,230,MYR,2023-11-24 17:03:43
-SHP-PROD0067,SHP-SKU0052,Adidas Cropped T-Shirt,Tops,Adidas,120,130,MYR,2023-11-24 17:03:43
-SHP-PROD0068,SHP-SKU0063,Guess Ruched Shift Dress,Dresses,Guess,170,200,MYR,2023-11-24 17:03:43
-SHP-PROD0069,SHP-SKU0051,Levi's Distressed Shorts,Bottoms,Levi's,200,240,MYR,2023-11-24 17:03:43
-SHP-PROD0070,SHP-SKU0042,Dockers ActiveDry Cargo Pants,Bottoms,Dockers,250,270,MYR,2023-11-24 17:03:43
-SHP-PROD0071,SHP-SKU0015,Converse GlideStep Sneakers,Shoes,Converse,80,100,MYR,2023-11-24 17:03:43
-SHP-PROD0072,SHP-SKU0009,American Eagle TaperedFit Cargo Pants,Bottoms,American Eagle,110,120,MYR,2023-11-24 17:03:43
-SHP-PROD0073,SHP-SKU0027,New Balance FreshFoam Sneakers,Shoes,New Balance,160,220,MYR,2023-11-24 17:03:43
-SHP-PROD0074,SHP-SKU0014,Wrangler High-Rise Shorts,Bottoms,Wrangler,100,160,MYR,2023-11-24 17:03:43
-SHP-PROD0075,SHP-SKU0095,Tommy Hilfiger SkinFit Blouse,Tops,Tommy Hilfiger,220,280,MYR,2023-11-24 17:03:43
-SHP-PROD0076,SHP-SKU0001,Adidas Ultraboost Sneakers,Shoes,Adidas,110,130,MYR,2023-11-24 17:03:43
-SHP-PROD0077,SHP-SKU0003,Old Navy ProStretch Chinos,Bottoms,Old Navy,40,90,MYR,2023-11-24 17:03:43
-SHP-PROD0078,SHP-SKU0078,Champion MotionWeave Sports Bra,Activewear,Champion,230,290,MYR,2023-11-24 17:03:43
-SHP-PROD0079,SHP-SKU0047,Under Armour SkinFit Leggings,Activewear,Under Armour,60,80,MYR,2023-11-24 17:03:43
-SHP-PROD0080,SHP-SKU0065,Converse Ultraboost Boots,Shoes,Converse,210,270,MYR,2023-11-24 17:03:43
+SHP-PROD0001,SHP-SKU0080,New Balance SmoothMotion Slip-Ons,Shoes,New Balance,240,260,MYR,2024-10-11 20:29:23
+SHP-PROD0002,SHP-SKU0038,Lee ActiveDry Shorts,Bottoms,Lee,120,160,MYR,2024-10-11 20:29:23
+SHP-PROD0003,SHP-SKU0066,Nike FreshFoam Sandals,Shoes,Nike,230,260,MYR,2024-10-11 20:29:23
+SHP-PROD0004,SHP-SKU0055,Puma Breathable Sports Bra,Activewear,Puma,80,90,MYR,2024-10-11 20:29:23
+SHP-PROD0005,SHP-SKU0016,Tommy Hilfiger Ruched Mini Dress,Dresses,Tommy Hilfiger,220,260,MYR,2024-10-11 20:29:23
+SHP-PROD0006,SHP-SKU0021,Calvin Klein UtilityStyle Sweater,Outerwear,Calvin Klein,120,170,MYR,2024-10-11 20:29:23
+SHP-PROD0007,SHP-SKU0100,Old Navy PowerStretch Trousers,Bottoms,Old Navy,120,170,MYR,2024-10-11 20:29:23
+SHP-PROD0008,SHP-SKU0026,Champion HyperDry Track Jacket,Activewear,Champion,230,270,MYR,2024-10-11 20:29:23
+SHP-PROD0009,SHP-SKU0057,Under Armour MotionWeave Track Jacket,Activewear,Under Armour,80,100,MYR,2024-10-11 20:29:23
+SHP-PROD0010,SHP-SKU0018,Nike SpeedForm Boots,Shoes,Nike,160,200,MYR,2024-10-11 20:29:23
+SHP-PROD0011,SHP-SKU0060,Dockers MotionFlex Jeans,Bottoms,Dockers,130,150,MYR,2024-10-11 20:29:23
+SHP-PROD0012,SHP-SKU0094,Banana Republic Ruched Shift Dress,Dresses,Banana Republic,260,270,MYR,2024-10-11 20:29:23
+SHP-PROD0013,SHP-SKU0088,Adidas MotionWeave Track Jacket,Activewear,Adidas,220,280,MYR,2024-10-11 20:29:23
+SHP-PROD0014,SHP-SKU0067,New Balance SmoothMotion Sandals,Shoes,New Balance,250,290,MYR,2024-10-11 20:29:23
+SHP-PROD0015,SHP-SKU0056,Nike Dri-FIT Tank Top,Tops,Nike,110,170,MYR,2024-10-11 20:29:23
+SHP-PROD0016,SHP-SKU0074,Puma QuickDry Tank Top,Tops,Puma,220,240,MYR,2024-10-11 20:29:23
+SHP-PROD0017,SHP-SKU0040,Reebok TrueShape T-Shirt,Tops,Reebok,50,110,MYR,2024-10-11 20:29:23
+SHP-PROD0018,SHP-SKU0031,Columbia StormProof Coat,Outerwear,Columbia,220,270,MYR,2024-10-11 20:29:23
+SHP-PROD0019,SHP-SKU0017,Levi's MotionFlex Cargo Pants,Bottoms,Levi's,50,60,MYR,2024-10-11 20:29:23
+SHP-PROD0020,SHP-SKU0050,Skechers GlideStep Sandals,Shoes,Skechers,130,180,MYR,2024-10-11 20:29:23
+SHP-PROD0021,SHP-SKU0061,Lee FlexLite Jeans,Bottoms,Lee,60,90,MYR,2024-10-11 20:29:23
+SHP-PROD0022,SHP-SKU0054,Adidas CoolTouch Tank Top,Tops,Adidas,80,130,MYR,2024-10-11 20:29:23
+SHP-PROD0023,SHP-SKU0084,The North Face UtilityStyle Cardigan,Outerwear,The North Face,220,260,MYR,2024-10-11 20:29:23
+SHP-PROD0024,SHP-SKU0024,Nike FlexLite Polo Shirt,Tops,Nike,50,70,MYR,2024-10-11 20:29:23
+SHP-PROD0025,SHP-SKU0089,Columbia StormGuard Coat,Outerwear,Columbia,50,80,MYR,2024-10-11 20:29:23
+SHP-PROD0026,SHP-SKU0010,Vans LightMotion Running Shoes,Shoes,Vans,150,180,MYR,2024-10-11 20:29:23
+SHP-PROD0027,SHP-SKU0019,Lululemon RapidDry Athletic Tee,Activewear,Lululemon,250,310,MYR,2024-10-11 20:29:23
+SHP-PROD0028,SHP-SKU0083,Marmot StormProof Jacket,Outerwear,Marmot,170,180,MYR,2024-10-11 20:29:23
+SHP-PROD0029,SHP-SKU0075,Patagonia Lightweight Coat,Outerwear,Patagonia,240,300,MYR,2024-10-11 20:29:23
+SHP-PROD0030,SHP-SKU0090,Marmot Padded Jacket,Outerwear,Marmot,120,160,MYR,2024-10-11 20:29:23
+SHP-PROD0031,SHP-SKU0059,Gap CoreFlex Trousers,Bottoms,Gap,70,110,MYR,2024-10-11 20:29:23
+SHP-PROD0032,SHP-SKU0099,Calvin Klein Quilted Hoodie,Outerwear,Calvin Klein,240,280,MYR,2024-10-11 20:29:23
+SHP-PROD0033,SHP-SKU0049,Lululemon SkinFit Athletic Tee,Activewear,Lululemon,80,110,MYR,2024-10-11 20:29:23
+SHP-PROD0034,SHP-SKU0077,Champion BounceFlex Sports Bra,Activewear,Champion,80,120,MYR,2024-10-11 20:29:23
+SHP-PROD0035,SHP-SKU0058,Lee ActiveDry Chinos,Bottoms,Lee,140,180,MYR,2024-10-11 20:29:23
+SHP-PROD0036,SHP-SKU0091,Calvin Klein UtilityStyle Parka,Outerwear,Calvin Klein,50,80,MYR,2024-10-11 20:29:23
+SHP-PROD0037,SHP-SKU0076,Under Armour QuickDry Polo Shirt,Tops,Under Armour,90,150,MYR,2024-10-11 20:29:23
+SHP-PROD0038,SHP-SKU0087,Tommy Hilfiger Sculpted Mini Dress,Dresses,Tommy Hilfiger,90,130,MYR,2024-10-11 20:29:23
+SHP-PROD0039,SHP-SKU0064,The North Face StormProof Cardigan,Outerwear,The North Face,160,210,MYR,2024-10-11 20:29:23
+SHP-PROD0040,SHP-SKU0025,Tommy Hilfiger Ribbed Blouse,Tops,Tommy Hilfiger,210,230,MYR,2024-10-11 20:29:23
+SHP-PROD0041,SHP-SKU0079,Nike Breathable Yoga Pants,Activewear,Nike,190,230,MYR,2024-10-11 20:29:23
+SHP-PROD0042,SHP-SKU0011,Timberland SpeedTech Boots,Shoes,Timberland,230,290,MYR,2024-10-11 20:29:23
+SHP-PROD0043,SHP-SKU0030,American Eagle ActiveDry Jeans,Bottoms,American Eagle,60,110,MYR,2024-10-11 20:29:23
+SHP-PROD0044,SHP-SKU0020,Under Armour HyperDry Yoga Pants,Activewear,Under Armour,140,150,MYR,2024-10-11 20:29:23
+SHP-PROD0045,SHP-SKU0046,Adidas Ribbed T-Shirt,Tops,Adidas,220,230,MYR,2024-10-11 20:29:23
+SHP-PROD0046,SHP-SKU0082,Dockers High-Rise Trousers,Bottoms,Dockers,80,140,MYR,2024-10-11 20:29:23
+SHP-PROD0047,SHP-SKU0086,Champion PowerMesh Leggings,Activewear,Champion,120,160,MYR,2024-10-11 20:29:23
+SHP-PROD0048,SHP-SKU0053,Old Navy EnduraFit Chinos,Bottoms,Old Navy,180,230,MYR,2024-10-11 20:29:23
+SHP-PROD0049,SHP-SKU0006,Ann Taylor ClassicCut Mini Dress,Dresses,Ann Taylor,70,100,MYR,2024-10-11 20:29:23
+SHP-PROD0050,SHP-SKU0068,Ralph Lauren Contemporary Maxi Dress,Dresses,Ralph Lauren,170,230,MYR,2024-10-11 20:29:23
+SHP-PROD0051,SHP-SKU0070,Lee ProStretch Skirt,Bottoms,Lee,240,270,MYR,2024-10-11 20:29:23
+SHP-PROD0052,SHP-SKU0002,Timberland SmoothMotion Boots,Shoes,Timberland,220,260,MYR,2024-10-11 20:29:23
+SHP-PROD0053,SHP-SKU0093,Lee SlimCore Cargo Pants,Bottoms,Lee,220,240,MYR,2024-10-11 20:29:23
+SHP-PROD0054,SHP-SKU0022,Under Armour SmoothFit Shirt,Tops,Under Armour,240,290,MYR,2024-10-11 20:29:23
+SHP-PROD0055,SHP-SKU0069,Levi's ProStretch Jeans,Bottoms,Levi's,160,210,MYR,2024-10-11 20:29:23
+SHP-PROD0056,SHP-SKU0092,Adidas AirMax Running Shoes,Shoes,Adidas,100,110,MYR,2024-10-11 20:29:23
+SHP-PROD0057,SHP-SKU0032,Patagonia Lightweight Cardigan,Outerwear,Patagonia,70,130,MYR,2024-10-11 20:29:23
+SHP-PROD0058,SHP-SKU0013,New Balance AirMax Running Shoes,Shoes,New Balance,50,80,MYR,2024-10-11 20:29:23
+SHP-PROD0059,SHP-SKU0036,Adidas AeroCool Yoga Pants,Activewear,Adidas,210,220,MYR,2024-10-11 20:29:23
+SHP-PROD0060,SHP-SKU0029,Champion Seamless Leggings,Activewear,Champion,40,50,MYR,2024-10-11 20:29:23
+SHP-PROD0061,SHP-SKU0043,Champion Seamless Track Jacket,Activewear,Champion,50,100,MYR,2024-10-11 20:29:23
+SHP-PROD0062,SHP-SKU0071,Converse SmoothMotion Slip-Ons,Shoes,Converse,90,150,MYR,2024-10-11 20:29:23
+SHP-PROD0063,SHP-SKU0045,Gap High-Rise Chinos,Bottoms,Gap,250,310,MYR,2024-10-11 20:29:23
+SHP-PROD0064,SHP-SKU0039,Vans SmoothMotion Slip-Ons,Shoes,Vans,80,100,MYR,2024-10-11 20:29:23
+SHP-PROD0065,SHP-SKU0085,Calvin Klein Layered Mini Dress,Dresses,Calvin Klein,210,270,MYR,2024-10-11 20:29:23
+SHP-PROD0066,SHP-SKU0004,Skechers MaxSpeed Running Shoes,Shoes,Skechers,180,230,MYR,2024-10-11 20:29:23
+SHP-PROD0067,SHP-SKU0052,Adidas SmoothFit Sweatshirt,Tops,Adidas,120,130,MYR,2024-10-11 20:29:23
+SHP-PROD0068,SHP-SKU0063,Ann Taylor ClassicCut Shift Dress,Dresses,Ann Taylor,170,200,MYR,2024-10-11 20:29:23
+SHP-PROD0069,SHP-SKU0051,Old Navy SlimCore Jeans,Bottoms,Old Navy,200,240,MYR,2024-10-11 20:29:23
+SHP-PROD0070,SHP-SKU0042,American Eagle ProStretch Cargo Pants,Bottoms,American Eagle,250,270,MYR,2024-10-11 20:29:23
+SHP-PROD0071,SHP-SKU0015,Nike GlideStep Sandals,Shoes,Nike,80,100,MYR,2024-10-11 20:29:23
+SHP-PROD0072,SHP-SKU0009,Wrangler EnduraFit Cargo Pants,Bottoms,Wrangler,110,120,MYR,2024-10-11 20:29:23
+SHP-PROD0073,SHP-SKU0027,Timberland GripLock Sandals,Shoes,Timberland,160,220,MYR,2024-10-11 20:29:23
+SHP-PROD0074,SHP-SKU0014,Levi's TaperedFit Jeans,Bottoms,Levi's,100,160,MYR,2024-10-11 20:29:23
+SHP-PROD0075,SHP-SKU0095,Reebok AirFlow Shirt,Tops,Reebok,220,280,MYR,2024-10-11 20:29:23
+SHP-PROD0076,SHP-SKU0001,Adidas AirMax Sandals,Shoes,Adidas,110,130,MYR,2024-10-11 20:29:23
+SHP-PROD0077,SHP-SKU0003,Dockers PowerStretch Skirt,Bottoms,Dockers,40,90,MYR,2024-10-11 20:29:23
+SHP-PROD0078,SHP-SKU0078,Puma MaxSpeed Sports Bra,Activewear,Puma,230,290,MYR,2024-10-11 20:29:23
+SHP-PROD0079,SHP-SKU0047,Lululemon Breathable Running Shorts,Activewear,Lululemon,60,80,MYR,2024-10-11 20:29:23
+SHP-PROD0080,SHP-SKU0065,Nike AirMax Sneakers,Shoes,Nike,210,270,MYR,2024-10-11 20:29:23

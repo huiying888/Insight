@@ -4,9 +4,10 @@ from datetime import datetime, timedelta
 from faker import Faker
 import makedirectory
 
+Faker.seed(42)
 fake = Faker()
 random.seed(42)
-Faker.seed(42)
+pd.random_state = 42
 
 malay_prefix_male = ["Md","Mohd","Muhammad","Mohammed","Abdul","Ahmad","Syed",]
 malay_prefix_female = ["Ain","Nur","Wan","Che","Siti"]
@@ -59,16 +60,16 @@ def random_customer(platform_id,x):
     name = random_name()
     phone = random_phone()
     email = random_email(name)
-    region = random.choice(["Kuala Lumpur","Selangor","Penang","Johor","Sabah","Sarawak"])
-    created_at = fake.date_time_between(start_date="-2y", end_date="now")
+    region = random.choice(states)
+    created_at = fake.date_time_between(start_date="-1y", end_date="now")
     
     return (id, name, phone, email, region, created_at)
 
 # Generate customers
-lazada_customers = [random_customer("LAZC",x+1) for x in range(100)]
-shopee_customers = [random_customer("SHPC",x+1) for x in range(100)]
-tiktok_customers = [random_customer("TIKC",x+1) for x in range(100)]
-pos_customers = [random_customer("POSC",x+1) for x in range(100)]
+lazada_customers = [random_customer("LAZC",x+1) for x in range(60)]
+shopee_customers = [random_customer("SHPC",x+1) for x in range(60)]
+tiktok_customers = [random_customer("TIKC",x+1) for x in range(60)]
+pos_customers = [random_customer("POSC",x+1) for x in range(60)]
 
 pd.DataFrame(lazada_customers, columns=["buyer_id","name","phone","email","region","created_at"]).to_csv("data/src_lazada/customers.csv", index=False)
 pd.DataFrame(shopee_customers, columns=["buyer_id","name","phone","email","region","created_at"]).to_csv("data/src_shopee/customers.csv", index=False)

@@ -5,11 +5,11 @@ from datetime import datetime, timedelta
 from faker import Faker
 import makedirectory
 
+Faker.seed(42)
 fake = Faker()
 random.seed(42)
-Faker.seed(42)
-pd.random_state = 42
 np.random.seed(42)
+pd.random_state = 42
 
 product_list = pd.read_csv("data/master_product.csv")
 
@@ -19,14 +19,14 @@ def sample_products(platform_id, num_products):
     selected_products['product_id'] = selected_products.index.map(lambda x: f"{platform_id}-PROD{x+1:04d}")
     selected_products['currency'] = "MYR"
     selected_products['sku'] = selected_products['sku'].map(lambda x: f"{platform_id}-{x}")
-    selected_products['updated_at'] = fake.date_time_between(start_date="-2y", end_date="now")
+    selected_products['updated_at'] = fake.date_time_between(start_date="-1y", end_date="now")
     selected_products = selected_products.reindex(columns=["product_id","sku","name","category","brand","cost","price","currency","updated_at"])
     return selected_products
 
 def random_inventory(products):
     df = pd.DataFrame(products['product_id'], columns=["product_id"])
     df['stock_qty'] = df['product_id'].map(lambda x: random.randint(1, 200))
-    df['updated_at'] = products['updated_at'].map(lambda x: fake.date_time_between(start_date="-2y", end_date=x))
+    df['updated_at'] = products['updated_at'].map(lambda x: fake.date_time_between(start_date="-1y", end_date=x))
     return df
 
 # Generate products for each platform

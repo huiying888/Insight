@@ -3,9 +3,10 @@ from datetime import datetime, timedelta
 import pandas as pd
 from faker import Faker
 
+Faker.seed(42)
 fake = Faker()
 random.seed(42)
-Faker.seed(42)
+pd.random_state = 42
 
 # Configuration
 receipt_lines = pd.read_csv("data/src_pos/receipt_lines.csv")

@@ -1,6 +1,8 @@
 import pandas as pd
 import makedirectory
 
+pd.random_state = 42
+
 campaigns = [
     {"campaign_id":"TIK-CAMP001","name":"Fall Fashion Showcase","start_at":"2025-08-21 00:00:00+00","end_at":"2025-09-20 15:59:59+00","budget":"5000.00"},
     {"campaign_id":"TIK-CAMP002","name":"Mega Sale Launch","start_at":"2025-08-21 02:00:00+00","end_at":"2025-08-27 15:59:59+00","budget":"3000.00"},

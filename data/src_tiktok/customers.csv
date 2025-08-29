@@ -1,101 +1,61 @@
 buyer_id,name,phone,email,region,created_at
-TIKC00000001,Khoo Chen Wei,+60182923309,khoo555@hotmail.com,Penang,2025-01-09 02:05:40
-TIKC00000002,Chan Chen Wei,+60168126042,chan265@yahoo.com,Selangor,2024-05-20 11:01:51
-TIKC00000003,Rekha A/P Sanjay,+60187294667,rekha658@gmail.com,Kuala Lumpur,2023-11-24 21:11:01
-TIKC00000004,Khoo Si Ying,+60177759017,khoo880@hotmail.com,Kuala Lumpur,2024-04-14 04:56:22
-TIKC00000005,Mani A/L Sanjay,+60147454589,mani589@yahoo.com,Johor,2024-08-01 22:18:44
-TIKC00000006,Rekha A/P Arun,+60111701277,rekha991@gmail.com,Johor,2023-12-31 01:58:29
-TIKC00000007,Mohd Rizal bin Irfan,+60162415415,mohd63@yahoo.com,Johor,2024-08-16 15:43:24
-TIKC00000008,Ng Fang Ying,+60121037129,ng541@yahoo.com,Sarawak,2023-09-01 18:11:51
-TIKC00000009,Chong Hao Ran,+60126271361,chong115@gmail.com,Penang,2025-03-13 02:28:19
-TIKC00000010,Ng Yu Xuan,+60132189092,ng369@outlook.com,Sarawak,2025-07-10 12:46:57
-TIKC00000011,Mohammed Amin bin Irfan,+60193112196,mohammed996@hotmail.com,Johor,2025-03-11 05:31:14
-TIKC00000012,Wan Fatin binti Hafiz,+60148999404,wan540@yahoo.com,Sabah,2024-03-21 19:37:41
-TIKC00000013,Chan Fang Ying,+60113761379,chan550@gmail.com,Kuala Lumpur,2024-09-22 01:18:07
-TIKC00000014,Radha A/P Prakash,+60137109104,radha50@yahoo.com,Kuala Lumpur,2025-04-13 01:42:19
-TIKC00000015,Vijay A/L Ajay,+60186618892,vijay95@hotmail.com,Penang,2024-01-16 00:00:46
-TIKC00000016,Syed Aiman bin Syafiq,+60176914630,syed98@yahoo.com,Johor,2024-09-27 13:34:22
-TIKC00000017,Md Amir bin Irfan,+60131020275,md180@hotmail.com,Penang,2025-08-08 02:18:59
-TIKC00000018,Muhammad Hakim bin Rizal,+60120564814,muhammad518@gmail.com,Johor,2023-11-20 21:20:31
-TIKC00000019,Ho Chen Wei,+60135241913,ho55@gmail.com,Kuala Lumpur,2025-07-06 09:20:34
-TIKC00000020,Che Siti binti Aiman,+60118635365,che855@hotmail.com,Kuala Lumpur,2024-12-27 22:08:27
-TIKC00000021,Tan Li Jun,+60148061744,tan98@hotmail.com,Sabah,2024-04-18 01:06:52
-TIKC00000022,Lau Jia Hui,+60147597383,lau16@yahoo.com,Johor,2025-06-13 23:33:15
-TIKC00000023,Ahmad Zulhilmi bin Hakim,+60115064138,ahmad439@yahoo.com,Johor,2025-01-07 12:34:56
-TIKC00000024,Priya A/P Deepak,+60161038657,priya604@gmail.com,Kuala Lumpur,2024-09-27 13:13:21
-TIKC00000025,Ng Xiu Lin,+60116234456,ng335@hotmail.com,Johor,2024-12-15 05:43:41
-TIKC00000026,Ain Siti binti Fazli,+60195618537,ain484@hotmail.com,Penang,2024-01-31 17:40:20
-TIKC00000027,Anil A/L Ajay,+60169035213,anil415@hotmail.com,Sabah,2023-12-26 22:49:51
-TIKC00000028,Nur Aisyah binti Haziq,+60198831712,nur22@gmail.com,Kuala Lumpur,2024-06-15 15:57:35
-TIKC00000029,Priya A/P Raj,+60185199410,priya212@gmail.com,Sarawak,2025-04-13 11:55:55
-TIKC00000030,Cheah Hao Ran,+60171070296,cheah518@outlook.com,Kuala Lumpur,2024-01-02 17:11:34
-TIKC00000031,Cheah Li Jun,+60164720999,cheah672@yahoo.com,Penang,2024-10-22 04:27:15
-TIKC00000032,Ong Wei Ming,+60124626383,ong401@gmail.com,Sarawak,2025-04-26 00:21:00
-TIKC00000033,Ng Jia Hui,+60130593040,ng552@outlook.com,Penang,2025-08-15 17:07:05
-TIKC00000034,Priya A/P Ravi,+60143480396,priya967@hotmail.com,Selangor,2024-10-15 04:12:34
-TIKC00000035,Syed Hakim bin Hakim,+60179059929,syed866@yahoo.com,Johor,2025-08-12 15:39:37
-TIKC00000036,Tan Xiu Lin,+60113930870,tan949@hotmail.com,Sabah,2023-08-30 16:21:41
-TIKC00000037,Nur Mira binti Zulhilmi,+60170029218,nur993@hotmail.com,Kuala Lumpur,2024-12-07 10:50:12
-TIKC00000038,Ng Chen Wei,+60125452267,ng188@hotmail.com,Sarawak,2024-05-08 00:24:26
-TIKC00000039,Radha A/P Raj,+60136442209,radha881@outlook.com,Sabah,2024-09-12 17:58:16
-TIKC00000040,Syed Amin bin Farid,+60127251355,syed661@yahoo.com,Kuala Lumpur,2023-09-14 08:46:24
-TIKC00000041,Sunita A/P Suresh,+60190433154,sunita747@gmail.com,Kuala Lumpur,2023-11-25 03:03:57
-TIKC00000042,Che Siti binti Rizal,+60187658617,che176@yahoo.com,Johor,2025-08-20 21:21:14
-TIKC00000043,Muhammad Ahmad bin Azman,+60161152621,muhammad356@gmail.com,Sabah,2024-06-07 04:09:08
-TIKC00000044,Sunita A/P Arun,+60182962015,sunita204@yahoo.com,Johor,2025-07-12 18:15:48
-TIKC00000045,Sunita A/P Prakash,+60164431069,sunita167@outlook.com,Kuala Lumpur,2025-06-06 05:04:10
-TIKC00000046,Goh Zhi Hao,+60141032417,goh325@gmail.com,Johor,2025-05-17 21:04:22
-TIKC00000047,Chan Xiu Lin,+60182565270,chan460@hotmail.com,Johor,2024-04-25 02:10:45
-TIKC00000048,Abdul Ahmad bin Aiman,+60121586938,abdul870@gmail.com,Johor,2024-03-03 05:24:54
-TIKC00000049,Prakash A/L Ajay,+60199374160,prakash133@yahoo.com,Johor,2023-10-14 05:30:14
-TIKC00000050,Mohd Fikri bin Farid,+60130616329,mohd337@hotmail.com,Sarawak,2024-03-04 07:52:20
-TIKC00000051,Mani A/L Prakash,+60188548709,mani125@outlook.com,Johor,2025-07-12 04:59:08
-TIKC00000052,Abdul Fikri bin Hafiz,+60129148564,abdul680@outlook.com,Johor,2024-11-12 22:00:01
-TIKC00000053,Lee Jia Hui,+60182996065,lee60@yahoo.com,Sarawak,2023-10-30 09:50:18
-TIKC00000054,Chong Wei Ming,+60174447132,chong771@hotmail.com,Johor,2023-11-04 18:23:47
-TIKC00000055,Deepak A/L Mani,+60123736785,deepak537@gmail.com,Selangor,2025-03-20 17:26:49
-TIKC00000056,Mohammed Aiman bin Fikri,+60112330307,mohammed950@gmail.com,Penang,2024-09-10 17:13:09
-TIKC00000057,Sanjay A/L Hari,+60181035797,sanjay993@yahoo.com,Johor,2025-05-25 01:28:35
-TIKC00000058,Khoo Hao Ran,+60124060293,khoo672@yahoo.com,Selangor,2023-10-22 23:54:55
-TIKC00000059,Arun A/L Sanjay,+60117229034,arun739@hotmail.com,Sarawak,2025-04-12 00:21:09
-TIKC00000060,Chong Zhi Hao,+60163748969,chong17@gmail.com,Sabah,2024-10-17 00:03:47
-TIKC00000061,Nisha A/P Ramesh,+60164171545,nisha277@hotmail.com,Sarawak,2025-04-16 01:53:20
-TIKC00000062,Sita A/P Raj,+60138309652,sita681@gmail.com,Johor,2023-12-05 22:02:47
-TIKC00000063,Mani A/L Mani,+60180993538,mani938@outlook.com,Sarawak,2023-12-07 23:05:27
-TIKC00000064,Low Li Jun,+60161724825,low237@gmail.com,Penang,2025-01-23 16:20:50
-TIKC00000065,Mohammed Fikri bin Rizal,+60175494717,mohammed897@gmail.com,Sarawak,2024-09-02 09:36:22
-TIKC00000066,Lim Zhi Hao,+60148168460,lim150@yahoo.com,Selangor,2024-10-30 06:46:56
-TIKC00000067,Ong Li Jun,+60172175250,ong472@gmail.com,Penang,2024-01-05 11:53:24
-TIKC00000068,Abdul Fikri bin Aiman,+60191296666,abdul402@outlook.com,Kuala Lumpur,2024-03-23 02:42:51
-TIKC00000069,Wan Aisyah binti Rizal,+60178300335,wan142@hotmail.com,Kuala Lumpur,2024-10-13 02:15:10
-TIKC00000070,Lee Xiu Lin,+60114478985,lee919@outlook.com,Sarawak,2025-07-07 21:01:52
-TIKC00000071,Kumar A/L Anil,+60180332309,kumar136@yahoo.com,Penang,2024-12-13 09:25:50
-TIKC00000072,Meena A/P Ajay,+60168909010,meena716@gmail.com,Kuala Lumpur,2024-07-23 21:33:48
-TIKC00000073,Low Jia Hui,+60192304618,low647@hotmail.com,Sabah,2024-02-10 17:54:18
-TIKC00000074,Ravi A/L Prakash,+60124117393,ravi861@hotmail.com,Sabah,2025-08-20 17:54:11
-TIKC00000075,Mani A/L Vijay,+60130873753,mani23@gmail.com,Sarawak,2024-10-22 02:54:29
-TIKC00000076,Siti Fatin binti Fazli,+60131811437,siti280@hotmail.com,Johor,2025-04-07 20:51:51
-TIKC00000077,Syed Ahmad bin Zulhilmi,+60165561100,syed689@yahoo.com,Sarawak,2025-03-19 04:36:06
-TIKC00000078,Che Izzati binti Amir,+60125521667,che865@hotmail.com,Johor,2025-02-16 01:45:55
-TIKC00000079,Mani A/L Ajay,+60131202169,mani831@outlook.com,Sabah,2024-02-02 11:25:41
-TIKC00000080,Mani A/L Anil,+60179027716,mani57@outlook.com,Kuala Lumpur,2025-03-06 00:01:57
-TIKC00000081,Siti Huda binti Amin,+60145889163,siti364@outlook.com,Sarawak,2024-04-28 08:30:48
-TIKC00000082,Sanjay A/L Sanjay,+60110287721,sanjay338@outlook.com,Selangor,2024-07-05 03:27:21
-TIKC00000083,Siti Farah binti Syafiq,+60186317797,siti887@gmail.com,Johor,2025-02-01 22:51:10
-TIKC00000084,Ong Jing Yi,+60111660880,ong820@gmail.com,Sabah,2025-01-16 00:18:20
-TIKC00000085,Divya A/P Prakash,+60147550375,divya743@outlook.com,Sarawak,2024-06-15 06:45:47
-TIKC00000086,Teo Mei Ling,+60115548851,teo928@gmail.com,Selangor,2024-08-04 12:28:40
-TIKC00000087,Wong Mei Ling,+60126373516,wong958@gmail.com,Sarawak,2025-07-28 23:43:21
-TIKC00000088,Rekha A/P Hari,+60199827080,rekha868@outlook.com,Sabah,2024-10-05 06:00:48
-TIKC00000089,Lee Jing Yi,+60132169958,lee438@outlook.com,Sabah,2024-08-14 22:00:44
-TIKC00000090,Sita A/P Mani,+60174722698,sita873@hotmail.com,Sarawak,2023-12-02 05:22:56
-TIKC00000091,Low Fang Ying,+60143394522,low737@hotmail.com,Kuala Lumpur,2024-03-09 18:59:46
-TIKC00000092,Asha A/P Ramesh,+60188460810,asha158@outlook.com,Kuala Lumpur,2024-02-20 18:21:45
-TIKC00000093,Anil A/L Anil,+60134420438,anil377@gmail.com,Johor,2023-10-18 23:13:47
-TIKC00000094,Ahmad Syafiq bin Zulhilmi,+60148638406,ahmad436@outlook.com,Sarawak,2024-05-18 20:04:20
-TIKC00000095,Md Hakim bin Amir,+60149735989,md804@yahoo.com,Sarawak,2023-09-15 13:48:27
-TIKC00000096,Kumar A/L Ajay,+60122281606,kumar579@hotmail.com,Penang,2024-11-29 04:34:11
-TIKC00000097,Mohammed Hakim bin Rizal,+60130259094,mohammed818@outlook.com,Sabah,2024-11-02 11:32:46
-TIKC00000098,Low Mei Ling,+60138182688,low104@outlook.com,Penang,2024-02-24 23:21:00
-TIKC00000099,Wan Farah binti Fikri,+60198015739,wan991@yahoo.com,Kuala Lumpur,2024-11-29 07:01:09
-TIKC00000100,Anil A/L Ravi,+60184840858,anil508@outlook.com,Kuala Lumpur,2024-02-17 06:51:00
+TIKC00000001,Syed Aiman bin Syafiq,+60165115447,syed180@outlook.com,Terengganu,2025-04-02 21:57:25
+TIKC00000002,Khoo Hao Ran,+60179640165,khoo985@yahoo.com,Kuala Lumpur,2024-11-22 21:46:15
+TIKC00000003,Syed Fazli bin Ahmad,+60131355690,syed705@yahoo.com,Perak,2025-05-22 11:52:35
+TIKC00000004,Anil A/L Ravi,+60138565431,anil763@gmail.com,Penang,2025-01-02 13:20:35
+TIKC00000005,Low Xiu Lin,+60164739473,low148@gmail.com,Perlis,2025-07-22 22:45:30
+TIKC00000006,Che Nurul binti Fikri,+60175188442,che822@yahoo.com,Sarawak,2025-06-24 00:00:38
+TIKC00000007,Wong Yu Xuan,+60133705895,wong832@outlook.com,Pahang,2025-06-26 23:39:09
+TIKC00000008,Md Amir bin Haziq,+60198669125,md470@gmail.com,Perak,2024-09-20 08:11:19
+TIKC00000009,Sanjay A/L Anil,+60132680182,sanjay178@hotmail.com,Penang,2024-11-26 13:41:30
+TIKC00000010,Muhammad Syafiq bin Rizal,+60161438424,muhammad524@gmail.com,Kelantan,2025-07-14 18:33:52
+TIKC00000011,Mohd Aiman bin Irfan,+60179001094,mohd795@yahoo.com,Kedah,2024-09-11 02:00:18
+TIKC00000012,Ong Si Ying,+60164736471,ong171@gmail.com,Perak,2025-07-08 06:22:47
+TIKC00000013,Chong Chen Wei,+60135556258,chong336@gmail.com,Johor,2024-12-30 03:02:40
+TIKC00000014,Wong Li Jun,+60120469632,wong966@hotmail.com,Kedah,2025-02-01 09:56:09
+TIKC00000015,Kumar A/L Hari,+60197470168,kumar999@outlook.com,Johor,2024-12-11 14:20:06
+TIKC00000016,Ain Liyana binti Fazli,+60194801624,ain792@hotmail.com,Negeri Sembilan,2024-09-24 07:43:54
+TIKC00000017,Goh Yue Ying,+60145841687,goh855@hotmail.com,Kedah,2024-11-19 13:18:42
+TIKC00000018,Ravi A/L Mani,+60175852398,ravi522@outlook.com,Kuala Lumpur,2025-08-19 05:51:16
+TIKC00000019,Wan Mira binti Fazli,+60192982595,wan412@yahoo.com,Kedah,2025-04-06 21:18:37
+TIKC00000020,Suresh A/L Prakash,+60199470551,suresh607@outlook.com,Sabah,2025-08-04 23:08:50
+TIKC00000021,Sunita A/P Ajay,+60119749930,sunita184@outlook.com,Pahang,2025-06-04 10:15:18
+TIKC00000022,Teo Mei Ling,+60119130756,teo432@yahoo.com,Terengganu,2024-12-29 19:49:10
+TIKC00000023,Abdul Rizal bin Fazli,+60112838578,abdul331@outlook.com,Penang,2024-11-20 04:37:55
+TIKC00000024,Teo Yu Xuan,+60169733484,teo974@yahoo.com,Sabah,2025-05-11 03:56:25
+TIKC00000025,Sunita A/P Deepak,+60195758441,sunita927@outlook.com,Negeri Sembilan,2025-03-11 11:58:54
+TIKC00000026,Rekha A/P Kumar,+60160415747,rekha216@yahoo.com,Perlis,2025-01-30 06:21:56
+TIKC00000027,Lee Xiu Lin,+60143083301,lee348@outlook.com,Terengganu,2025-08-08 04:39:13
+TIKC00000028,Lee Wei Ming,+60136773454,lee939@gmail.com,Melaka,2025-08-19 19:00:37
+TIKC00000029,Abdul Hakim bin Hakim,+60112620672,abdul907@hotmail.com,Kuala Lumpur,2025-05-06 06:37:22
+TIKC00000030,Md Rizal bin Azman,+60167887287,md207@hotmail.com,Melaka,2025-02-23 19:37:06
+TIKC00000031,Che Fatin binti Amir,+60130549329,che856@outlook.com,Negeri Sembilan,2024-10-24 02:28:08
+TIKC00000032,Teo Xiu Lin,+60132753046,teo467@yahoo.com,Melaka,2024-12-10 11:40:16
+TIKC00000033,Siti Huda binti Amin,+60114530174,siti425@yahoo.com,Kelantan,2024-10-22 20:15:29
+TIKC00000034,Khoo Yu Xuan,+60161459332,khoo166@outlook.com,Perak,2024-12-03 09:32:38
+TIKC00000035,Meena A/P Deepak,+60198339187,meena89@hotmail.com,Kedah,2025-06-14 22:36:35
+TIKC00000036,Abdul Farid bin Amin,+60132587139,abdul103@outlook.com,Pahang,2025-04-04 15:08:21
+TIKC00000037,Lee Yue Ying,+60187908740,lee270@outlook.com,Perlis,2025-03-26 22:26:29
+TIKC00000038,Ain Aisyah binti Haziq,+60171801704,ain194@outlook.com,Melaka,2024-12-09 15:44:18
+TIKC00000039,Ahmad Irfan bin Haziq,+60176766182,ahmad131@hotmail.com,Penang,2025-06-15 17:28:57
+TIKC00000040,Kumar A/L Deepak,+60140047868,kumar853@outlook.com,Johor,2025-04-13 15:32:43
+TIKC00000041,Wan Farah binti Rizal,+60120690331,wan618@gmail.com,Kuala Lumpur,2025-02-12 00:06:06
+TIKC00000042,Ho Wei Ming,+60140673830,ho525@yahoo.com,Sabah,2025-08-13 07:07:29
+TIKC00000043,Abdul Azman bin Amin,+60173428364,abdul72@hotmail.com,Pahang,2025-04-13 05:43:48
+TIKC00000044,Priya A/P Ajay,+60188705685,priya428@outlook.com,Penang,2025-01-31 17:29:30
+TIKC00000045,Siti Nadia binti Farid,+60144270866,siti407@yahoo.com,Johor,2025-01-17 04:51:38
+TIKC00000046,Ain Nadia binti Zulhilmi,+60171830469,ain904@gmail.com,Selangor,2024-11-22 19:01:36
+TIKC00000047,Ahmad Irfan bin Syafiq,+60147354033,ahmad774@gmail.com,Melaka,2024-10-22 08:09:16
+TIKC00000048,Goh Jing Yi,+60146385467,goh325@hotmail.com,Sabah,2025-03-15 11:56:18
+TIKC00000049,Lau Jing Yi,+60195355609,lau769@yahoo.com,Penang,2025-03-09 06:42:36
+TIKC00000050,Abdul Amin bin Hakim,+60184235369,abdul521@yahoo.com,Pahang,2024-10-03 22:08:46
+TIKC00000051,Chan Yu Xuan,+60197725228,chan198@outlook.com,Pahang,2025-06-19 03:12:34
+TIKC00000052,Divya A/P Arun,+60120062312,divya233@gmail.com,Pahang,2024-09-16 21:57:56
+TIKC00000053,Cheah Chen Wei,+60197008860,cheah552@gmail.com,Terengganu,2025-07-30 00:52:12
+TIKC00000054,Md Syafiq bin Zulhilmi,+60182118233,md844@hotmail.com,Sarawak,2024-10-11 04:48:47
+TIKC00000055,Wan Aina binti Fazli,+60143410166,wan575@outlook.com,Perak,2024-10-27 23:23:36
+TIKC00000056,Nur Nurul binti Fazli,+60185918033,nur287@outlook.com,Kuala Lumpur,2025-04-30 07:01:48
+TIKC00000057,Sita A/P Prakash,+60112503926,sita316@gmail.com,Penang,2024-10-30 17:56:58
+TIKC00000058,Teo Si Ying,+60176218501,teo247@outlook.com,Perlis,2025-07-03 05:31:26
+TIKC00000059,Abdul Amin bin Haziq,+60170477358,abdul452@outlook.com,Penang,2025-05-20 21:21:13
+TIKC00000060,Lakshmi A/P Anil,+60163114262,lakshmi334@outlook.com,Sarawak,2025-02-09 13:37:30

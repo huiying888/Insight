@@ -1,51 +1,51 @@
 product_id,sku,name,category,brand,cost,price,currency,updated_at
-TIK-PROD0001,TIK-SKU0049,Under Armour Seamless Yoga Pants,Activewear,Under Armour,80,110,MYR,2023-09-18 15:56:05
-TIK-PROD0002,TIK-SKU0029,Nike PowerMesh Track Jacket,Activewear,Nike,40,50,MYR,2023-09-18 15:56:05
-TIK-PROD0003,TIK-SKU0086,Nike BounceFlex Track Jacket,Activewear,Nike,120,160,MYR,2023-09-18 15:56:05
-TIK-PROD0004,TIK-SKU0084,Marmot Lightweight Cardigan,Outerwear,Marmot,220,260,MYR,2023-09-18 15:56:05
-TIK-PROD0005,TIK-SKU0015,Converse GlideStep Sneakers,Shoes,Converse,80,100,MYR,2023-09-18 15:56:05
-TIK-PROD0006,TIK-SKU0010,Vans GripLock Running Shoes,Shoes,Vans,150,180,MYR,2023-09-18 15:56:05
-TIK-PROD0007,TIK-SKU0043,Nike PowerMesh Running Shorts,Activewear,Nike,50,100,MYR,2023-09-18 15:56:05
-TIK-PROD0008,TIK-SKU0022,Reebok Cropped Blouse,Tops,Reebok,240,290,MYR,2023-09-18 15:56:05
-TIK-PROD0009,TIK-SKU0076,Reebok Dri-FIT Polo Shirt,Tops,Reebok,90,150,MYR,2023-09-18 15:56:05
-TIK-PROD0010,TIK-SKU0094,Ralph Lauren Contemporary Shift Dress,Dresses,Ralph Lauren,260,270,MYR,2023-09-18 15:56:05
-TIK-PROD0011,TIK-SKU0045,Gap CoreFlex Jeans,Bottoms,Gap,250,310,MYR,2023-09-18 15:56:05
-TIK-PROD0012,TIK-SKU0027,New Balance FreshFoam Sneakers,Shoes,New Balance,160,220,MYR,2023-09-18 15:56:05
-TIK-PROD0013,TIK-SKU0061,Lee FlexLite Shorts,Bottoms,Lee,60,90,MYR,2023-09-18 15:56:05
-TIK-PROD0014,TIK-SKU0013,Nike Ultraboost Running Shoes,Shoes,Nike,50,80,MYR,2023-09-18 15:56:05
-TIK-PROD0015,TIK-SKU0021,Calvin Klein Lightweight Parka,Outerwear,Calvin Klein,120,170,MYR,2023-09-18 15:56:05
-TIK-PROD0016,TIK-SKU0047,Under Armour SkinFit Leggings,Activewear,Under Armour,60,80,MYR,2023-09-18 15:56:05
-TIK-PROD0017,TIK-SKU0046,Adidas TrueShape Tank Top,Tops,Adidas,220,230,MYR,2023-09-18 15:56:05
-TIK-PROD0018,TIK-SKU0041,Puma HeatGear Running Shorts,Activewear,Puma,90,100,MYR,2023-09-18 15:56:05
-TIK-PROD0019,TIK-SKU0014,Wrangler High-Rise Shorts,Bottoms,Wrangler,100,160,MYR,2023-09-18 15:56:05
-TIK-PROD0020,TIK-SKU0062,The North Face UtilityStyle Coat,Outerwear,The North Face,40,50,MYR,2023-09-18 15:56:05
-TIK-PROD0021,TIK-SKU0054,Adidas CoolTouch Shirt,Tops,Adidas,80,130,MYR,2023-09-18 15:56:05
-TIK-PROD0022,TIK-SKU0051,Levi's Distressed Shorts,Bottoms,Levi's,200,240,MYR,2023-09-18 15:56:05
-TIK-PROD0023,TIK-SKU0072,New Balance SpeedTech Sneakers,Shoes,New Balance,60,80,MYR,2023-09-18 15:56:05
-TIK-PROD0024,TIK-SKU0095,Tommy Hilfiger SkinFit Blouse,Tops,Tommy Hilfiger,220,280,MYR,2023-09-18 15:56:05
-TIK-PROD0025,TIK-SKU0058,Lee SlimCore Jeans,Bottoms,Lee,140,180,MYR,2023-09-18 15:56:05
-TIK-PROD0026,TIK-SKU0006,Guess Ruched Midi Dress,Dresses,Guess,70,100,MYR,2023-09-18 15:56:05
-TIK-PROD0027,TIK-SKU0004,Timberland SmoothMotion Running Shoes,Shoes,Timberland,180,230,MYR,2023-09-18 15:56:05
-TIK-PROD0028,TIK-SKU0008,Timberland GripLock Boots,Shoes,Timberland,100,160,MYR,2023-09-18 15:56:05
-TIK-PROD0029,TIK-SKU0085,Calvin Klein Layered Midi Dress,Dresses,Calvin Klein,210,270,MYR,2023-09-18 15:56:05
-TIK-PROD0030,TIK-SKU0078,Champion MotionWeave Sports Bra,Activewear,Champion,230,290,MYR,2023-09-18 15:56:05
-TIK-PROD0031,TIK-SKU0063,Guess Ruched Shift Dress,Dresses,Guess,170,200,MYR,2023-09-18 15:56:05
-TIK-PROD0032,TIK-SKU0034,The North Face Quilted Cardigan,Outerwear,The North Face,110,130,MYR,2023-09-18 15:56:05
-TIK-PROD0033,TIK-SKU0066,Converse AirMax Sneakers,Shoes,Converse,230,260,MYR,2023-09-18 15:56:05
-TIK-PROD0034,TIK-SKU0083,Columbia UtilityStyle Hoodie,Outerwear,Columbia,170,180,MYR,2023-09-18 15:56:05
-TIK-PROD0035,TIK-SKU0089,Patagonia Oversized Jacket,Outerwear,Patagonia,50,80,MYR,2023-09-18 15:56:05
-TIK-PROD0036,TIK-SKU0087,Ann Taylor Floral Midi Dress,Dresses,Ann Taylor,90,130,MYR,2023-09-18 15:56:05
-TIK-PROD0037,TIK-SKU0048,Marmot Lightweight Coat,Outerwear,Marmot,230,290,MYR,2023-09-18 15:56:05
-TIK-PROD0038,TIK-SKU0082,Old Navy CoreFlex Skirt,Bottoms,Old Navy,80,140,MYR,2023-09-18 15:56:05
-TIK-PROD0039,TIK-SKU0088,Adidas RapidDry Running Shorts,Activewear,Adidas,220,280,MYR,2023-09-18 15:56:05
-TIK-PROD0040,TIK-SKU0009,American Eagle TaperedFit Cargo Pants,Bottoms,American Eagle,110,120,MYR,2023-09-18 15:56:05
-TIK-PROD0041,TIK-SKU0093,Lee Distressed Cargo Pants,Bottoms,Lee,220,240,MYR,2023-09-18 15:56:05
-TIK-PROD0042,TIK-SKU0037,Old Navy CoreFlex Trousers,Bottoms,Old Navy,190,210,MYR,2023-09-18 15:56:05
-TIK-PROD0043,TIK-SKU0005,Reebok AirFlow Shirt,Tops,Reebok,170,200,MYR,2023-09-18 15:56:05
-TIK-PROD0044,TIK-SKU0012,Old Navy EnduraFit Trousers,Bottoms,Old Navy,120,180,MYR,2023-09-18 15:56:05
-TIK-PROD0045,TIK-SKU0060,Old Navy EnduraFit Shorts,Bottoms,Old Navy,130,150,MYR,2023-09-18 15:56:05
-TIK-PROD0046,TIK-SKU0100,Levi's ProStretch Skirt,Bottoms,Levi's,120,170,MYR,2023-09-18 15:56:05
-TIK-PROD0047,TIK-SKU0026,Nike AeroCool Running Shorts,Activewear,Nike,230,270,MYR,2023-09-18 15:56:05
-TIK-PROD0048,TIK-SKU0079,Puma SkinFit Athletic Tee,Activewear,Puma,190,230,MYR,2023-09-18 15:56:05
-TIK-PROD0049,TIK-SKU0007,Puma TrueShape Tank Top,Tops,Puma,70,110,MYR,2023-09-18 15:56:05
-TIK-PROD0050,TIK-SKU0035,Lee MotionFlex Shorts,Bottoms,Lee,180,200,MYR,2023-09-18 15:56:05
+TIK-PROD0001,TIK-SKU0049,Lululemon SkinFit Athletic Tee,Activewear,Lululemon,80,110,MYR,2024-09-08 07:55:34
+TIK-PROD0002,TIK-SKU0029,Champion Seamless Leggings,Activewear,Champion,40,50,MYR,2024-09-08 07:55:34
+TIK-PROD0003,TIK-SKU0086,Champion PowerMesh Leggings,Activewear,Champion,120,160,MYR,2024-09-08 07:55:34
+TIK-PROD0004,TIK-SKU0084,The North Face UtilityStyle Cardigan,Outerwear,The North Face,220,260,MYR,2024-09-08 07:55:34
+TIK-PROD0005,TIK-SKU0015,Nike GlideStep Sandals,Shoes,Nike,80,100,MYR,2024-09-08 07:55:34
+TIK-PROD0006,TIK-SKU0010,Vans LightMotion Running Shoes,Shoes,Vans,150,180,MYR,2024-09-08 07:55:34
+TIK-PROD0007,TIK-SKU0043,Champion Seamless Track Jacket,Activewear,Champion,50,100,MYR,2024-09-08 07:55:34
+TIK-PROD0008,TIK-SKU0022,Under Armour SmoothFit Shirt,Tops,Under Armour,240,290,MYR,2024-09-08 07:55:34
+TIK-PROD0009,TIK-SKU0076,Under Armour QuickDry Polo Shirt,Tops,Under Armour,90,150,MYR,2024-09-08 07:55:34
+TIK-PROD0010,TIK-SKU0094,Banana Republic Ruched Shift Dress,Dresses,Banana Republic,260,270,MYR,2024-09-08 07:55:34
+TIK-PROD0011,TIK-SKU0045,Gap High-Rise Chinos,Bottoms,Gap,250,310,MYR,2024-09-08 07:55:34
+TIK-PROD0012,TIK-SKU0027,Timberland GripLock Sandals,Shoes,Timberland,160,220,MYR,2024-09-08 07:55:34
+TIK-PROD0013,TIK-SKU0061,Lee FlexLite Jeans,Bottoms,Lee,60,90,MYR,2024-09-08 07:55:34
+TIK-PROD0014,TIK-SKU0013,New Balance AirMax Running Shoes,Shoes,New Balance,50,80,MYR,2024-09-08 07:55:34
+TIK-PROD0015,TIK-SKU0021,Calvin Klein UtilityStyle Sweater,Outerwear,Calvin Klein,120,170,MYR,2024-09-08 07:55:34
+TIK-PROD0016,TIK-SKU0047,Lululemon Breathable Running Shorts,Activewear,Lululemon,60,80,MYR,2024-09-08 07:55:34
+TIK-PROD0017,TIK-SKU0046,Adidas Ribbed T-Shirt,Tops,Adidas,220,230,MYR,2024-09-08 07:55:34
+TIK-PROD0018,TIK-SKU0041,Nike RapidDry Track Jacket,Activewear,Nike,90,100,MYR,2024-09-08 07:55:34
+TIK-PROD0019,TIK-SKU0014,Levi's TaperedFit Jeans,Bottoms,Levi's,100,160,MYR,2024-09-08 07:55:34
+TIK-PROD0020,TIK-SKU0062,Tommy Hilfiger StormProof Hoodie,Outerwear,Tommy Hilfiger,40,50,MYR,2024-09-08 07:55:34
+TIK-PROD0021,TIK-SKU0054,Adidas CoolTouch Tank Top,Tops,Adidas,80,130,MYR,2024-09-08 07:55:34
+TIK-PROD0022,TIK-SKU0051,Old Navy SlimCore Jeans,Bottoms,Old Navy,200,240,MYR,2024-09-08 07:55:34
+TIK-PROD0023,TIK-SKU0072,Timberland SpeedForm Sandals,Shoes,Timberland,60,80,MYR,2024-09-08 07:55:34
+TIK-PROD0024,TIK-SKU0095,Reebok AirFlow Shirt,Tops,Reebok,220,280,MYR,2024-09-08 07:55:34
+TIK-PROD0025,TIK-SKU0058,Lee ActiveDry Chinos,Bottoms,Lee,140,180,MYR,2024-09-08 07:55:34
+TIK-PROD0026,TIK-SKU0006,Ann Taylor ClassicCut Mini Dress,Dresses,Ann Taylor,70,100,MYR,2024-09-08 07:55:34
+TIK-PROD0027,TIK-SKU0004,Skechers MaxSpeed Running Shoes,Shoes,Skechers,180,230,MYR,2024-09-08 07:55:34
+TIK-PROD0028,TIK-SKU0008,Skechers LightMotion Sneakers,Shoes,Skechers,100,160,MYR,2024-09-08 07:55:34
+TIK-PROD0029,TIK-SKU0085,Calvin Klein Layered Mini Dress,Dresses,Calvin Klein,210,270,MYR,2024-09-08 07:55:34
+TIK-PROD0030,TIK-SKU0078,Puma MaxSpeed Sports Bra,Activewear,Puma,230,290,MYR,2024-09-08 07:55:34
+TIK-PROD0031,TIK-SKU0063,Ann Taylor ClassicCut Shift Dress,Dresses,Ann Taylor,170,200,MYR,2024-09-08 07:55:34
+TIK-PROD0032,TIK-SKU0034,Tommy Hilfiger Padded Cardigan,Outerwear,Tommy Hilfiger,110,130,MYR,2024-09-08 07:55:34
+TIK-PROD0033,TIK-SKU0066,Nike FreshFoam Sandals,Shoes,Nike,230,260,MYR,2024-09-08 07:55:34
+TIK-PROD0034,TIK-SKU0083,Marmot StormProof Jacket,Outerwear,Marmot,170,180,MYR,2024-09-08 07:55:34
+TIK-PROD0035,TIK-SKU0089,Columbia StormGuard Coat,Outerwear,Columbia,50,80,MYR,2024-09-08 07:55:34
+TIK-PROD0036,TIK-SKU0087,Tommy Hilfiger Sculpted Mini Dress,Dresses,Tommy Hilfiger,90,130,MYR,2024-09-08 07:55:34
+TIK-PROD0037,TIK-SKU0048,The North Face UtilityStyle Hoodie,Outerwear,The North Face,230,290,MYR,2024-09-08 07:55:34
+TIK-PROD0038,TIK-SKU0082,Dockers High-Rise Trousers,Bottoms,Dockers,80,140,MYR,2024-09-08 07:55:34
+TIK-PROD0039,TIK-SKU0088,Adidas MotionWeave Track Jacket,Activewear,Adidas,220,280,MYR,2024-09-08 07:55:34
+TIK-PROD0040,TIK-SKU0009,Wrangler EnduraFit Cargo Pants,Bottoms,Wrangler,110,120,MYR,2024-09-08 07:55:34
+TIK-PROD0041,TIK-SKU0093,Lee SlimCore Cargo Pants,Bottoms,Lee,220,240,MYR,2024-09-08 07:55:34
+TIK-PROD0042,TIK-SKU0037,Dockers High-Rise Shorts,Bottoms,Dockers,190,210,MYR,2024-09-08 07:55:34
+TIK-PROD0043,TIK-SKU0005,Under Armour Cropped Tank Top,Tops,Under Armour,170,200,MYR,2024-09-08 07:55:34
+TIK-PROD0044,TIK-SKU0012,Dockers MotionFlex Shorts,Bottoms,Dockers,120,180,MYR,2024-09-08 07:55:34
+TIK-PROD0045,TIK-SKU0060,Dockers MotionFlex Jeans,Bottoms,Dockers,130,150,MYR,2024-09-08 07:55:34
+TIK-PROD0046,TIK-SKU0100,Old Navy PowerStretch Trousers,Bottoms,Old Navy,120,170,MYR,2024-09-08 07:55:34
+TIK-PROD0047,TIK-SKU0026,Champion HyperDry Track Jacket,Activewear,Champion,230,270,MYR,2024-09-08 07:55:34
+TIK-PROD0048,TIK-SKU0079,Nike Breathable Yoga Pants,Activewear,Nike,190,230,MYR,2024-09-08 07:55:34
+TIK-PROD0049,TIK-SKU0007,Tommy Hilfiger Ribbed T-Shirt,Tops,Tommy Hilfiger,70,110,MYR,2024-09-08 07:55:34
+TIK-PROD0050,TIK-SKU0035,Lee CoreFlex Jeans,Bottoms,Lee,180,200,MYR,2024-09-08 07:55:34

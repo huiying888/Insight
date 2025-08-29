@@ -5,9 +5,9 @@ from datetime import datetime, timedelta
 from faker import Faker
 import makedirectory
 
+Faker.seed(42)
 fake = Faker()
 random.seed(42)
-Faker.seed(42)
 pd.random_state = 42
 np.random.seed(42)
 
@@ -44,52 +44,91 @@ refund_reasons = [
     "Unauthorized Purchase",
     "Other"
 ]
-    
-def generate_orders(platform_id, products_df, num_orders):
-    j=1
-    for i in range(1, num_orders + 1):
+
+def generate_orders(platform_id, products_df, customers_df, min_orders):
+    """
+    Generate orders:
+    1. Always create a minimum number of random orders.
+    2. Ensure all customers appear at least once.
+    """
+    all_orders, i, j = pd.DataFrame(), 1, 1
+    customer_ids = customers_df["buyer_id"].tolist()
+
+    # helper to create one order for a given buyer
+    def create_order(buyer_id, order_idx, item_idx):
         num_items = random.randint(1, 5)
-        order_items = products_df.sample(n=num_items).reset_index(drop=True)[['product_id','name','sku','category','price']]
-        order_items['order_id'] = f"{platform_id}-ORD{i:08d}"
-        for x in order_items.index:
-            order_items.loc[x,'item_id'] = f"{platform_id}-ITEM{j:08d}"
-            j+=1
-        order_items['qty'] = order_items['product_id'].map(lambda x: random.randint(1, 3))
-        order_items['discount'] = order_items['price'].map(lambda x: np.random.randint(0,10) if x > 50 else 0)
-        order_items['shipping_fee'] = order_items['price'].map(lambda x: 0 if x > 75 else np.random.randint(0,15))
-        order_items['tax'] = order_items.apply(lambda x: round(x['price'] * x['qty'] * 0.06, 2), axis=1)
-        order_items = order_items.reindex(columns=['order_id','item_id','product_id','name','category','sku','qty','price','discount','shipping_fee','tax'])
-        order_items.rename(columns={'name':'product_name'}, inplace=True)
+        order_items = products_df.sample(n=num_items).reset_index(drop=True)
+        order_items = order_items[["product_id","name","sku","category","price"]].copy()
+        order_items["order_id"] = f"{platform_id}-ORD{order_idx:08d}"
+        order_items["buyer_id"] = buyer_id
+        order_items["item_id"] = [
+            f"{platform_id}-ITEM{k:08d}" for k in range(item_idx, item_idx + num_items)
+        ]
+        order_items["qty"] = [random.randint(1, 3) for _ in range(num_items)]
+        order_items["discount"] = order_items["price"].apply(
+            lambda x: np.random.randint(0, 10) if x > 50 else 0
+        )
+        order_items["shipping_fee"] = order_items["price"].apply(
+            lambda x: 0 if x > 75 else np.random.randint(0, 15)
+        )
+        order_items["tax"] = (order_items["price"] * order_items["qty"] * 0.06).round(2)
+        order_items.rename(columns={"name": "product_name"}, inplace=True)
+        return order_items, order_idx + 1, item_idx + num_items
 
-        if i == 1:
-            all_orders = order_items
-        else:
-            all_orders = pd.concat([all_orders, order_items], ignore_index=True)
+    # Phase 1: generate min_orders
+    for _ in range(min_orders):
+        order_items, i, j = create_order(random.choice(customer_ids), i, j)
+        all_orders = pd.concat([all_orders, order_items], ignore_index=True)
 
-    return all_orders
+    # Phase 2 & 3: handle missing customers
+    missing = set(customer_ids) - set(all_orders["buyer_id"])
+    for buyer_id in missing:
+        order_items, i, j = create_order(buyer_id, i, j)
+        all_orders = pd.concat([all_orders, order_items], ignore_index=True)
 
-def generate_receipt(products_df, num_orders):
-    j=1
-    for i in range(1, num_orders + 1):
+    return all_orders.reindex(columns=["order_id","item_id","product_id","product_name","category","sku","qty","price","discount","shipping_fee","tax"])
+
+def generate_receipts(products_df, customers_df, min_receipts=50):
+    """
+    Generate receipts:
+    1. Always create a minimum number of random receipts.
+    2. Ensure all customers appear at least once.
+    """
+    all_receipts, i, j = pd.DataFrame(), 1, 1
+    customer_ids = customers_df["customer_id"].tolist()
+
+    # helper: create a receipt for one customer
+    def create_receipt(customer_id, receipt_idx, line_idx):
         num_items = random.randint(1, 5)
-        receipt_items = products_df.sample(n=num_items).reset_index(drop=True)[['product_id','name','sku','category','price']]
-        receipt_items['receipt_id'] = f"REC{i:08d}"
-        for x in receipt_items.index:
-            receipt_items.loc[x,'line_id'] = f"LINE{j:08d}"
-            j+=1
-        receipt_items['qty'] = receipt_items['product_id'].map(lambda x: random.randint(1, 3))
-        receipt_items['line_discount'] = receipt_items['price'].map(lambda x: np.random.randint(0,10) if x > 50 else 0)
-        receipt_items['line_tax'] = receipt_items.apply(lambda x: round(x['price'] * x['qty'] * 0.06, 2), axis=1)
-        receipt_items['line_total'] = receipt_items.apply(lambda x: round(x['price'] * x['qty'] + x['line_tax'], 2), axis=1)
-        receipt_items = receipt_items.reindex(columns=['receipt_id','line_id','product_id','name','category','sku','qty','price','line_discount','line_tax'])
-        receipt_items.rename(columns={'name':'product_name','price':'unit_price'}, inplace=True)
+        receipt_items = products_df.sample(n=num_items).reset_index(drop=True)
+        receipt_items = receipt_items[["product_id","name","sku","category","price"]].copy()
+        receipt_items["receipt_id"] = f"REC{receipt_idx:08d}"
+        receipt_items["customer_id"] = customer_id
+        receipt_items["line_id"] = [
+            f"LINE{k:08d}" for k in range(line_idx, line_idx + num_items)
+        ]
+        receipt_items["qty"] = [random.randint(1, 3) for _ in range(num_items)]
+        receipt_items["line_discount"] = receipt_items["price"].apply(
+            lambda x: np.random.randint(0, 10) if x > 50 else 0
+        )
+        receipt_items["line_tax"] = (receipt_items["price"] * receipt_items["qty"] * 0.06).round(2)
+        receipt_items["line_total"] = (receipt_items["price"] * receipt_items["qty"] + receipt_items["line_tax"]).round(2)
+        receipt_items.rename(columns={"name": "product_name","price": "unit_price"}, inplace=True)
+        return receipt_items, receipt_idx + 1, line_idx + num_items
 
-        if i == 1:
-            all_orders = receipt_items
-        else:
-            all_orders = pd.concat([all_orders, receipt_items], ignore_index=True)
+    # Phase 1: minimum random receipts
+    for _ in range(min_receipts):
+        receipt_items, i, j = create_receipt(random.choice(customer_ids), i, j)
+        all_receipts = pd.concat([all_receipts, receipt_items], ignore_index=True)
 
-    return all_orders
+    # Phase 2 + 3: handle missing customers
+    missing = set(customer_ids) - set(all_receipts["customer_id"])
+    for customer_id in missing:
+        receipt_items, i, j = create_receipt(customer_id, i, j)
+        all_receipts = pd.concat([all_receipts, receipt_items], ignore_index=True)
+
+    return all_receipts.reindex(columns=["receipt_id","line_id","product_id","product_name","category","sku","qty","unit_price","line_discount","line_tax","line_total"])
+
 
 def calculate_orders(order_items, customers_df):
     for x in order_items['order_id'].unique():
@@ -196,10 +235,10 @@ def assign_campaigns_influencers(orders_df, campaigns_df, influencers_df):
     orders_df = orders_df.reindex(columns=['order_id','buyer_id','created_at','updated_at','status','currency','total_amount','shipping_fee','tax_total','voucher_amount','campaign_id','influencer_id','market_region'])
     return orders_df
 
-laz_order_items = generate_orders("LAZ", lazada_products, 100)
-shp_order_items = generate_orders("SHP", shopee_products, 100)
-tik_order_items = generate_orders("TIK", tiktok_products, 100)
-pos_receipt_lines = generate_receipt(pos_products, 100)
+laz_order_items = generate_orders("LAZ", lazada_products, lazada_customers, 100)
+shp_order_items = generate_orders("SHP", shopee_products, shopee_customers, 100)
+tik_order_items = generate_orders("TIK", tiktok_products, tiktok_customers, 100)
+pos_receipt_lines = generate_receipts(pos_products, pos_customers, 100)
 
 laz_orders = calculate_orders(laz_order_items, lazada_customers)
 shp_orders = calculate_orders(shp_order_items, shopee_customers)
