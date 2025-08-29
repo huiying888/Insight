@@ -83,8 +83,12 @@ Learnings:
 ## 👥 Team LaiChai
 
 - [@huiying888](https://github.com/huiying888)
+- [@kerjing0328](https://github.com/kerjing0328)
+- [@sia1010](https://github.com/sia1010)
+- [@Yijen10](https://github.com/Yijen10)
+- [@rav-pixel-cpu](https://github.com/rav-pixel-cpu)
 
-
+---
 
 ## License
 MIT License — free to use and modify.
