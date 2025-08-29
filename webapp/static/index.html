@@ -80,6 +80,19 @@
         <label>Shipping (RM)</label><br/>
         <input id="shipping" type="number" step="1" value="0"/>
       </div>
+      <div>
+        <label>Payment Method</label><br/>
+        <select id="payMethod">
+          <option value="CASH">CASH</option>
+          <option value="TOUCH N GO">TOUCH N GO</option>
+          <option value="GRAB PAY">GRAB PAY</option>
+          <option value="CREDIT CARD">CREDIT CARD</option>
+          <option value="DEBIT CARD">DEBIT CARD</option>
+        </select>
+      </div>
+      <div>
+        <input id="payRef" type="hidden" />
+      </div>
     </div>
 
     <div class="row">
@@ -162,6 +175,22 @@ const fmt = n => Number(n).toFixed(2);
 let products = [];
 let cart = [];
 
+/* Payment ref auto generator (client-side convenience; server also validates) */
+function genPayRef(method) {
+  const map = {
+    "TOUCH N GO": "TNGO",
+    "CASH": "CASH",
+    "GRAB PAY": "GRAB",
+    "CREDIT CARD": "CRDC",
+    "DEBIT CARD": "DBTC"
+  };
+  const prefix = map[method] || "PAY";
+  let digits = "";
+  for (let i=0;i<10;i++) digits += Math.floor(Math.random()*10);
+  return prefix + digits;
+}
+
+/* ---------- Fetch helpers ---------- */
 async function safeJson(url) {
   try {
     const r = await fetch(url);
@@ -206,20 +235,16 @@ async function populateTerminals() {
   sel.replaceChildren();
   sel.appendChild(new Option("Loading…", ""));
 
-  // try filtered first
   let data = await safeJson("/api/terminals" + (storeId ? `?store_id=${encodeURIComponent(storeId)}` : ""));
-  // fallback: refetch without filter if failed or empty
-  if (!data || data.length === 0) {
-    data = await safeJson("/api/terminals");
-  }
+  if (!data || data.length === 0) { data = await safeJson("/api/terminals"); }
 
   sel.replaceChildren();
   if (!data) { sel.appendChild(new Option("(terminals unavailable)", "")); return; }
   if (!data.length) { sel.appendChild(new Option("(no terminals in DB)", "")); return; }
   data.forEach(t => {
-  const label = t.name && t.name !== t.terminal_id ? `${t.name} (${t.terminal_id})` : t.terminal_id;
-  sel.appendChild(new Option(label, t.terminal_id));
-});
+    const label = t.name && t.name !== t.terminal_id ? `${t.name} (${t.terminal_id})` : t.terminal_id;
+    sel.appendChild(new Option(label, t.terminal_id));
+  });
 }
 
 async function populateCashiers() {
@@ -228,24 +253,19 @@ async function populateCashiers() {
   sel.replaceChildren();
   sel.appendChild(new Option("Loading…", ""));
 
-  // try filtered first
   let data = await safeJson("/api/cashiers" + (storeId ? `?store_id=${encodeURIComponent(storeId)}` : ""));
-  // fallback: refetch without filter if failed or empty
-  if (!data || data.length === 0) {
-    data = await safeJson("/api/cashiers");
-  }
+  if (!data || data.length === 0) { data = await safeJson("/api/cashiers"); }
 
   sel.replaceChildren();
   if (!data) { sel.appendChild(new Option("(cashiers unavailable)", "")); return; }
   if (!data.length) { sel.appendChild(new Option("(no cashiers in DB)", "")); return; }
   data.forEach(c => {
-  const label = c.name && c.name !== c.cashier_id ? `${c.name} (${c.cashier_id})` : c.cashier_id;
-  sel.appendChild(new Option(label, c.cashier_id));
-});
+    const label = c.name && c.name !== c.cashier_id ? `${c.name} (${c.cashier_id})` : c.cashier_id;
+    sel.appendChild(new Option(label, c.cashier_id));
+  });
 }
 
 async function loadRefs() {
-  // stores
   const stores = await safeJson("/api/stores");
   const storeSel = document.getElementById("store");
   const sStore   = document.getElementById("sStore");
@@ -264,11 +284,9 @@ async function loadRefs() {
     (stores || []).forEach(s => sStore.appendChild(new Option(s.name, s.store_id)));
   }
 
-  // customers
   const customers = await safeJson("/api/customers");
   buildCustomerSelect(customers);
 
-  // terminals & cashiers (dependent on store)
   await populateTerminals();
   await populateCashiers();
   storeSel.addEventListener("change", async () => {
@@ -276,7 +294,12 @@ async function loadRefs() {
     await populateCashiers();
   });
 
-  // default dates for sales
+  // init payment ref
+  const pm = document.getElementById("payMethod");
+  const pr = document.getElementById("payRef");
+  pm.addEventListener("change", () => { pr.value = genPayRef(pm.value); });
+  pr.value = genPayRef(pm.value);
+
   const toEl = document.getElementById("sTo");
   const fromEl = document.getElementById("sFrom");
   if (toEl && fromEl) {
@@ -385,6 +408,8 @@ async function checkout() {
     tax_rate: Number(document.getElementById("tax").value || "0"),
     order_discount: Number(document.getElementById("orderDisc").value || "0"),
     shipping_fee: Number(document.getElementById("shipping").value || "0"),
+    payment_method: document.getElementById("payMethod").value,
+    payment_ref: document.getElementById("payRef").value,
     items: cart.map(i=>({ product_id: i.product_id, qty: i.qty, unit_price: i.unit_price, line_discount: i.line_discount }))
   };
   if (!payload.store_id)   { msg.innerHTML = `<div class="error">Please select a store.</div>`; return; }
@@ -457,7 +482,7 @@ async function createCustomer() {
   const out = await res.json();
   if (!res.ok) { msg.innerHTML = `<div class="error">Create failed: ${out.error || "Unknown"}</div>`; return; }
   msg.innerHTML = `<div class="success">Created customer_id: <b>${out.customer_id}</b></div>`;
-  loadRefs(); // refresh dropdowns
+  loadRefs();
 }
 document.getElementById("btnCreateCustomer").addEventListener("click", createCustomer);
 
@@ -539,7 +564,7 @@ document.getElementById("btnSearch").addEventListener("click", searchProducts);
   document.getElementById(id).addEventListener("change", ()=>renderCart());
 });
 
-loadRefs(); // kick off initial population
+loadRefs();
 </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, secrets
 from datetime import datetime
 from pathlib import Path
 
@@ -18,7 +18,6 @@ if DOTENV_PATH.exists():
 else:
     load_dotenv(BASE_DIR / ".env")
 
-# Make repo root importable for future hooks
 sys.path.insert(0, str(BASE_DIR))
 
 # ---------- DB POOL (Supabase Postgres) ----------
@@ -76,10 +75,6 @@ def table_exists(schema: str, table: str) -> bool:
         put_conn(conn)
 
 def next_id(schema: str, table: str, column: str, prefix: str, width: int = 3) -> str:
-    """
-    Returns next ID like PREFIX### by reading current max numeric suffix.
-    Example: CUST004 -> CUST005
-    """
     sql = f"""
       SELECT COALESCE(MAX(CAST(SUBSTRING({column} FROM %s) AS INTEGER)), 0)
       FROM {schema}.{table}
@@ -112,21 +107,8 @@ def next_id_batch(schema: str, table: str, column: str, prefix: str, width: int,
     finally:
         put_conn(conn)
 
-# helper: find which column represents store on a given table
 def _resolve_store_col(table: str) -> str | None:
     candidates = ("store_id", "store", "store_code", "outlet_id", "branch_id")
-    for c in candidates:
-        if table_has_col("src_pos", table, c):
-            return c
-    return None
-
-def _resolve_name_col(table: str) -> str | None:
-    """
-    Try common name/display columns: name, <table>_name, display_name, label, description.
-    Returns the first that exists or None.
-    """
-    base = table.rstrip("s")  # terminals -> terminal
-    candidates = ("name", f"{base}_name", "display_name", "label", "description")
     for c in candidates:
         if table_has_col("src_pos", table, c):
             return c
@@ -163,11 +145,10 @@ def api_terminals():
     """
     Optional filter: /api/terminals?store_id=STR01
     Returns [{terminal_id, name}]
-    Detects actual id/name/store columns so we never reference a missing column.
+    Column-safe discovery so we never reference a missing column.
     """
     store_id = (request.args.get("store_id") or "").strip()
 
-    # Discover real columns present on src_pos.terminals
     conn = get_conn()
     try:
         with conn, conn.cursor() as cur:
@@ -178,36 +159,14 @@ def api_terminals():
             """, ("src_pos", "terminals"))
             cols = {r[0] for r in cur.fetchall()}
 
-        # choose id column
-        for cand in ("terminal_id", "terminal_code", "id", "code"):
-            if cand in cols:
-                term_id_col = cand
-                break
-        else:
-            return jsonify({"error": "No terminal id-like column found in src_pos.terminals"}), 500
+        term_id_col = next((c for c in ("terminal_id", "terminal_code", "id", "code") if c in cols), None)
+        if not term_id_col:
+            return jsonify([])  # no usable columns
 
-        # choose name/display column (fallback to id)
-        for cand in ("name", "terminal_name", "display_name", "label", "description"):
-            if cand in cols:
-                name_col = cand
-                break
-        else:
-            name_col = term_id_col
+        name_col = next((c for c in ("name", "terminal_name", "display_name", "label", "description") if c in cols), term_id_col)
+        store_col = next((c for c in ("store_id", "store", "store_code", "outlet_id", "branch_id") if c in cols), None)
 
-        # choose store column (fallback: none)
-        for cand in ("store_id", "store", "store_code", "outlet_id", "branch_id"):
-            if cand in cols:
-                store_col = cand
-                break
-        else:
-            store_col = None
-
-        # build SELECT that never references a missing column
-        name_expr = (
-            f"COALESCE({name_col}::text, {term_id_col}::text)"
-            if name_col != term_id_col else
-            f"{term_id_col}::text"
-        )
+        name_expr = (f"COALESCE({name_col}::text, {term_id_col}::text)" if name_col != term_id_col else f"{term_id_col}::text")
         base = f"SELECT {term_id_col} AS terminal_id, {name_expr} AS name FROM src_pos.terminals"
         params = []
         if store_id and store_col:
@@ -228,7 +187,7 @@ def api_cashiers():
     """
     Optional filter: /api/cashiers?store_id=STR01
     Returns [{cashier_id, name}]
-    Detects actual id/name/store columns so we never reference a missing column.
+    Column-safe discovery.
     """
     store_id = (request.args.get("store_id") or "").strip()
 
@@ -242,35 +201,14 @@ def api_cashiers():
             """, ("src_pos", "cashiers"))
             cols = {r[0] for r in cur.fetchall()}
 
-        # id column
-        for cand in ("cashier_id", "cashier_code", "id", "code"):
-            if cand in cols:
-                cash_id_col = cand
-                break
-        else:
-            return jsonify({"error": "No cashier id-like column found in src_pos.cashiers"}), 500
+        cash_id_col = next((c for c in ("cashier_id", "cashier_code", "id", "code") if c in cols), None)
+        if not cash_id_col:
+            return jsonify([])
 
-        # name/display column (fallback to id)
-        for cand in ("name", "cashier_name", "display_name", "label", "description"):
-            if cand in cols:
-                name_col = cand
-                break
-        else:
-            name_col = cash_id_col
+        name_col = next((c for c in ("name", "cashier_name", "display_name", "label", "description") if c in cols), cash_id_col)
+        store_col = next((c for c in ("store_id", "store", "store_code", "outlet_id", "branch_id") if c in cols), None)
 
-        # store column (optional)
-        for cand in ("store_id", "store", "store_code", "outlet_id", "branch_id"):
-            if cand in cols:
-                store_col = cand
-                break
-        else:
-            store_col = None
-
-        name_expr = (
-            f"COALESCE({name_col}::text, {cash_id_col}::text)"
-            if name_col != cash_id_col else
-            f"{cash_id_col}::text"
-        )
+        name_expr = (f"COALESCE({name_col}::text, {cash_id_col}::text)" if name_col != cash_id_col else f"{cash_id_col}::text")
         base = f"SELECT {cash_id_col} AS cashier_id, {name_expr} AS name FROM src_pos.cashiers"
         params = []
         if store_id and store_col:
@@ -302,37 +240,29 @@ def api_customers():
     finally:
         put_conn(conn)
 
-# ---------- CUSTOMERS (Register) ----------
+# ---------- CUSTOMERS ----------
 @app.post("/api/customers")
 def api_create_customer():
-    """
-    Accepts at least {"name": "..."}.
-    Optionally: email, phone, address, city, state, region, postcode, country.
-    """
     data = request.get_json(force=True)
     name = (data.get("name") or "").strip()
     if not name:
         return jsonify({"error": "Missing field: name"}), 400
 
-    # ID like CUST###
-    cid = next_id("src_pos", "customers", "customer_id", "CUST", 8)
+    cid = next_id("src_pos", "customers", "customer_id", "POSC", 8)
 
     cols = ["customer_id", "name"]
     vals = [cid, name]
 
-    # region fallback to state
     if "region" not in data and data.get("state"):
         data["region"] = data.get("state")
 
     optional_cols = ["email", "phone", "address", "city", "state", "region", "postcode", "country"]
     for c in optional_cols:
         if table_has_col("src_pos", "customers", c) and data.get(c) not in (None, ""):
-            cols.append(c)
-            vals.append(str(data[c]).strip())
+            cols.append(c); vals.append(str(data[c]).strip())
 
     if table_has_col("src_pos", "customers", "created_at"):
-        cols.append("created_at")
-        vals.append(datetime.now(tz=MY_TZ))
+        cols.append("created_at"); vals.append(datetime.now(tz=MY_TZ))
 
     conn = get_conn()
     try:
@@ -403,16 +333,13 @@ def api_products():
 
 @app.post("/api/products")
 def api_create_product():
-    """
-    Body: {sku, name, category, brand, price, currency, cost?}
-    """
     data = request.get_json(force=True)
     required = ["sku", "name", "category", "brand", "price", "currency"]
     for k in required:
         if k not in data or str(data[k]).strip() == "":
             return jsonify({"error": f"Missing field: {k}"}), 400
 
-    pid = next_id("src_pos", "products", "product_id", "POSP-ROD", 4)
+    pid = next_id("src_pos", "products", "product_id", "POS-PROD", 4)
     now_ts = datetime.now(tz=MY_TZ)
 
     conn = get_conn()
@@ -476,11 +403,9 @@ def api_update_product(product_id):
     sets, vals = [], []
     for k, v in data.items():
         if k in allowed:
-            sets.append(f"{k}=%s")
-            vals.append(v)
+            sets.append(f"{k}=%s"); vals.append(v)
     if table_has_col("src_pos", "products", "updated_at"):
-        sets.append("updated_at=%s")
-        vals.append(datetime.now(tz=MY_TZ))
+        sets.append("updated_at=%s"); vals.append(datetime.now(tz=MY_TZ))
     if not sets:
         return jsonify({"error": "No updatable fields provided"}), 400
     sql = "UPDATE src_pos.products SET " + ", ".join(sets) + " WHERE product_id=%s"
@@ -496,21 +421,31 @@ def api_update_product(product_id):
     finally:
         put_conn(conn)
 
-# ---------- SALES (receipt + lines) ----------
+# ---------- SALES (receipt + lines + payment) ----------
+def _gen_payment_ref(method: str) -> str:
+    """Generate ref_no with required prefix + 10 digits."""
+    m = (method or "").strip().upper()
+    prefix = {
+        "TOUCH N GO": "TNGO",
+        "CASH": "CASH",
+        "GRAB PAY": "GRAB",
+        "CREDIT CARD": "CRDC",
+        "DEBIT CARD": "DBTC",
+    }.get(m, "PAY")
+    digits = "".join(secrets.choice("0123456789") for _ in range(10))
+    return prefix + digits
+
 @app.post("/api/receipts")
 def api_create_receipt():
     """
     Body:
     {
-      "store_id": "...",
-      "terminal_id": "TERM01",
-      "cashier_id": "CASH001",
-      "customer_id": "WALKIN",
-      "currency": "MYR",
-      "tax_rate": 6.0,
-      "order_discount": 0.0,
-      "shipping_fee": 0.0,
-      "items": [{"product_id":"...", "qty":2, "unit_price":123.45, "line_discount":0.0}]
+      "store_id": "...", "terminal_id": "...", "cashier_id": "...",
+      "customer_id": "...", "currency": "MYR",
+      "tax_rate": 6.0, "order_discount": 0.0, "shipping_fee": 0.0,
+      "payment_method": "CASH" | "TOUCH N GO" | "GRAB PAY" | "CREDIT CARD" | "DEBIT CARD",
+      "payment_ref": "CASHxxxxxxxxxx" (optional; auto-generated if empty),
+      "items": [{product_id, qty, unit_price, line_discount}]
     }
     """
     data = request.get_json(force=True)
@@ -526,7 +461,10 @@ def api_create_receipt():
 
     terminal_id  = (data.get("terminal_id")  or "").strip()
     cashier_id   = (data.get("cashier_id")   or "").strip()
-    cashier_code = (data.get("cashier_code") or "").strip()  # fallback if only code exists in your DB
+    cashier_code = (data.get("cashier_code") or "").strip()
+
+    pay_method = (data.get("payment_method") or "").strip()
+    pay_ref    = (data.get("payment_ref") or "").strip()
 
     order_discount = float(data.get("order_discount", 0.0))
     tax_rate       = float(data.get("tax_rate", 0.0))
@@ -546,6 +484,7 @@ def api_create_receipt():
     try:
         with conn:
             with conn.cursor() as cur:
+                # ----- receipts
                 cols = [
                     "receipt_id","customer_id","store_id","sold_at","status","currency",
                     "subtotal","discount_total","tax_total","shipping_fee","grand_total"
@@ -565,7 +504,7 @@ def api_create_receipt():
                 ph = ", ".join(["%s"] * len(cols))
                 cur.execute(f"INSERT INTO src_pos.receipts ({', '.join(cols)}) VALUES ({ph})", vals)
 
-                # preload product details
+                # ----- preload product meta
                 pids = tuple({i["product_id"] for i in items})
                 prod_map = {}
                 if pids:
@@ -591,7 +530,7 @@ def api_create_receipt():
                 if has_line["line_tax"]:     line_cols.append("line_tax")
                 if has_line["line_total"]:   line_cols.append("line_total")
 
-                line_ids = next_id_batch("src_pos", "receipt_lines", "line_id", "LINE", 3, len(items))
+                line_ids = next_id_batch("src_pos", "receipt_lines", "line_id", "LINE", 8, len(items))
                 rows = []
                 for idx, i in enumerate(items):
                     pid  = i["product_id"]
@@ -615,8 +554,8 @@ def api_create_receipt():
                     rows
                 )
 
+                # ----- inventory_movements (optional)
                 if table_exists("src_pos", "inventory_movements"):
-                    # Pre-generate unique movement IDs for all items
                     move_ids = next_id_batch("src_pos", "inventory_movements", "movement_id", "IMV", 6, len(items))
                     inv_rows = [
                         (
@@ -630,12 +569,48 @@ def api_create_receipt():
                         cur,
                         """
                         INSERT INTO src_pos.inventory_movements
-                        (movement_id, product_id, store_id, movement_type, qty_delta, reference_id, moved_at)
+                          (movement_id, product_id, store_id, movement_type, qty_delta, reference_id, moved_at)
                         VALUES %s
                         """,
                         inv_rows
                     )
 
+                # ----- payment (optional; table name assumed "payments")
+                if table_exists("src_pos", "payments"):
+                    # discover available columns
+                    cur.execute("""
+                        SELECT column_name FROM information_schema.columns
+                        WHERE table_schema=%s AND table_name=%s
+                    """, ("src_pos", "payments"))
+                    pcols = {r[0] for r in cur.fetchall()}
+
+                    payment_id = next_id("src_pos", "payments", "payment_id", "PAY", 8) if "payment_id" in pcols else None
+                    method = pay_method or "CASH"
+                    ref_no = pay_ref or _gen_payment_ref(method)
+                    paid_at = sold_at
+
+                    cols = []
+                    vals = []
+
+                    if "payment_id" in pcols and payment_id:
+                        cols.append("payment_id"); vals.append(payment_id)
+                    if "receipt_id" in pcols:
+                        cols.append("receipt_id"); vals.append(rid)
+                    if "method" in pcols:
+                        cols.append("method"); vals.append(method)
+                    if "amount" in pcols:
+                        cols.append("amount"); vals.append(grand_total)
+                    if "ref_no" in pcols:
+                        cols.append("ref_no"); vals.append(ref_no)
+                    if "paid_at" in pcols:
+                        cols.append("paid_at"); vals.append(paid_at)
+
+                    if cols:
+                        placeholders = ", ".join(["%s"] * len(cols))
+                        cur.execute(
+                            f"INSERT INTO src_pos.payments ({', '.join(cols)}) VALUES ({placeholders})",
+                            vals
+                        )
 
         return jsonify({
             "ok": True,
@@ -807,5 +782,4 @@ def api_receipt_lines(receipt_id):
         put_conn(conn)
 
 if __name__ == "__main__":
-    # Open http://127.0.0.1:8000/
     app.run(host="127.0.0.1", port=8000, debug=True)
