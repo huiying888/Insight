@@ -84,7 +84,7 @@ def get_sql_chain(db: SQLDatabase, schema: str):
     llm = ChatGoogleGenerativeAI(
     model="gemma-3-27b-it", 
     google_api_key=os.getenv("GEMINI_API_KEY"),  # make sure this matches your .env variable name
-    temperature=0.1
+    temperature=0
 )
 
     return (
