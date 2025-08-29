@@ -6,10 +6,13 @@ from dotenv import load_dotenv
 import os
 from utils import get_db_connection, load_data, generate_insight
 import requests, json
+from datetime import timedelta
 
 st.set_page_config(page_title="KPI Dashboard", page_icon="🦙", layout="wide")
 st.title("📊 Business KPI Dashboard")
 st.markdown("KPIs across **Shopee, Lazada, TikTok, POS** from warehouse DB.")
+
+from datetime import timedelta
 
 # -----------------------------
 # DATE FILTER
@@ -17,15 +20,20 @@ st.markdown("KPIs across **Shopee, Lazada, TikTok, POS** from warehouse DB.")
 date_range = load_data("SELECT MIN(date_key) as min_date, MAX(date_key) as max_date FROM wh.dim_date;")
 min_date, max_date = pd.to_datetime(date_range.iloc[0]['min_date']).date(), pd.to_datetime(date_range.iloc[0]['max_date']).date()
 
+# Default range: last 1 month
+default_start = max(min_date, max_date - timedelta(days=30))
+default_end = max_date
+print(f"Date range in DB: {min_date} to {max_date}")
+print(f"Default date range: {default_start} to {default_end}")
+# 👇 must be a tuple
 start_date, end_date = st.date_input(
     "📅 Select Date Range",
-    [min_date, max_date],
+    value=(default_start, default_end),  # tuple not list
     min_value=min_date,
     max_value=max_date
 )
 
 date_params = {"start_date": start_date, "end_date": end_date}
-
 # -----------------------------
 # KPIs
 # -----------------------------
@@ -313,11 +321,14 @@ with tab5:
                 color='total_revenue',
                 hover_data=['total_customers','total_revenue'],
                 color_continuous_scale="Blues",
-                title='Total Revenue by State'
+                title='Total Revenue by State',
+
             )
             fig.update_layout(
                 margin={"r":0,"t":50,"l":0,"b":0},  
-                height=600,                          
+                height=600,
+                paper_bgcolor="#FFFDF7",  # background around the plotting area
+                plot_bgcolor="#FFFDF7"    # background of the plotting area itself                   
             )
             fig.update_geos(
                 fitbounds="locations",
