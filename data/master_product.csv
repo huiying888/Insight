@@ -1,101 +1,101 @@
 master_product_code,name,category,brand,is_active,created_at,starting_inventory,base_cost,base_price
-SKU0001,Nike Ultraboost Sandals,Shoes,Nike,True,2023-08-27T11:55:54.561338+00:00,220,110,130
-SKU0002,Skechers LightMotion Slip-Ons,Shoes,Skechers,True,2023-08-27T11:55:54.561338+00:00,90,220,260
-SKU0003,American Eagle ProStretch Chinos,Bottoms,American Eagle,True,2023-08-27T11:55:54.561338+00:00,300,40,90
-SKU0004,Adidas SmoothMotion Running Shoes,Shoes,Adidas,True,2023-08-27T11:55:54.561338+00:00,400,180,230
-SKU0005,Puma AirFlow Blouse,Tops,Puma,True,2023-08-27T11:55:54.561338+00:00,400,170,200
-SKU0006,Tommy Hilfiger Ruched Maxi Dress,Dresses,Tommy Hilfiger,True,2023-08-27T11:55:54.561338+00:00,490,70,100
-SKU0007,Adidas TrueShape Sweatshirt,Tops,Adidas,True,2023-08-27T11:55:54.561338+00:00,150,70,110
-SKU0008,Adidas GripLock Boots,Shoes,Adidas,True,2023-08-27T11:55:54.561338+00:00,130,100,160
-SKU0009,Wrangler TaperedFit Trousers,Bottoms,Wrangler,True,2023-08-27T11:55:54.561338+00:00,530,110,120
-SKU0010,Converse GripLock Running Shoes,Shoes,Converse,True,2023-08-27T11:55:54.561338+00:00,310,150,180
-SKU0011,Skechers Slip-On Slip-Ons,Shoes,Skechers,True,2023-08-27T11:55:54.561338+00:00,260,230,290
-SKU0012,American Eagle EnduraFit Shorts,Bottoms,American Eagle,True,2023-08-27T11:55:54.561338+00:00,930,120,180
-SKU0013,Timberland Ultraboost Running Shoes,Shoes,Timberland,True,2023-08-27T11:55:54.561338+00:00,560,50,80
-SKU0014,Dockers High-Rise Cargo Pants,Bottoms,Dockers,True,2023-08-27T11:55:54.561338+00:00,680,100,160
-SKU0015,New Balance GlideStep Sandals,Shoes,New Balance,True,2023-08-27T11:55:54.561338+00:00,1000,80,100
-SKU0016,Ralph Lauren Contemporary Maxi Dress,Dresses,Ralph Lauren,True,2023-08-27T11:55:54.561338+00:00,510,220,260
-SKU0017,Dockers EnduraFit Trousers,Bottoms,Dockers,True,2023-08-27T11:55:54.561338+00:00,240,50,60
-SKU0018,New Balance SpeedTech Slip-Ons,Shoes,New Balance,False,2023-08-27T11:55:54.561338+00:00,810,160,200
-SKU0019,Champion HeatGear Yoga Pants,Activewear,Champion,True,2023-08-27T11:55:54.561338+00:00,190,250,310
-SKU0020,Puma AeroCool Track Jacket,Activewear,Puma,True,2023-08-27T11:55:54.561338+00:00,420,140,150
-SKU0021,Columbia Lightweight Jacket,Outerwear,Columbia,True,2023-08-27T11:55:54.561338+00:00,270,120,170
-SKU0022,Puma Cropped Polo Shirt,Tops,Puma,True,2023-08-27T11:55:54.561338+00:00,820,240,290
-SKU0023,Banana Republic Sculpted Midi Dress,Dresses,Banana Republic,True,2023-08-27T11:55:54.561338+00:00,460,40,90
-SKU0024,Calvin Klein SlimCore Tank Top,Tops,Calvin Klein,False,2023-08-27T11:55:54.561338+00:00,770,50,70
-SKU0025,Adidas TrueShape T-Shirt,Tops,Adidas,True,2023-08-27T11:55:54.561338+00:00,210,210,230
-SKU0026,Lululemon AeroCool Athletic Tee,Activewear,Lululemon,False,2023-08-27T11:55:54.561338+00:00,320,230,270
-SKU0027,Skechers FreshFoam Sandals,Shoes,Skechers,True,2023-08-27T11:55:54.561338+00:00,880,160,220
-SKU0028,Reebok MaxSpeed Leggings,Activewear,Reebok,True,2023-08-27T11:55:54.561338+00:00,480,110,120
-SKU0029,Lululemon PowerMesh Leggings,Activewear,Lululemon,True,2023-08-27T11:55:54.561338+00:00,950,40,50
-SKU0030,Old Navy SlimCore Cargo Pants,Bottoms,Old Navy,True,2023-08-27T11:55:54.561338+00:00,350,60,110
-SKU0031,The North Face UtilityStyle Cardigan,Outerwear,The North Face,True,2023-08-27T11:55:54.561338+00:00,650,220,270
-SKU0032,Calvin Klein StormProof Coat,Outerwear,Calvin Klein,True,2023-08-27T11:55:54.561338+00:00,600,70,130
-SKU0033,Calvin Klein Lightweight Coat,Outerwear,Calvin Klein,True,2023-08-27T11:55:54.561338+00:00,870,250,310
-SKU0034,Marmot Quilted Coat,Outerwear,Marmot,True,2023-08-27T11:55:54.561338+00:00,290,110,130
-SKU0035,Levi's MotionFlex Cargo Pants,Bottoms,Levi's,True,2023-08-27T11:55:54.561338+00:00,140,180,200
-SKU0036,Nike Ultraboost Track Jacket,Activewear,Nike,False,2023-08-27T11:55:54.561338+00:00,160,210,220
-SKU0037,American Eagle CoreFlex Shorts,Bottoms,American Eagle,False,2023-08-27T11:55:54.562343+00:00,560,190,210
-SKU0038,Levi's SlimCore Shorts,Bottoms,Levi's,True,2023-08-27T11:55:54.562343+00:00,410,120,160
-SKU0039,Converse LightMotion Sneakers,Shoes,Converse,True,2023-08-27T11:55:54.562343+00:00,420,80,100
-SKU0040,Under Armour Oversized Sweatshirt,Tops,Under Armour,True,2023-08-27T11:55:54.562343+00:00,450,50,110
-SKU0041,Reebok HeatGear Athletic Tee,Activewear,Reebok,True,2023-08-27T11:55:54.562343+00:00,700,90,100
-SKU0042,Old Navy ActiveDry Trousers,Bottoms,Old Navy,True,2023-08-27T11:55:54.562343+00:00,560,250,270
-SKU0043,Lululemon PowerMesh Athletic Tee,Activewear,Lululemon,True,2023-08-27T11:55:54.562343+00:00,150,50,100
-SKU0044,Under Armour HeatGear Running Shorts,Activewear,Under Armour,True,2023-08-27T11:55:54.562343+00:00,900,120,140
-SKU0045,Gap CoreFlex Jeans,Bottoms,Gap,True,2023-08-27T11:55:54.562343+00:00,430,250,310
-SKU0046,Nike TrueShape Sweatshirt,Tops,Nike,True,2023-08-27T11:55:54.562343+00:00,140,220,230
-SKU0047,Champion SkinFit Running Shorts,Activewear,Champion,True,2023-08-27T11:55:54.562343+00:00,520,60,80
-SKU0048,Patagonia Lightweight Hoodie,Outerwear,Patagonia,True,2023-08-27T11:55:54.562343+00:00,720,230,290
-SKU0049,Champion Seamless Yoga Pants,Activewear,Champion,True,2023-08-27T11:55:54.562343+00:00,190,80,110
-SKU0050,Adidas GlideStep Sandals,Shoes,Adidas,True,2023-08-27T11:55:54.562343+00:00,310,130,180
-SKU0051,Lee Distressed Cargo Pants,Bottoms,Lee,False,2023-08-27T11:55:54.562343+00:00,370,200,240
-SKU0052,Nike Cropped Shirt,Tops,Nike,True,2023-08-27T11:55:54.562343+00:00,50,120,130
-SKU0053,Lee TaperedFit Jeans,Bottoms,Lee,True,2023-08-27T11:55:54.562343+00:00,950,180,230
-SKU0054,Nike CoolTouch Blouse,Tops,Nike,True,2023-08-27T11:55:54.562343+00:00,90,80,130
-SKU0055,Under Armour SkinFit Sports Bra,Activewear,Under Armour,True,2023-08-27T11:55:54.562343+00:00,440,80,90
-SKU0056,Calvin Klein SmoothFit Blouse,Tops,Calvin Klein,True,2023-08-27T11:55:54.562343+00:00,180,110,170
-SKU0057,Puma RapidDry Athletic Tee,Activewear,Puma,False,2023-08-27T11:55:54.562343+00:00,250,80,100
-SKU0058,Levi's SlimCore Jeans,Bottoms,Levi's,True,2023-08-27T11:55:54.562343+00:00,900,140,180
-SKU0059,Gap MotionFlex Skirt,Bottoms,Gap,True,2023-08-27T11:55:54.562343+00:00,90,70,110
-SKU0060,American Eagle EnduraFit Cargo Pants,Bottoms,American Eagle,True,2023-08-27T11:55:54.562343+00:00,330,130,150
-SKU0061,Levi's FlexLite Cargo Pants,Bottoms,Levi's,True,2023-08-27T11:55:54.562343+00:00,490,60,90
-SKU0062,Marmot UtilityStyle Hoodie,Outerwear,Marmot,True,2023-08-27T11:55:54.562343+00:00,380,40,50
-SKU0063,Tommy Hilfiger Ruched Midi Dress,Dresses,Tommy Hilfiger,True,2023-08-27T11:55:54.562343+00:00,980,170,200
-SKU0064,Patagonia UtilityStyle Coat,Outerwear,Patagonia,True,2023-08-27T11:55:54.562343+00:00,290,160,210
-SKU0065,New Balance Ultraboost Boots,Shoes,New Balance,False,2023-08-27T11:55:54.562343+00:00,970,210,270
-SKU0066,New Balance AirMax Sandals,Shoes,New Balance,True,2023-08-27T11:55:54.562343+00:00,890,230,260
-SKU0067,Timberland LightMotion Sandals,Shoes,Timberland,True,2023-08-27T11:55:54.562343+00:00,460,250,290
-SKU0068,Guess Cinched Dress,Dresses,Guess,True,2023-08-27T11:55:54.562343+00:00,530,170,230
-SKU0069,Dockers ActiveDry Cargo Pants,Bottoms,Dockers,True,2023-08-27T11:55:54.562343+00:00,50,160,210
-SKU0070,Levi's ActiveDry Chinos,Bottoms,Levi's,True,2023-08-27T11:55:54.562343+00:00,640,240,270
-SKU0071,Vans LightMotion Sneakers,Shoes,Vans,True,2023-08-27T11:55:54.562343+00:00,150,90,150
-SKU0072,Skechers SpeedTech Sandals,Shoes,Skechers,True,2023-08-27T11:55:54.562343+00:00,910,60,80
-SKU0073,American Eagle SlimCore Trousers,Bottoms,American Eagle,True,2023-08-27T11:55:54.562343+00:00,830,110,150
-SKU0074,Reebok Dri-FIT Blouse,Tops,Reebok,True,2023-08-27T11:55:54.562343+00:00,960,220,240
-SKU0075,Calvin Klein StormProof Cardigan,Outerwear,Calvin Klein,True,2023-08-27T11:55:54.562343+00:00,50,240,300
-SKU0076,Puma Dri-FIT Tank Top,Tops,Puma,True,2023-08-27T11:55:54.562343+00:00,710,90,150
-SKU0077,Lululemon MaxSpeed Sports Bra,Activewear,Lululemon,True,2023-08-27T11:55:54.562343+00:00,900,80,120
-SKU0078,Under Armour MotionWeave Sports Bra,Activewear,Under Armour,True,2023-08-27T11:55:54.562343+00:00,690,230,290
-SKU0079,Reebok SkinFit Track Jacket,Activewear,Reebok,True,2023-08-27T11:55:54.562343+00:00,380,190,230
-SKU0080,Timberland LightMotion Sneakers,Shoes,Timberland,True,2023-08-27T11:55:54.562343+00:00,400,240,260
-SKU0081,Timberland FreshFoam Sandals,Shoes,Timberland,True,2023-08-27T11:55:54.562343+00:00,740,140,170
-SKU0082,American Eagle CoreFlex Skirt,Bottoms,American Eagle,True,2023-08-27T11:55:54.562343+00:00,320,80,140
-SKU0083,Tommy Hilfiger UtilityStyle Parka,Outerwear,Tommy Hilfiger,True,2023-08-27T11:55:54.562343+00:00,310,170,180
-SKU0084,Patagonia Lightweight Coat,Outerwear,Patagonia,True,2023-08-27T11:55:54.562343+00:00,660,220,260
-SKU0085,Calvin Klein Layered Maxi Dress,Dresses,Calvin Klein,True,2023-08-27T11:55:54.562343+00:00,990,210,270
-SKU0086,Lululemon BounceFlex Leggings,Activewear,Lululemon,True,2023-08-27T11:55:54.562343+00:00,670,120,160
-SKU0087,Ralph Lauren Floral Maxi Dress,Dresses,Ralph Lauren,False,2023-08-27T11:55:54.562343+00:00,210,90,130
-SKU0088,Nike RapidDry Athletic Tee,Activewear,Nike,True,2023-08-27T11:55:54.562343+00:00,80,220,280
-SKU0089,The North Face Oversized Cardigan,Outerwear,The North Face,True,2023-08-27T11:55:54.562343+00:00,530,50,80
-SKU0090,Tommy Hilfiger Quilted Parka,Outerwear,Tommy Hilfiger,True,2023-08-27T11:55:54.562343+00:00,370,120,160
-SKU0091,Columbia Lightweight Sweater,Outerwear,Columbia,True,2023-08-27T11:55:54.562343+00:00,330,50,80
-SKU0092,Nike Ultraboost Running Shoes,Shoes,Nike,True,2023-08-27T11:55:54.562343+00:00,840,100,110
-SKU0093,Levi's Distressed Trousers,Bottoms,Levi's,True,2023-08-27T11:55:54.562343+00:00,640,220,240
-SKU0094,Banana Republic Contemporary Midi Dress,Dresses,Banana Republic,False,2023-08-27T11:55:54.562343+00:00,250,260,270
-SKU0095,Under Armour SkinFit Polo Shirt,Tops,Under Armour,True,2023-08-27T11:55:54.562343+00:00,530,220,280
-SKU0096,Vans AirMax Boots,Shoes,Vans,True,2023-08-27T11:55:54.562343+00:00,360,260,320
-SKU0097,Ralph Lauren Contemporary Shift Dress,Dresses,Ralph Lauren,True,2023-08-27T11:55:54.562343+00:00,490,220,230
-SKU0098,Timberland AirMax Boots,Shoes,Timberland,True,2023-08-27T11:55:54.562343+00:00,60,240,270
-SKU0099,Columbia Padded Hoodie,Outerwear,Columbia,True,2023-08-27T11:55:54.562343+00:00,950,240,280
-SKU0100,Lee ProStretch Skirt,Bottoms,Lee,True,2023-08-27T11:55:54.562343+00:00,730,120,170
+SKU0001,Converse Ultraboost Sandals,Shoes,Converse,True,2023-08-30T09:06:16.285053+00:00,220,110,130
+SKU0002,Nike LightMotion Slip-Ons,Shoes,Nike,True,2023-08-30T09:06:16.285053+00:00,90,220,260
+SKU0003,Dockers ProStretch Shorts,Bottoms,Dockers,True,2023-08-30T09:06:16.285053+00:00,300,40,90
+SKU0004,Skechers SmoothMotion Boots,Shoes,Skechers,True,2023-08-30T09:06:16.285053+00:00,400,180,230
+SKU0005,Nike AirFlow T-Shirt,Tops,Nike,True,2023-08-30T09:06:16.285053+00:00,400,170,200
+SKU0006,Banana Republic Ruched Mini Dress,Dresses,Banana Republic,True,2023-08-30T09:06:16.285053+00:00,490,70,100
+SKU0007,Tommy Hilfiger TrueShape Shirt,Tops,Tommy Hilfiger,True,2023-08-30T09:06:16.285053+00:00,150,70,110
+SKU0008,Skechers GripLock Running Shoes,Shoes,Skechers,True,2023-08-30T09:06:16.285053+00:00,130,100,160
+SKU0009,Lee TaperedFit Cargo Pants,Bottoms,Lee,True,2023-08-30T09:06:16.285053+00:00,530,110,120
+SKU0010,Vans GripLock Boots,Shoes,Vans,True,2023-08-30T09:06:16.285053+00:00,310,150,180
+SKU0011,Nike Slip-On Slip-Ons,Shoes,Nike,True,2023-08-30T09:06:16.285053+00:00,260,230,290
+SKU0012,Dockers EnduraFit Jeans,Bottoms,Dockers,True,2023-08-30T09:06:16.285053+00:00,930,120,180
+SKU0013,Adidas Ultraboost Boots,Shoes,Adidas,True,2023-08-30T09:06:16.285053+00:00,560,50,80
+SKU0014,American Eagle High-Rise Skirt,Bottoms,American Eagle,True,2023-08-30T09:06:16.285053+00:00,680,100,160
+SKU0015,New Balance GlideStep Sandals,Shoes,New Balance,True,2023-08-30T09:06:16.285053+00:00,1000,80,100
+SKU0016,Ann Taylor Contemporary Mini Dress,Dresses,Ann Taylor,True,2023-08-30T09:06:16.285053+00:00,510,220,260
+SKU0017,American Eagle EnduraFit Cargo Pants,Bottoms,American Eagle,True,2023-08-30T09:06:16.285053+00:00,240,50,60
+SKU0018,New Balance SpeedTech Slip-Ons,Shoes,New Balance,False,2023-08-30T09:06:16.285053+00:00,810,160,200
+SKU0019,Champion HeatGear Athletic Tee,Activewear,Champion,True,2023-08-30T09:06:16.285053+00:00,190,250,310
+SKU0020,Lululemon AeroCool Yoga Pants,Activewear,Lululemon,True,2023-08-30T09:06:16.285053+00:00,420,140,150
+SKU0021,Patagonia Lightweight Coat,Outerwear,Patagonia,True,2023-08-30T09:06:16.285053+00:00,270,120,170
+SKU0022,Nike Cropped Polo Shirt,Tops,Nike,True,2023-08-30T09:06:16.285053+00:00,820,240,290
+SKU0023,Guess Sculpted Dress,Dresses,Guess,True,2023-08-30T09:06:16.285053+00:00,460,40,90
+SKU0024,Calvin Klein SlimCore Sweatshirt,Tops,Calvin Klein,False,2023-08-30T09:06:16.285053+00:00,770,50,70
+SKU0025,Tommy Hilfiger TrueShape Blouse,Tops,Tommy Hilfiger,True,2023-08-30T09:06:16.285053+00:00,210,210,230
+SKU0026,Under Armour AeroCool Track Jacket,Activewear,Under Armour,False,2023-08-30T09:06:16.285053+00:00,320,230,270
+SKU0027,Nike FreshFoam Sandals,Shoes,Nike,True,2023-08-30T09:06:16.285053+00:00,880,160,220
+SKU0028,Reebok MaxSpeed Leggings,Activewear,Reebok,True,2023-08-30T09:06:16.285053+00:00,480,110,120
+SKU0029,Under Armour PowerMesh Leggings,Activewear,Under Armour,True,2023-08-30T09:06:16.285053+00:00,950,40,50
+SKU0030,Wrangler SlimCore Skirt,Bottoms,Wrangler,True,2023-08-30T09:06:16.285053+00:00,350,60,110
+SKU0031,The North Face UtilityStyle Hoodie,Outerwear,The North Face,True,2023-08-30T09:06:16.285053+00:00,650,220,270
+SKU0032,Columbia StormProof Sweater,Outerwear,Columbia,True,2023-08-30T09:06:16.285053+00:00,600,70,130
+SKU0033,Columbia Lightweight Sweater,Outerwear,Columbia,True,2023-08-30T09:06:16.285053+00:00,870,250,310
+SKU0034,Tommy Hilfiger Quilted Sweater,Outerwear,Tommy Hilfiger,True,2023-08-30T09:06:16.285053+00:00,290,110,130
+SKU0035,Gap MotionFlex Skirt,Bottoms,Gap,True,2023-08-30T09:06:16.285053+00:00,140,180,200
+SKU0036,Puma Ultraboost Yoga Pants,Activewear,Puma,False,2023-08-30T09:06:16.285053+00:00,160,210,220
+SKU0037,Dockers CoreFlex Jeans,Bottoms,Dockers,False,2023-08-30T09:06:16.285053+00:00,560,190,210
+SKU0038,Gap SlimCore Jeans,Bottoms,Gap,True,2023-08-30T09:06:16.285053+00:00,410,120,160
+SKU0039,Vans LightMotion Sneakers,Shoes,Vans,True,2023-08-30T09:06:16.285053+00:00,420,80,100
+SKU0040,Adidas Oversized Shirt,Tops,Adidas,True,2023-08-30T09:06:16.285053+00:00,450,50,110
+SKU0041,Reebok HeatGear Track Jacket,Activewear,Reebok,True,2023-08-30T09:06:16.285053+00:00,700,90,100
+SKU0042,Wrangler ActiveDry Cargo Pants,Bottoms,Wrangler,True,2023-08-30T09:06:16.285053+00:00,560,250,270
+SKU0043,Under Armour PowerMesh Track Jacket,Activewear,Under Armour,True,2023-08-30T09:06:16.285053+00:00,150,50,100
+SKU0044,Adidas HeatGear Running Shorts,Activewear,Adidas,True,2023-08-30T09:06:16.285053+00:00,900,120,140
+SKU0045,Old Navy CoreFlex Chinos,Bottoms,Old Navy,True,2023-08-30T09:06:16.285053+00:00,430,250,310
+SKU0046,Puma TrueShape Shirt,Tops,Puma,True,2023-08-30T09:06:16.285053+00:00,140,220,230
+SKU0047,Champion SkinFit Running Shorts,Activewear,Champion,True,2023-08-30T09:06:16.285053+00:00,520,60,80
+SKU0048,Marmot Lightweight Cardigan,Outerwear,Marmot,True,2023-08-30T09:06:16.285053+00:00,720,230,290
+SKU0049,Champion Seamless Athletic Tee,Activewear,Champion,True,2023-08-30T09:06:16.285053+00:00,190,80,110
+SKU0050,Skechers GlideStep Sandals,Shoes,Skechers,True,2023-08-30T09:06:16.285053+00:00,310,130,180
+SKU0051,Levi's Distressed Skirt,Bottoms,Levi's,False,2023-08-30T09:06:16.285053+00:00,370,200,240
+SKU0052,Puma Cropped Tank Top,Tops,Puma,True,2023-08-30T09:06:16.285053+00:00,50,120,130
+SKU0053,Levi's TaperedFit Chinos,Bottoms,Levi's,True,2023-08-30T09:06:16.285053+00:00,950,180,230
+SKU0054,Puma CoolTouch T-Shirt,Tops,Puma,True,2023-08-30T09:06:16.285053+00:00,90,80,130
+SKU0055,Adidas SkinFit Sports Bra,Activewear,Adidas,True,2023-08-30T09:06:16.285053+00:00,440,80,90
+SKU0056,Calvin Klein SmoothFit T-Shirt,Tops,Calvin Klein,True,2023-08-30T09:06:16.285053+00:00,180,110,170
+SKU0057,Lululemon RapidDry Track Jacket,Activewear,Lululemon,False,2023-08-30T09:06:16.285053+00:00,250,80,100
+SKU0058,Gap SlimCore Chinos,Bottoms,Gap,True,2023-08-30T09:06:16.285053+00:00,900,140,180
+SKU0059,Old Navy MotionFlex Trousers,Bottoms,Old Navy,True,2023-08-30T09:06:16.285053+00:00,90,70,110
+SKU0060,Dockers EnduraFit Skirt,Bottoms,Dockers,True,2023-08-30T09:06:16.285053+00:00,330,130,150
+SKU0061,Gap FlexLite Skirt,Bottoms,Gap,True,2023-08-30T09:06:16.285053+00:00,490,60,90
+SKU0062,Tommy Hilfiger UtilityStyle Cardigan,Outerwear,Tommy Hilfiger,True,2023-08-30T09:06:16.286162+00:00,380,40,50
+SKU0063,Banana Republic Ruched Dress,Dresses,Banana Republic,True,2023-08-30T09:06:16.286162+00:00,980,170,200
+SKU0064,Marmot UtilityStyle Sweater,Outerwear,Marmot,True,2023-08-30T09:06:16.286162+00:00,290,160,210
+SKU0065,New Balance Ultraboost Running Shoes,Shoes,New Balance,False,2023-08-30T09:06:16.286162+00:00,970,210,270
+SKU0066,New Balance AirMax Sandals,Shoes,New Balance,True,2023-08-30T09:06:16.286162+00:00,890,230,260
+SKU0067,Adidas LightMotion Sandals,Shoes,Adidas,True,2023-08-30T09:06:16.286162+00:00,460,250,290
+SKU0068,Tommy Hilfiger Cinched Shift Dress,Dresses,Tommy Hilfiger,True,2023-08-30T09:06:16.286162+00:00,530,170,230
+SKU0069,American Eagle ActiveDry Skirt,Bottoms,American Eagle,True,2023-08-30T09:06:16.286162+00:00,50,160,210
+SKU0070,Gap ActiveDry Shorts,Bottoms,Gap,True,2023-08-30T09:06:16.286162+00:00,640,240,270
+SKU0071,Timberland LightMotion Sneakers,Shoes,Timberland,True,2023-08-30T09:06:16.286162+00:00,150,90,150
+SKU0072,Nike SpeedTech Sandals,Shoes,Nike,True,2023-08-30T09:06:16.286162+00:00,910,60,80
+SKU0073,Dockers SlimCore Cargo Pants,Bottoms,Dockers,True,2023-08-30T09:06:16.286162+00:00,830,110,150
+SKU0074,Reebok Dri-FIT T-Shirt,Tops,Reebok,True,2023-08-30T09:06:16.286162+00:00,960,220,240
+SKU0075,Columbia StormProof Hoodie,Outerwear,Columbia,True,2023-08-30T09:06:16.286162+00:00,50,240,300
+SKU0076,Nike Dri-FIT Sweatshirt,Tops,Nike,True,2023-08-30T09:06:16.286162+00:00,710,90,150
+SKU0077,Under Armour MaxSpeed Sports Bra,Activewear,Under Armour,True,2023-08-30T09:06:16.286162+00:00,900,80,120
+SKU0078,Adidas MotionWeave Sports Bra,Activewear,Adidas,True,2023-08-30T09:06:16.286162+00:00,690,230,290
+SKU0079,Reebok SkinFit Yoga Pants,Activewear,Reebok,True,2023-08-30T09:06:16.286162+00:00,380,190,230
+SKU0080,Adidas LightMotion Sneakers,Shoes,Adidas,True,2023-08-30T09:06:16.286162+00:00,400,240,260
+SKU0081,Adidas FreshFoam Sandals,Shoes,Adidas,True,2023-08-30T09:06:16.286162+00:00,740,140,170
+SKU0082,Dockers CoreFlex Trousers,Bottoms,Dockers,True,2023-08-30T09:06:16.286162+00:00,320,80,140
+SKU0083,Calvin Klein UtilityStyle Jacket,Outerwear,Calvin Klein,True,2023-08-30T09:06:16.286162+00:00,310,170,180
+SKU0084,Marmot Lightweight Sweater,Outerwear,Marmot,True,2023-08-30T09:06:16.286162+00:00,660,220,260
+SKU0085,Calvin Klein Layered Mini Dress,Dresses,Calvin Klein,True,2023-08-30T09:06:16.286162+00:00,990,210,270
+SKU0086,Under Armour BounceFlex Leggings,Activewear,Under Armour,True,2023-08-30T09:06:16.286162+00:00,670,120,160
+SKU0087,Ann Taylor Floral Mini Dress,Dresses,Ann Taylor,False,2023-08-30T09:06:16.286162+00:00,210,90,130
+SKU0088,Puma RapidDry Track Jacket,Activewear,Puma,True,2023-08-30T09:06:16.286162+00:00,80,220,280
+SKU0089,The North Face Oversized Hoodie,Outerwear,The North Face,True,2023-08-30T09:06:16.286162+00:00,530,50,80
+SKU0090,Calvin Klein Quilted Jacket,Outerwear,Calvin Klein,True,2023-08-30T09:06:16.286162+00:00,370,120,160
+SKU0091,Patagonia Lightweight Parka,Outerwear,Patagonia,True,2023-08-30T09:06:16.286162+00:00,330,50,80
+SKU0092,Converse Ultraboost Boots,Shoes,Converse,True,2023-08-30T09:06:16.286162+00:00,840,100,110
+SKU0093,Gap Distressed Cargo Pants,Bottoms,Gap,True,2023-08-30T09:06:16.286162+00:00,640,220,240
+SKU0094,Guess Contemporary Dress,Dresses,Guess,False,2023-08-30T09:06:16.286162+00:00,250,260,270
+SKU0095,Adidas SkinFit Polo Shirt,Tops,Adidas,True,2023-08-30T09:06:16.286162+00:00,530,220,280
+SKU0096,Timberland AirMax Running Shoes,Shoes,Timberland,True,2023-08-30T09:06:16.286162+00:00,360,260,320
+SKU0097,Ann Taylor Contemporary Maxi Dress,Dresses,Ann Taylor,True,2023-08-30T09:06:16.286162+00:00,490,220,230
+SKU0098,Adidas AirMax Running Shoes,Shoes,Adidas,True,2023-08-30T09:06:16.286162+00:00,60,240,270
+SKU0099,Patagonia Padded Cardigan,Outerwear,Patagonia,True,2023-08-30T09:06:16.286162+00:00,950,240,280
+SKU0100,Levi's ProStretch Trousers,Bottoms,Levi's,True,2023-08-30T09:06:16.286162+00:00,730,120,170

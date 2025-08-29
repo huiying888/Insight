@@ -78,3 +78,6 @@ for i in range(1, num_products + 1):
 
 pd.DataFrame(products).to_csv("data/master_product.csv", index=False)
 print("Generated master_product.csv")
+
+pd.DataFrame(products).drop(["base_cost","base_price"],axis=1).to_csv("data/wh/dim_product.csv", index=False)
+print("Generated wh/dim_product.csv")

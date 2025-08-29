@@ -54,12 +54,8 @@ def random_email(name):
     domain = random.choice(["gmail.com","yahoo.com","hotmail.com","outlook.com"])
     return f"{slug}{random.randint(10,999)}@{domain}"
 
-def random_customer(platform_id):
-    while True:
-        id = platform_id+f"{random.randint(1,99999999):08d}"
-        if id not in used_id:
-            used_id.add(id)
-            break
+def random_customer(platform_id,x):
+    id = platform_id+f"{x:08d}"
     name = random_name()
     phone = random_phone()
     email = random_email(name)
@@ -69,13 +65,17 @@ def random_customer(platform_id):
     return (id, name, phone, email, region, created_at)
 
 # Generate customers
-shopee_customers = [random_customer("SHPC") for _ in range(100)]
-lazada_customers = [random_customer("LAZC") for _ in range(100)]
-tiktok_customers = [random_customer("TIKC") for _ in range(100)]
-pos_customers = [random_customer("POSC") for _ in range(100)]
+lazada_customers = [random_customer("LAZC",x+1) for x in range(100)]
+shopee_customers = [random_customer("SHPC",x+1) for x in range(100)]
+tiktok_customers = [random_customer("TIKC",x+1) for x in range(100)]
+pos_customers = [random_customer("POSC",x+1) for x in range(100)]
 
-pd.DataFrame(shopee_customers, columns=["buyer_id","name","phone","email","region","created_at"]).to_csv("data/src_shopee/customers.csv", index=False)
 pd.DataFrame(lazada_customers, columns=["buyer_id","name","phone","email","region","created_at"]).to_csv("data/src_lazada/customers.csv", index=False)
+pd.DataFrame(shopee_customers, columns=["buyer_id","name","phone","email","region","created_at"]).to_csv("data/src_shopee/customers.csv", index=False)
 pd.DataFrame(tiktok_customers, columns=["buyer_id","name","phone","email","region","created_at"]).to_csv("data/src_tiktok/customers.csv", index=False)
 pd.DataFrame(pos_customers, columns=["customer_id","name","phone","email","region","created_at"]).to_csv("data/src_pos/customers.csv", index=False)
-print("Generated customers data")
+
+print("Generated src_lazada/customers.csv")
+print("Generated src_shopee/customers.csv")
+print("Generated src_tiktok/customers.csv")
+print("Generated src_pos/customers.csv")

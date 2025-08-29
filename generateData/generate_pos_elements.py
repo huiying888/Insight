@@ -24,3 +24,7 @@ cashiers = [
 pd.DataFrame(terminals).to_csv("data/src_pos/terminals.csv", index=False)
 pd.DataFrame(stores).to_csv("data/src_pos/stores.csv", index=False)
 pd.DataFrame(cashiers).to_csv("data/src_pos/cashiers.csv", index=False)
+
+print("Generated src_pos/terminals.csv")
+print("Generated src_pos/stores.csv")
+print("Generated src_pos/cashiers.csv")

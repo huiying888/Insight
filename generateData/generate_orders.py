@@ -17,6 +17,8 @@ shopee_products = pd.read_csv("data/src_shopee/products.csv")
 shopee_customers = pd.read_csv("data/src_shopee/customers.csv")
 tiktok_products = pd.read_csv("data/src_tiktok/products.csv")
 tiktok_customers = pd.read_csv("data/src_tiktok/customers.csv")
+tiktok_influencers = pd.read_csv("data/src_tiktok/influencers.csv")
+tiktok_campaigns = pd.read_csv("data/src_tiktok/campaigns.csv")
 pos_products = pd.read_csv("data/src_pos/products.csv")
 pos_customers = pd.read_csv("data/src_pos/customers.csv")
 pos_terminals = pd.read_csv("data/src_pos/terminals.csv")
@@ -42,23 +44,16 @@ refund_reasons = [
     "Unauthorized Purchase",
     "Other"
 ]
-
-j=0
-
-def item_id_ing(platform_id, j):
-    j+=1
-    return f"{platform_id}-ITEM{j:08d}"
-
-def line_id_ing(j):
-    j+=1
-    return f"LINE{j:08d}"
     
-def generate_orders(platform_id, products_df, num_orders, j):
+def generate_orders(platform_id, products_df, num_orders):
+    j=1
     for i in range(1, num_orders + 1):
         num_items = random.randint(1, 5)
         order_items = products_df.sample(n=num_items).reset_index(drop=True)[['product_id','name','sku','category','price']]
         order_items['order_id'] = f"{platform_id}-ORD{i:08d}"
-        order_items['item_id'] = item_id_ing(platform_id, j)
+        for x in order_items.index:
+            order_items.loc[x,'item_id'] = f"{platform_id}-ITEM{j:08d}"
+            j+=1
         order_items['qty'] = order_items['product_id'].map(lambda x: random.randint(1, 3))
         order_items['discount'] = order_items['price'].map(lambda x: np.random.randint(0,10) if x > 50 else 0)
         order_items['shipping_fee'] = order_items['price'].map(lambda x: 0 if x > 75 else np.random.randint(0,15))
@@ -70,17 +65,18 @@ def generate_orders(platform_id, products_df, num_orders, j):
             all_orders = order_items
         else:
             all_orders = pd.concat([all_orders, order_items], ignore_index=True)
-        
-        j += 1
 
     return all_orders
 
-def generate_receipt(products_df, num_orders, j):
+def generate_receipt(products_df, num_orders):
+    j=1
     for i in range(1, num_orders + 1):
         num_items = random.randint(1, 5)
         receipt_items = products_df.sample(n=num_items).reset_index(drop=True)[['product_id','name','sku','category','price']]
         receipt_items['receipt_id'] = f"REC{i:08d}"
-        receipt_items['line_id'] = line_id_ing(j)
+        for x in receipt_items.index:
+            receipt_items.loc[x,'line_id'] = f"LINE{j:08d}"
+            j+=1
         receipt_items['qty'] = receipt_items['product_id'].map(lambda x: random.randint(1, 3))
         receipt_items['line_discount'] = receipt_items['price'].map(lambda x: np.random.randint(0,10) if x > 50 else 0)
         receipt_items['line_tax'] = receipt_items.apply(lambda x: round(x['price'] * x['qty'] * 0.06, 2), axis=1)
@@ -92,8 +88,6 @@ def generate_receipt(products_df, num_orders, j):
             all_orders = receipt_items
         else:
             all_orders = pd.concat([all_orders, receipt_items], ignore_index=True)
-        
-        j += 1
 
     return all_orders
 
@@ -148,47 +142,73 @@ def calculate_receipts(receipt_lines, customers_df):
 
 def generate_refunds(platform_id, orders_df, order_items_df):
     refund_list = []
-    k=0
-    for idx, order in orders_df.iterrows():
-        if order['status'] in ['CANCELLED', 'REFUNDED']:
-            items = order_items_df[order_items_df['order_id'] == order['order_id']]
-            for _, item in items.iterrows():
-                refund_amount = (item['price'] * item['qty']) - item['discount'] + item['shipping_fee'] + item['tax']
-                refund_list.append({
-                    'refund_id': f"{platform_id}-REF{k:08d}",
-                    'order_id': order['order_id'],
-                    'item_id': item['item_id'],
-                    'amount': round(refund_amount, 2),
-                    'reason': random.choice(refund_reasons),
-                    'processed_at': fake.date_time_between(start_date=pd.to_datetime(order['created_at']), end_date="now")
-                })
-                k+=1
+    k=1
+    refund_df = orders_df[orders_df['status'].isin(['CANCELLED', 'REFUNDED'])].sample(n=10, random_state=42)
+    for idx, order in refund_df.iterrows():
+        items = order_items_df[order_items_df['order_id'] == order['order_id']].sample(n=1, random_state=42)
+        for _, item in items.iterrows():
+            refund_amount = (item['price'] * item['qty']) - item['discount'] + item['shipping_fee'] + item['tax']
+            refund_list.append({
+                'refund_id': f"{platform_id}-REF{k:08d}",
+                'order_id': order['order_id'],
+                'item_id': item['item_id'],
+                'amount': round(refund_amount, 2),
+                'reason': random.choice(refund_reasons),
+                'processed_at': fake.date_time_between(start_date=pd.to_datetime(order['created_at']), end_date="now")
+            })
+            k+=1
     return pd.DataFrame(refund_list)
 
 def generate_payments(receipts_df):
     payment_methods = [["CASH","CASH"],["CREDIT CARD","CRDC"],["DEBIT CARD","DBTC"],["GRAB PAY","GRAB"],["TOUCH N GO","TNGO"]]
     payment_list = []
+    k=1
     for idx, receipt in receipts_df.iterrows():
         payment_method = random.choices(payment_methods, [0.4, 0.3, 0.2, 0.05, 0.05])[0],
         payment_list.append({
-            'payment_id': f"PAY{receipt['receipt_id'][3:]}",
+            'payment_id': f"PAY{k:08d}",
             'receipt_id': receipt['receipt_id'],
             'method': payment_method[0][0],
             'amount': receipt['grand_total'],
             'ref_no': payment_method[0][1] + fake.bothify(text='##########'),
             'paid_at': receipt['sold_at'] + timedelta(minutes=random.randint(1,10))
         })
+        k+=1
     return pd.DataFrame(payment_list)
 
-laz_order_items = generate_orders("LAZ", lazada_products, 100, j)
-shp_order_items = generate_orders("SHP", shopee_products, 100, j)
-tik_order_items = generate_orders("TIK", tiktok_products, 100, j)
-pos_receipt_lines = generate_receipt(pos_products, 100, j)
+def assign_last_updated(order_items_df, orders_df):
+    order_items_df['updated_at'] = None
+    for idx, item in order_items_df.iterrows():
+        order = orders_df[orders_df['order_id'] == item['order_id']].reset_index(drop=True)
+        order_items_df.at[idx, 'updated_at'] = fake.date_time_between(start_date=pd.to_datetime(order.loc[0, 'created_at']), end_date=pd.to_datetime(order.loc[0, 'updated_at']))
+    order_items_df = order_items_df.reindex(columns=['order_id','item_id','product_id','product_name','category','sku','qty','price','discount','shipping_fee','tax','updated_at'])
+    return order_items_df
+
+def assign_campaigns_influencers(orders_df, campaigns_df, influencers_df):
+    orders_df['campaign_id'] = None
+    orders_df['influencer_id'] = None
+    for idx, order in orders_df.iterrows():
+        campaign = campaigns_df.sample(n=1).reset_index(drop=True)
+        influencer = influencers_df.sample(n=1).reset_index(drop=True)
+        orders_df.at[idx, 'campaign_id'] = campaign.loc[0, 'campaign_id']
+        orders_df.at[idx, 'influencer_id'] = influencer.loc[0, 'influencer_id']
+    orders_df = orders_df.reindex(columns=['order_id','buyer_id','created_at','updated_at','status','currency','total_amount','shipping_fee','tax_total','voucher_amount','campaign_id','influencer_id','market_region'])
+    return orders_df
+
+laz_order_items = generate_orders("LAZ", lazada_products, 100)
+shp_order_items = generate_orders("SHP", shopee_products, 100)
+tik_order_items = generate_orders("TIK", tiktok_products, 100)
+pos_receipt_lines = generate_receipt(pos_products, 100)
 
 laz_orders = calculate_orders(laz_order_items, lazada_customers)
 shp_orders = calculate_orders(shp_order_items, shopee_customers)
 tik_orders = calculate_orders(tik_order_items, tiktok_customers)
+tik_orders = assign_campaigns_influencers(tik_orders, tiktok_campaigns, tiktok_influencers)
 pos_receipts = calculate_receipts(pos_receipt_lines, pos_customers)
+
+laz_order_items = assign_last_updated(laz_order_items, laz_orders)
+shp_order_items = assign_last_updated(shp_order_items, shp_orders)
+tik_order_items = assign_last_updated(tik_order_items, tik_orders)
 
 laz_refunds = generate_refunds("LAZ", laz_orders, laz_order_items)
 shp_refunds = generate_refunds("SHP", shp_orders, shp_order_items)
@@ -201,13 +221,29 @@ shp_order_items.to_csv("data/src_shopee/order_items.csv", index=False)
 tik_order_items.to_csv("data/src_tiktok/order_items.csv", index=False)
 pos_receipt_lines.to_csv("data/src_pos/receipt_lines.csv", index=False)
 
+print("Generated src_lazada/order_items.csv")
+print("Generated src_shopee/order_items.csv")
+print("Generated src_tiktok/order_items.csv")
+print("Generated src_pos/receipt_lines.csv")
+
 laz_orders.to_csv("data/src_lazada/orders.csv", index=False)
 shp_orders.to_csv("data/src_shopee/orders.csv", index=False)
 tik_orders.to_csv("data/src_tiktok/orders.csv", index=False)
 pos_receipts.to_csv("data/src_pos/receipts.csv", index=False)
 
+print("Generated src_lazada/orders.csv")
+print("Generated src_shopee/orders.csv")
+print("Generated src_tiktok/orders.csv")
+print("Generated src_pos/receipts.csv")
+
 laz_refunds.to_csv("data/src_lazada/refunds.csv", index=False)
 shp_refunds.to_csv("data/src_shopee/refunds.csv", index=False)
 tik_refunds.to_csv("data/src_tiktok/refunds.csv", index=False)
 
+print("Generated src_lazada/refunds.csv")
+print("Generated src_shopee/refunds.csv")
+print("Generated src_tiktok/refunds.csv")
+
 pos_payments.to_csv("data/src_pos/payments.csv", index=False)
+
+print("Generated src_pos/payments.csv")

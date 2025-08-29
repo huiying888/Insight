@@ -73,7 +73,6 @@ df = pd.DataFrame(data, columns=[
     "qty_delta", "reference_id", "moved_at", "note"
 ])
 
-print(df.head())
-
 # Save to CSV
 df.to_csv("data/src_pos/inventory_movements.csv", index=False)
+print("Generated src_pos/inventory_movements.csv")

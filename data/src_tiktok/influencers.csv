@@ -1,3 +1,21 @@
-idx,influencer_id,handle,name
-0,TIK-INFL001,@FashionistaMY,Maya Lee
-1,TIK-INFL002,@StyleGuruKL,Ben Tan
+influencer_id,handle,name
+TIK-INFL001,@FashionistaMY,Maya Lee
+TIK-INFL002,@StyleGuruKL,Ben Tan
+TIK-INFL003,@TrendSetSarawak,Alicia Wong
+TIK-INFL004,@OOTDKL,Jason Lim
+TIK-INFL005,@ChicPenang,Amira Zain
+TIK-INFL006,@StreetwearSabah,Rafiq Hakim
+TIK-INFL007,@BeautyVibesMY,Chloe Tan
+TIK-INFL008,@FoodieFits,Jared Ong
+TIK-INFL009,@UrbanGlam,Serena Yap
+TIK-INFL010,@MinimalistChic,Siti Nur
+TIK-INFL011,@CasualVibesKL,Daniel Koh
+TIK-INFL012,@LuxuryLooksMY,Fiona Goh
+TIK-INFL013,@BatikRevival,Aisyah Karim
+TIK-INFL014,@DenimCulture,Marcus Lee
+TIK-INFL015,@HijabistaStyle,Nurul Huda
+TIK-INFL016,@EcoFashionMY,Ivan Chan
+TIK-INFL017,@FestivalFits,Farah Anis
+TIK-INFL018,@StreetChicMY,Darren Lau
+TIK-INFL019,@RunwayVibes,Michelle Yong
+TIK-INFL020,@VintageMuse,Clara Lim
