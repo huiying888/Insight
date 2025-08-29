@@ -48,8 +48,8 @@ Insight solves this by:
 ### 1. Clone the Repository
 ```bash
 # Clone the repo
-git clone https://github.com/huiying888/insight.git
-cd insight
+git clone https://github.com/huiying888/Insight.git
+cd Insight
 ```
 ### 2. Configure Environment Variables
 Download the .env file (not provided in GitHub).
