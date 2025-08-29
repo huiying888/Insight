@@ -26,11 +26,11 @@ Many SMEs and online sellers face the challenge of:
 
 ## Solution
 Insight solves this by:
--Integrating multi-channel sales data into a single warehouse.
--Interactive dashboard for KPIs, trends, and product analysis.
--AI-driven storytelling for auto-generated insights(e.g., trends, composistion, inventory health).
--AI chatroom for querying the database in plain English instead of writing SQL, enabling faster decision-making.
--Demo POS system to simulate offline sales and test integrations.
+- Integrating multi-channel sales data into a single warehouse.
+- Interactive dashboard for KPIs, trends, and product analysis.
+- AI-driven storytelling for auto-generated insights(e.g., trends, composistion, inventory health).
+- AI chatroom for querying the database in plain English instead of writing SQL, enabling faster decision-making.
+- Demo POS system to simulate offline sales and test integrations.
 
 
 ---
