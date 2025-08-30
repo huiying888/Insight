@@ -523,63 +523,45 @@ def load_fact_orders_and_items_pos(conn):
 def load_fact_refunds(conn, channel: str):
     schema = SRC_SCHEMAS[channel]
     with conn.cursor() as cur:
+        # pull from source_refunds and join to source_order_items to get product_id
         cur.execute(f"""
-            SELECT refund_id, order_id, amount, reason, processed_at
-            FROM {schema}.refunds;
+            SELECT
+                r.refund_id,
+                o.order_sk,
+                p.product_sk,
+                r.amount,
+                r.reason,
+                r.processed_at
+            FROM {schema}.refunds r
+            JOIN {schema}.order_items oi
+              ON r.item_id = oi.item_id
+            JOIN wh.bridge_product_source p
+              ON oi.product_id = p.source_product_id
+            JOIN wh.fact_orders o
+              ON r.order_id = o.order_id
         """)
         rows = fetchall_dict(cur)
         if not rows:
             return
-        channel_id = get_channel_id(cur, channel)
 
-        cur.execute("SELECT order_sk, order_id FROM wh.fact_orders WHERE channel_id=%s;", (channel_id,))
-        order_map = {r[1]: r[0] for r in cur.fetchall()}
-
-        # Map order_sk → product_sks (from order_items)
-        cur.execute("""
-            SELECT order_sk, product_sk
-            FROM wh.fact_order_items;
-        """)
-        order_items_map = {}
-        for order_sk, product_sk in cur.fetchall():
-            order_items_map.setdefault(order_sk, []).append(product_sk)
-
-        out = []
-        min_d, max_d = None, None
-        for r in rows:
-            order_sk = order_map.get(r["order_id"])
-            if not order_sk:
-                continue
-            ts = r.get("processed_at")
-            if ts:
-                d = ts.date()
-                min_d = d if not min_d or d < min_d else min_d
-                max_d = d if not max_d or d > max_d else max_d
-                upsert_fx_myr_passthrough(cur, d)
-            # A refund might apply to multiple items in an order
-            product_sks = order_items_map.get(order_sk, [None])
-            for product_sk in product_sks:
-                out.append((
-                    r["refund_id"], order_sk, product_sk,
-                    r.get("amount"), r.get("reason"), r.get("processed_at")
-                ))
-
-        if out:
-            execute_values(cur, """
-                INSERT INTO wh.fact_refunds (
-                    refund_id, order_sk, product_sk, amount_native, reason, processed_ts
-                ) VALUES %s
+        for row in rows:
+            cur.execute("""
+                INSERT INTO wh.fact_refunds
+                    (refund_id, order_sk, product_sk, amount_native, reason, processed_ts)
+                VALUES (%s, %s, %s, %s, %s, %s)
                 ON CONFLICT (refund_id, product_sk) DO UPDATE
-                SET order_sk = EXCLUDED.order_sk,
-                    amount_native = EXCLUDED.amount_native,
-                    reason = EXCLUDED.reason,
-                    processed_ts = EXCLUDED.processed_ts;
-            """, out)
-            if min_d and max_d:
-                ensure_dim_date(cur, min_d, max_d)
-
-    conn.commit()
-
+                  SET amount_native = EXCLUDED.amount_native,
+                      reason = EXCLUDED.reason,
+                      processed_ts = EXCLUDED.processed_ts
+            """, (
+                row["refund_id"],
+                row["order_sk"],
+                row["product_sk"],
+                row["amount"],
+                row["reason"],
+                row["processed_at"]
+            ))
+        conn.commit()
 
 # ============================================================================
 # INVENTORY SNAPSHOT (MASTER)
@@ -746,4 +728,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
