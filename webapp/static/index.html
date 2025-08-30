@@ -95,12 +95,13 @@
       </div>
     </div>
 
+    <h3>Checkout Items</h3>
     <div class="row">
-      <input id="search" placeholder="Search product by SKU or name" style="flex:1"/>
+      <input id="search" placeholder="Search product by SKU or name" style="flex:1" onkeydown="if (event.key === 'Enter') document.getElementById('btnSearch').click();"/>
       <input id="qtyAdd" type="number" min="1" value="1" style="width:100px"/>
       <button id="btnSearch">Search</button>
     </div>
-    <div id="results" class="muted">Type something and click Search.</div>
+    <div id="results" class="muted">Type something and click Search / Use barcode scanner.</div>
 
     <h4>Cart</h4>
     <div id="cartWrap" class="muted">Cart is empty.</div>
