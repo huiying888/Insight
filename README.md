@@ -62,7 +62,7 @@ streamlit run main.py
 ### 4. Run the POS System (demo)
 ```bash
 # to insert data from pos system and automatically map to data warehouse
-python server.py
+python webapp/server.py
 ```
 
 ---
