@@ -1,0 +1,123 @@
+{
+  "tables": {
+    "fact_inventory": [
+      {"name": "stock_qty", "type": "numeric"},
+      {"name": "snapshot_date", "type": "date"},
+      {"name": "product_sk", "type": "bigint"}
+    ],
+    "fact_ads_spend": [
+      {"name": "revenue_attr_native", "type": "numeric"},
+      {"name": "campaign_sk", "type": "bigint"},
+      {"name": "date_key", "type": "date"},
+      {"name": "spend_native", "type": "numeric"},
+      {"name": "clicks", "type": "bigint"},
+      {"name": "impressions", "type": "bigint"},
+      {"name": "orders_attributed", "type": "integer"}
+    ],
+    "dim_date": [
+      {"name": "date_key", "type": "date"},
+      {"name": "year", "type": "integer"},
+      {"name": "quarter", "type": "integer"},
+      {"name": "month", "type": "integer"},
+      {"name": "day", "type": "integer"},
+      {"name": "week_of_year", "type": "integer"},
+      {"name": "is_weekend", "type": "boolean"}
+    ],
+    "fx_rates": [
+      {"name": "date_key", "type": "date"},
+      {"name": "to_myr", "type": "numeric"},
+      {"name": "currency", "type": "text"}
+    ],
+    "fact_order_items": [
+      {"name": "order_sk", "type": "bigint"},
+      {"name": "product_sk", "type": "bigint"},
+      {"name": "qty", "type": "numeric"},
+      {"name": "price", "type": "numeric"},
+      {"name": "discount", "type": "numeric"},
+      {"name": "revenue_net", "type": "numeric"},
+      {"name": "cost", "type": "numeric"},
+      {"name": "margin", "type": "numeric"}
+    ],
+    "bridge_product_source": [
+      {"name": "bridge_id", "type": "bigint"},
+      {"name": "product_sk", "type": "bigint"},
+      {"name": "cost_native", "type": "numeric"},
+      {"name": "updated_at", "type": "timestamp with time zone"},
+      {"name": "price_native", "type": "numeric"},
+      {"name": "source_sku", "type": "text"},
+      {"name": "source_name", "type": "text"},
+      {"name": "currency_native", "type": "text"},
+      {"name": "source_channel", "type": "text"},
+      {"name": "source_product_id", "type": "text"}
+    ],
+    "dim_customer": [
+      {"name": "customer_sk", "type": "bigint"},
+      {"name": "first_seen_at", "type": "timestamp with time zone"},
+      {"name": "source_customer_id", "type": "text"},
+      {"name": "region", "type": "text"},
+      {"name": "source_channel", "type": "text"}
+    ],
+    "bridge_customer_identity": [
+      {"name": "master_customer_id", "type": "bigint"},
+      {"name": "customer_sk", "type": "bigint"},
+      {"name": "confidence", "type": "numeric"}
+    ],
+    "fact_orders": [
+      {"name": "order_sk", "type": "bigint"},
+      {"name": "channel_id", "type": "smallint"},
+      {"name": "customer_sk", "type": "bigint"},
+      {"name": "store_sk", "type": "bigint"},
+      {"name": "order_ts", "type": "timestamp with time zone"},
+      {"name": "order_total_gross", "type": "numeric"},
+      {"name": "order_total_net", "type": "numeric"},
+      {"name": "shipping_fee", "type": "numeric"},
+      {"name": "tax_total", "type": "numeric"},
+      {"name": "voucher_amount", "type": "numeric"},
+      {"name": "order_id", "type": "text"},
+      {"name": "status", "type": "text"},
+      {"name": "currency_native", "type": "text"}
+    ],
+    "dim_channel": [
+      {"name": "channel_id", "type": "smallint"},
+      {"name": "name", "type": "text"}
+    ],
+    "dim_store": [
+      {"name": "store_sk", "type": "bigint"},
+      {"name": "store_id", "type": "text"},
+      {"name": "name", "type": "text"},
+      {"name": "region", "type": "text"},
+      {"name": "timezone", "type": "text"}
+    ],
+    "fact_refunds": [
+      {"name": "order_sk", "type": "bigint"},
+      {"name": "product_sk", "type": "bigint"},
+      {"name": "amount_native", "type": "numeric"},
+      {"name": "processed_ts", "type": "timestamp with time zone"},
+      {"name": "reason", "type": "text"},
+      {"name": "refund_id", "type": "text"}
+    ],
+    "dim_product": [
+      {"name": "product_sk", "type": "bigint"},
+      {"name": "is_active", "type": "boolean"},
+      {"name": "created_at", "type": "timestamp with time zone"},
+      {"name": "starting_inventory", "type": "numeric"},
+      {"name": "master_product_code", "type": "text"},
+      {"name": "name", "type": "text"},
+      {"name": "category", "type": "text"},
+      {"name": "brand", "type": "text"}
+    ],
+    "dim_campaign": [
+      {"name": "campaign_sk", "type": "bigint"},
+      {"name": "channel_id", "type": "smallint"},
+      {"name": "start_at", "type": "timestamp with time zone"},
+      {"name": "end_at", "type": "timestamp with time zone"},
+      {"name": "budget_native", "type": "numeric"},
+      {"name": "currency_native", "type": "text"},
+      {"name": "source_campaign_id", "type": "text"},
+      {"name": "name", "type": "text"}
+    ]
+  },
+  "rules": {
+    "revenue": "Always use fact_orders.order_total_gross as the final revenue column instead of summing fact_order_items.revenue_net"
+  }
+}
