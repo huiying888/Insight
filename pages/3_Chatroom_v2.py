@@ -56,7 +56,7 @@ if "chat_history" not in st.session_state:
 if "db" not in st.session_state:
     st.session_state.db = init_supabase()
 if "schema_info" not in st.session_state:
-    st.session_state.schema_info = load_schema_from_file("config/schema.sql")
+    st.session_state.schema_info = load_schema_from_file("config/schema.json")
 if "pending_ai" not in st.session_state:
     st.session_state["pending_ai"] = False
 
