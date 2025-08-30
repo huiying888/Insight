@@ -535,6 +535,15 @@ def load_fact_refunds(conn, channel: str):
         cur.execute("SELECT order_sk, order_id FROM wh.fact_orders WHERE channel_id=%s;", (channel_id,))
         order_map = {r[1]: r[0] for r in cur.fetchall()}
 
+        # Map order_sk → product_sks (from order_items)
+        cur.execute("""
+            SELECT order_sk, product_sk
+            FROM wh.fact_order_items;
+        """)
+        order_items_map = {}
+        for order_sk, product_sk in cur.fetchall():
+            order_items_map.setdefault(order_sk, []).append(product_sk)
+
         out = []
         min_d, max_d = None, None
         for r in rows:
@@ -547,21 +556,22 @@ def load_fact_refunds(conn, channel: str):
                 min_d = d if not min_d or d < min_d else min_d
                 max_d = d if not max_d or d > max_d else max_d
                 upsert_fx_myr_passthrough(cur, d)
-            out.append((
-                r["refund_id"], order_sk, None,  # product_sk unknown here
-                r.get("amount"), r.get("reason"), r.get("processed_at")
-            ))
+            # A refund might apply to multiple items in an order
+            product_sks = order_items_map.get(order_sk, [None])
+            for product_sk in product_sks:
+                out.append((
+                    r["refund_id"], order_sk, product_sk,
+                    r.get("amount"), r.get("reason"), r.get("processed_at")
+                ))
 
         if out:
             execute_values(cur, """
                 INSERT INTO wh.fact_refunds (
                     refund_id, order_sk, product_sk, amount_native, reason, processed_ts
                 ) VALUES %s
-                ON CONFLICT (refund_id) DO UPDATE
+                ON CONFLICT (refund_id, product_sk) DO UPDATE
                 SET order_sk = EXCLUDED.order_sk,
-                    product_sk = COALESCE(EXCLUDED.product_sk, wh.fact_refunds.product_sk),
                     amount_native = EXCLUDED.amount_native,
-                    
                     reason = EXCLUDED.reason,
                     processed_ts = EXCLUDED.processed_ts;
             """, out)
@@ -569,6 +579,7 @@ def load_fact_refunds(conn, channel: str):
                 ensure_dim_date(cur, min_d, max_d)
 
     conn.commit()
+
 
 # ============================================================================
 # INVENTORY SNAPSHOT (MASTER)
@@ -735,3 +746,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
