@@ -1,4 +1,6 @@
-# Insight 
+# Project Title: Insight 
+
+![Insight](assets/1.png)
 
 **Insight** is a unified sales analytics platform that consolidates sales data from multiple sources such as Shopee, TikTok, Lazada, and a demo Point-of-Sale (POS) system, into one central dashboard.
 The goal is to provide businesses with actionable insights, enabling them to understand performance across various sales channels without needing to juggle multiple reports. 
@@ -7,7 +9,7 @@ It combines **real-time dashboards**, **AI storytelling for KPIs**, and an **int
 ---
 ## Table of Contents
 
-- [Problem Statement](#problem-statemnt)
+- [Problem Statement](#problem-statement-ai-powered-tools-for-growth)
 - [Solution](#solution)
 - [Tech Stack](#tech-stack)
 - [Setup Instructions](#setup-instructions)
@@ -15,7 +17,7 @@ It combines **real-time dashboards**, **AI storytelling for KPIs**, and an **int
 - [License](#license)
 
 ---
-## Problem Statement
+## Problem Statement [AI-Powered Tools for Growth]
 Many SMEs and online sellers face the challenge of:
 - Fragmented sales data spread across multiple platforms.
 - Manual reporting that is time-consuming and error-prone.
@@ -35,6 +37,9 @@ Insight solves this by:
 ---
 
 ## Tech Stack
+
+![Insight](assets/9.png)
+
 - Frontend/Dashboard: Streamlit
 - Backend/API: FastAPI (server.py for POS system)
 - Database: PostgreSQL (with sales fact & dimension tables)
@@ -85,11 +90,11 @@ Learnings:
 
 ## 👥 Team LaiChai
 
-- [@huiying888](https://github.com/huiying888)
-- [@kerjing0328](https://github.com/kerjing0328)
-- [@sia1010](https://github.com/sia1010)
-- [@Yijen10](https://github.com/Yijen10)
-- [@rav-pixel-cpu](https://github.com/rav-pixel-cpu)
+- Jocelyn Ngieng Hui Ying : [@huiying888](https://github.com/huiying888)
+- Ng Ker Jing : [@kerjing0328](https://github.com/kerjing0328)
+- Sia Sheng Jie : [@sia1010](https://github.com/sia1010)
+- Teoh Yi Jen : [@Yijen10](https://github.com/Yijen10)
+- Chai Woon Hue : [@rav-pixel-cpu](https://github.com/rav-pixel-cpu)
 
 ---
 
