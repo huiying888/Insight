@@ -41,7 +41,7 @@ Insight solves this by:
 ![Insight](assets/9.png)
 
 - Frontend/Dashboard: Streamlit
-- Backend/API: FastAPI (server.py for POS system)
+- Backend/API: FlaskAPI (server.py for POS system)
 - Database: PostgreSQL (with sales fact & dimension tables)
 - AI Models: Google API (for AI storytelling + chatroom)
 - Others: Python, Pandas, LangChain
@@ -56,7 +56,7 @@ git clone https://github.com/huiying888/Insight.git
 cd Insight
 ```
 ### 2. Configure Environment Variables
-Download the .env file (not provided in GitHub).
+Download the .env file (not provided in GitHub, please refer to the prototype documentation provided).
 
 Place it inside the `/config` folder.
 
