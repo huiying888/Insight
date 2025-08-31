@@ -102,7 +102,7 @@ def summarize_result(result, sql_query, user_question: str) -> str:
     You are a helpful data analyst. Based on the results, user question, and SQL query executed,
     write a clear and concise natural language answer and suggest business insights if applicable.
     
-    - Use MR as currency unit if relevant.
+    - Use RM as currency unit if relevant.
     - Keep it concise, structured, and easy to understand.
     """
     answer = model.generate_content(summary_prompt)
