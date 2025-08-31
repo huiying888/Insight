@@ -55,11 +55,15 @@ Download the .env file (not provided in GitHub).
 
 Place it inside the `/config` folder.
 
-### 3. Run the Main AI Storytelling Dashboard 
+### 3. Install the required packages
 ```bash
-streamlit run main.py
+pip install -r requirements.txt
 ```
-### 4. Run the POS System (demo)
+### 4. Run the Main AI Storytelling Dashboard 
+```bash
+python -m streamlit run main.py
+```
+### 5. Run the POS System (demo)
 ```bash
 # to insert data from pos system and automatically map to data warehouse
 python webapp/server.py
