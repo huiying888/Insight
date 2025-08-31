@@ -5,7 +5,7 @@ import plotly.express as px
 from dotenv import load_dotenv
 import os
 from langchain_core.messages import AIMessage, HumanMessage
-from utils import get_db_connection, load_data, init_supabase, load_schema_from_file, get_response
+from utils_v2 import get_db_connection, load_data, init_supabase, load_schema_from_file, get_response
 
 load_dotenv()
 
