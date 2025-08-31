@@ -17,7 +17,7 @@ It combines **real-time dashboards**, **AI storytelling for KPIs**, and an **int
 - [License](#license)
 
 ---
-## Problem Statement [AI-Powered Tools for Growth]
+## Problem Statement: AI-Powered Tools for Growth
 Many SMEs and online sellers face the challenge of:
 - Fragmented sales data spread across multiple platforms.
 - Manual reporting that is time-consuming and error-prone.
@@ -29,7 +29,7 @@ Many SMEs and online sellers face the challenge of:
 Insight solves this by:
 - Integrating multi-channel sales data into a single warehouse.
 - Interactive dashboard for KPIs, trends, and product analysis.
-- AI-driven storytelling for auto-generated insights(e.g., trends, composistion, inventory health).
+- AI-driven storytelling for auto-generated insights (e.g., trends, composition, inventory health).
 - AI chatroom for querying the database in plain English instead of writing SQL, enabling faster decision-making.
 - Demo POS system to simulate offline sales and test integrations.
 
@@ -88,7 +88,7 @@ Learnings:
 - Designing a POS prototype helps demonstrate integration feasibility for offline sales.
 
 
-## 👥 Team LaiChai
+## Team: LaiChai
 
 - Jocelyn Ngieng Hui Ying : [@huiying888](https://github.com/huiying888)
 - Ng Ker Jing : [@kerjing0328](https://github.com/kerjing0328)
