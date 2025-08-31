@@ -40,11 +40,11 @@ Insight solves this by:
 
 ![Insight](assets/9.png)
 
-- Frontend/Dashboard: Streamlit
-- Backend/API: FlaskAPI (server.py for POS system)
+- Frontend/Dashboard: Streamlit (Dashboard), Raw HTML/CSS/JS (POS)
+- Backend/API: ETL Python scripts, FlaskAPI (server.py for POS system)
 - Database: PostgreSQL (with sales fact & dimension tables)
 - AI Models: Google API (for AI storytelling + chatroom)
-- Others: Python, Pandas, LangChain
+- Others: Python, Pandas, LangChain, Plotly
 
 ---
 
