@@ -64,13 +64,14 @@ Place it inside the `/config` folder.
 ```bash
 pip install -r requirements.txt
 ```
-### 4. Run the Main AI Storytelling Dashboard 
+### 4. Run the Main AI Storytelling Dashboard
+Run and access through browser at http://localhost:8501
 ```bash
 python -m streamlit run main.py
 ```
-### 5. Run the POS System (demo)
+### 5. Run the POS System
+Run and access through browser at http://localhost:8000
 ```bash
-# to insert data from pos system and automatically map to data warehouse
 python webapp/server.py
 ```
 
