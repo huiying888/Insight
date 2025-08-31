@@ -9,7 +9,7 @@ It combines **real-time dashboards**, **AI storytelling for KPIs**, and an **int
 ---
 ## Table of Contents
 
-- [Problem Statement](#problem-statement-ai-powered-tools-for-growth)
+- [Problem Statement](#problem-statement-ai-driven-automation-for-business-growth)
 - [Solution](#solution)
 - [Tech Stack](#tech-stack)
 - [Setup Instructions](#setup-instructions)
@@ -17,7 +17,7 @@ It combines **real-time dashboards**, **AI storytelling for KPIs**, and an **int
 - [License](#license)
 
 ---
-## Problem Statement: AI-Powered Tools for Growth
+## Problem Statement: AI-Driven Automation for Business Growth
 Many SMEs and online sellers face the challenge of:
 - Fragmented sales data spread across multiple platforms.
 - Manual reporting that is time-consuming and error-prone.
