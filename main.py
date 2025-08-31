@@ -152,11 +152,11 @@ def gradient_button(label, href, description):
     st.markdown(button_html, unsafe_allow_html=True)
 
 with col1:
-    gradient_button("📊 Dashboard", "/dashboard", "View real-time metrics & analytics")
+    gradient_button("📊 Dashboard", "/2_Dashboard", "View real-time metrics & analytics")
 
 with col2:
-    gradient_button("💬 Chatroom", "/chatroom", "Ask questions & get AI-driven insights")
+    gradient_button("💬 Chatroom", "/3_Chatroom", "Ask questions & get AI-driven insights")
 
 with col3:
-    gradient_button("🛒 Product Insertion", "/master_product_insertion", "Add or update products in your database")
+    gradient_button("🛒 Product Insertion", "/4_Product_Insertion", "Add or update products in your database")
 
