@@ -81,7 +81,7 @@ with col1:
     st.markdown(
         """
         <div class="card">
-            <h3>📊 Cross-Platform View</h3>
+            <p style="font-size:28px; font-weight:bold;">📊 Cross-Platform View</p>
             <p>We seamlessly integrate <b>Lazada</b>, <b>Shopee</b>, <b>TikTok Shop</b>, and <b>POS sales</b> into one single source of truth.</p>
         </div>
         """,
@@ -92,7 +92,7 @@ with col2:
     st.markdown(
         """
         <div class="card">
-            <h3>📈 Live Monitor</h3>
+            <p style="font-size:28px; font-weight:bold;">📈 Live Monitor</p>
             <p>Monitor your business performance instantly with <b>real-time updates</b> and <b>interactive visualizations</b>.</p>
         </div>
         """,
@@ -103,7 +103,7 @@ with col3:
     st.markdown(
         """
         <div class="card">
-            <h3>🤖 Smart AI Chatbot</h3>
+            <p style="font-size:28px; font-weight:bold;">🤖 Smart AI Chatbot</p>
             <p>Ask questions and get <b>actionable insights</b> from your sales data powered by <b>AI-driven analytics</b>.</p>
         </div>
         """,
@@ -152,11 +152,11 @@ def gradient_button(label, href, description):
     st.markdown(button_html, unsafe_allow_html=True)
 
 with col1:
-    gradient_button("📊 Dashboard", "/2_Dashboard", "View real-time metrics & analytics")
+    gradient_button("📊 Dashboard", "/Dashboard", "View real-time metrics & analytics")
 
 with col2:
-    gradient_button("💬 Chatroom", "/3_Chatroom", "Ask questions & get AI-driven insights")
+    gradient_button("💬 Chatroom", "/Chatroom", "Ask questions & get AI-driven insights")
 
 with col3:
-    gradient_button("🛒 Product Insertion", "/4_Product_Insertion", "Add or update products in your database")
+    gradient_button("🛒 Product Insertion", "/Product_Insertion", "Add or update products in your database")
 
