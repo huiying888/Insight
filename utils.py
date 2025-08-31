@@ -11,6 +11,8 @@ import plotly.express as px
 import streamlit as st
 import pandas as pd
 import psycopg2
+import google.generativeai as genai
+import json
 
 load_dotenv("config/.env")
 
@@ -45,92 +47,83 @@ def init_supabase() -> SQLDatabase:
     db_uri = f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}"
     return SQLDatabase.from_uri(db_uri)
 
-def load_schema_from_file(path="config/schema.sql") -> str:
+# ============================================================================
+# LOAD SCHEMA FROM JSON
+# ============================================================================
+def load_schema_from_file(path="config/schema.json") -> dict:
     with open(path, "r") as f:
-        return f.read()
+        return json.load(f)
+
 # ============================================================================
 # SQL GENERATION CHAIN
 # ============================================================================
-def get_sql_chain(db: SQLDatabase, schema: str):
-    template = """
-    You are a data analyst at a company. You are interacting with a user who is asking you questions about the company's database.
-    Based on the table schema below, write a SQL query that would answer the user's question. 
-    Always use schema-qualified table names in the format schema.table (e.g., wh.dim_product, wh.fact_orders). Never prepend extra letters or aliases to the schema name.
-    Take the conversation history into account.
-    
-    
-    <SCHEMA>{schema}</SCHEMA>
-    
-    Conversation History: {chat_history}
-    
-    Write only the SQL query and nothing else. Do not wrap the SQL query in any other text, not even backticks.
-    No explanation. No formatting. No backticks.
+def generate_sql(user_question: str, schema_info: dict) -> str:
+    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+    model = genai.GenerativeModel("gemini-2.5-flash")
 
-    For example:
-    Question: how many products do I have?
-    SQL Query: SELECT "ArtistId", COUNT(*) as track_count FROM "Track" GROUP BY "ArtistId" ORDER BY track_count DESC LIMIT 3;
-    
-    Question: Name 10 artists
-    SQL Query: SELECT "Name" FROM "Artist" LIMIT 10;
-    
-    Your turn:
-    Question: {question}
-    SQL Query:
+    prompt = f"""
+    You are a data analyst. 
+    Here is the database schema:
+    {schema_info}
+
+    ⚠️ IMPORTANT:
+    - Always use schema-qualified table names in the format wh.table_name
+    - When calculating revenue, ALWAYS use the column 'order_total_gross' from 'wh.fact_orders'. 
+      Do NOT use revenue_net, order_total_net, or join to fact_order_items.
+    - Use PostgreSQL syntax
+    - Return only the SQL query, no markdown, no explanation
+
+    User question: {user_question}
     """
 
-    prompt = ChatPromptTemplate.from_template(template)
+    response = model.generate_content(prompt)
+    sql_query = response.text.strip()
 
-    # Use LLaMA 3.2 via OpenAI-compatible endpoint (set in .env as OPENAI_API_KEY + BASE_URL if needed)
-    llm = ChatGoogleGenerativeAI(
-    model="gemma-3-27b-it", 
-    google_api_key=os.getenv("GEMINI_API_KEY"),  # make sure this matches your .env variable name
-    temperature=0
-)
+    if sql_query.startswith("```"):
+        sql_query = sql_query.strip("`")
+        sql_query = sql_query.replace("sql\n", "")
+        sql_query = sql_query.replace("sql", "")
+        sql_query = sql_query.replace("```", "")
 
-    return (
-        RunnablePassthrough.assign(schema=lambda _: schema)
-        | prompt
-        | llm
-        | StrOutputParser()
-    )
+    return sql_query.strip()
+
 
 # ============================================================================
 # NATURAL LANGUAGE RESPONSE CHAIN
 # ============================================================================
-def get_response(user_query: str, db: SQLDatabase, schema: str, chat_history: list):
-    sql_chain = get_sql_chain(db, schema)
+def summarize_result(result, sql_query, user_question: str) -> str:
+    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+    model = genai.GenerativeModel("gemini-2.5-flash")
+    summary_prompt = f"""
+    The SQL query returned: {result}
+    User question: {user_question}
+    SQL query executed: {sql_query}
 
-    template = """
-    You are a helpful data analyst. Based on the schema, user question, SQL query, and SQL response,
-    write a clear and concise natural language answer.
-
-    <SCHEMA>{schema}</SCHEMA>
-    Conversation History: {chat_history}
-    SQL Query: <SQL>{query}</SQL>
-    User question: {question}
-    SQL Response: {response}
+    You are a helpful data analyst. Based on the results, user question, and SQL query executed,
+    write a clear and concise natural language answer and suggest business insights if applicable.
+    
+    - Use RM as currency unit if relevant.
+    - Keep it concise, structured, and easy to understand.
     """
+    answer = model.generate_content(summary_prompt)
+    return answer.text.strip()
 
-    prompt = ChatPromptTemplate.from_template(template)
 
-    llm = ChatGoogleGenerativeAI(
-    model="gemma-3-27b-it", 
-    google_api_key=os.getenv("GEMINI_API_KEY"),  # make sure this matches your .env variable name
-    temperature=0.1
-)
-    chain = (
-        RunnablePassthrough.assign(query=sql_chain).assign(
-            schema=lambda _: schema,
-            response=lambda vars: db.run(vars["query"]),
-        )
-        | prompt
-        | llm
-        | StrOutputParser()
-    )
-    return chain.invoke({
-        "question": user_query,
-        "chat_history": chat_history,
-    })
+# ============================================================================
+# MAIN FLOW (replacement for get_response)
+# ============================================================================
+def get_response(user_question: str):
+    schema_info = load_schema_from_file()
+    sql_query = generate_sql(user_question, schema_info)
+    print("Generated SQL:", sql_query)
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute(sql_query)
+    result = cursor.fetchall()
+    print("SQL Result:", result)
+    final_answer = summarize_result(result, sql_query, user_question)
+    print("Final Answer:", final_answer)
+    return final_answer
 
 def generate_insight(user_query: str, df: pd.DataFrame):
     template = """

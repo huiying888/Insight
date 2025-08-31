@@ -56,19 +56,19 @@ if "chat_history" not in st.session_state:
 if "db" not in st.session_state:
     st.session_state.db = init_supabase()
 if "schema_info" not in st.session_state:
-    st.session_state.schema_info = load_schema_from_file("config/schema.sql")
+    st.session_state.schema_info = load_schema_from_file("config/schema.json")
 if "pending_ai" not in st.session_state:
     st.session_state["pending_ai"] = False
 
 # ------------------------------------------------------------------
-# FAQ section (row of styled buttons)
+# FAQ section 
 # ------------------------------------------------------------------
 st.write("### ❓ Frequently Asked Questions")
 
 faq_items = [
     {"q": "💰 What is the total revenue this quarter?"},
     {"q": "📈 What is the monthly sales trend this year?"},
-    {"q": "🏬 Which region generated the highest revenue?"},
+    {"q": "🏬 Which customer region had the highest revenue this month?"},
     {"q": "⚡ What is the average order value last month?"},
 ]
 
@@ -135,13 +135,7 @@ if st.session_state["pending_ai"]:
     last_query = st.session_state.get("last_query", None)
     if last_query:
         with st.spinner("Thinking..."):
-            response = get_response(
-                last_query,
-                st.session_state.db,
-                st.session_state.schema_info,
-                st.session_state.chat_history
-            )
-
+            response = get_response(last_query)
         st.session_state.chat_history.append(AIMessage(content=response))
         st.session_state["pending_ai"] = False
         st.rerun()
